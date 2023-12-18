@@ -1,0 +1,32 @@
+input[type="text"]{
+    border-radius: 10px 0 0 10px;
+    width: 650px;
+    height: 62px;
+    border: 0.7px solid #6D6A6A;
+    margin-top: 45px;
+    /* background: #FFF; */
+}
+form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input[placeholder="Your Email Address"]{
+    color: #666161;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+.footerButton{
+width: 112px;
+height: 62px;
+padding: 12px;
+border-radius: 0px 8px 8px 0px;
+border: 1px solid var(--Foundation-Primary-Normal, #E66B66);
+background-color: var(--Foundation-Primary-Normal, #E66B66);
+margin-top: 45px;
+}
