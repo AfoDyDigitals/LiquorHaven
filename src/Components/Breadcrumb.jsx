@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ShopDropdown from "./ShopDropdown";
 import CurrencyConverter from "./CurrencyConverter";
 
 function Breadcrumb() {
+  const [isShopDropdownVisible, setIsShopDropdownVisible] = useState(false);
+  function toggleShopDropdown() {
+    setIsShopDropdownVisible(!isShopDropdownVisible);
+  }
+
+  const [isCurrencyConverterVisible, setIsCurrencyConverterVisible] =
+    useState(false);
+  function toggleCurrencyConverter() {
+    setIsCurrencyConverterVisible(!isCurrencyConverterVisible);
+  }
+
   return (
     <>
-    {/* searchbar */}
-      <div className="flex items-center justify-center justify-between border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mx-[16px] mt-[16px] md:hidden lg:hidden">
+      {/* searchbar */}
+      <div className="relative flex items-center justify-center justify-between border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mx-[16px] mt-[16px] md:hidden lg:hidden">
         <input
           className="font-normal focus:outline-none focus:ring-1 focus:ring-[#E66B66] w-[343px] h-[16px] text-[13px] p-[15px] "
           type="text"
@@ -20,7 +31,7 @@ function Breadcrumb() {
         </button>
       </div>
 
-    {/* breadcrumb */}
+      {/* breadcrumb */}
       <div className=" flex justify-center items-center bg-[#A22634] text-white justify-evenly h-[60px] mt-[22px] md:h-[60px] mt-[40px] lg:h-[108px] mt-[60px]">
         <div className="flex gap-[10px] justify-center items-center md:ml-[32px]">
           <img
@@ -39,7 +50,18 @@ function Breadcrumb() {
           <div>Home</div>
           <div className="flex gap-[5px] justify-center items-center">
             <div>Shop</div>
-            <img src="../src/assets/Dropdown white.svg" />
+            {isShopDropdownVisible && (
+              <img
+                onClick={toggleShopDropdown}
+                src="../src/assets/Dropdown white.svg"
+              />
+            )}
+            {!isShopDropdownVisible && (
+              <img
+                onClick={toggleShopDropdown}
+                src="../src/assets/Dropdown white.svg"
+              />
+            )}
           </div>
           <div>About Us</div>
           <div>Contact Us</div>
@@ -49,10 +71,20 @@ function Breadcrumb() {
         <div className="flex justify-center items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
           <div className="flex justify-center items-center gap-[5px] ml-[50px] md:ml-[120px]">
             <div className="text-[10px] font-normal md:text-[13px]">USD</div>
-            <img
-              className="w-[6px] h-[10px]"
-              src="../src/assets/Dropdown white.svg"
-            />
+            {isCurrencyConverterVisible && (
+              <img
+                onClick={toggleCurrencyConverter}
+                className="w-[6px] h-[10px]"
+                src="../src/assets/Dropdown white.svg"
+              />
+            )}
+            {!isCurrencyConverterVisible && (
+              <img
+                onClick={toggleCurrencyConverter}
+                className="w-[6px] h-[10px]"
+                src="../src/assets/Dropdown white.svg"
+              />
+            )}
           </div>
 
           <div className="flex">
@@ -77,11 +109,13 @@ function Breadcrumb() {
         </div>
 
         <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[93px] h-[46px] ">
-          <div className="md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">Sign in</div>
+          <div className="md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
+            Sign in
+          </div>
         </button>
       </div>
-      <ShopDropdown />
-      <CurrencyConverter />
+      {isShopDropdownVisible && (<ShopDropdown toggleShopDropdown={toggleShopDropdown} />)}
+      {isCurrencyConverterVisible && (<CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />)}
     </>
   );
 }

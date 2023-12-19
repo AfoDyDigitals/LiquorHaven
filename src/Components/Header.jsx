@@ -4,10 +4,16 @@ import SideBar from "./SideBar";
 
 function Header() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
-
   function toggleSidebar() {
     setIsSidebarVisible(!isSidebarVisible);
   }
+
+  const [isCurrencyConverterVisible, setIsCurrencyConverterVisible] =
+    useState(false);
+  function toggleCurrencyConverter() {
+    setIsCurrencyConverterVisible(!isCurrencyConverterVisible);
+  }
+
   return (
     <>
       <div className="relative z-20 flex justify-center items-center  justify-between mx-[16px] md:flex justify-center items-center  justify-between mx-[32px] lg:mx-[45px]">
@@ -51,10 +57,20 @@ function Header() {
         <div className="sm:hidden md:hidden lg:flex gap-[45px] w-[260px] h-[32px]">
           <div className="flex justify-center items-center gap-[5px] ml-[64.59px]">
             <div className="text-[16px] font-normal">USD</div>
-            <img
-              className="w-[8px] h-[14px]"
-              src="../src/assets/Dropdown.svg"
-            />
+            {isCurrencyConverterVisible && (
+              <img
+                onClick={toggleCurrencyConverter}
+                className="w-[8px] h-[14px]"
+                src="../src/assets/Dropdown.svg"
+              />
+            )}
+            {!isCurrencyConverterVisible && (
+              <img
+                onClick={toggleCurrencyConverter}
+                className="w-[8px] h-[14px]"
+                src="../src/assets/Dropdown.svg"
+              />
+            )}
           </div>
 
           <div className="flex">
@@ -79,8 +95,7 @@ function Header() {
         </div>
       </div>
       {isSidebarVisible && <SideBar toggleSidebar={toggleSidebar} />}
-      <CurrencyConverter />
-    </>
+      {isCurrencyConverterVisible && (<CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />)}    </>
   );
 }
 
