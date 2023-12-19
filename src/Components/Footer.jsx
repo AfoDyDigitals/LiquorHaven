@@ -14,7 +14,7 @@ function Footer() {
             <p className='text-[20px] font-normal font-rubik leading-[24px]'>Sign up for our members portal to receive some exclusive offer & rewards.It’s easy and free!</p>
             <form action="">
             <input type="text" placeholder="Your Email Address" />
-            <button className='footerButton'>sign in</button>
+            <button className='footerButton'>Sign in</button>
             </form>
         </div>
         <div className='flex justify-center items-center gap-[90px]'>
@@ -23,11 +23,11 @@ function Footer() {
             <p className='font-rubik text-[16px] font-normal leading-5 w-[242px] text-[#1E1E1E]'>3, Adel Avenue, NextGen Estate Lagos, Nigeria.</p>
             <p className='w-[130px] font-rubik text-[16px] font-normal leading-5 text-[#1E1E1E] '>+234 80197867</p>
             <p>Booking@spirithaven.com</p>
-            <div>
-                <img src={facebook} alt="" />
-                <img src={instagram} alt="" />
-                <img src={linkedin} alt="" />
-                <img src={twitter} alt="" />
+            <div className='flex items-start gap-5 pt-7'>
+                <img src={facebook} alt="image description"  />
+                <img src={instagram} alt="image description" />
+                <img src={linkedin} alt="image description" />
+                <img src={twitter} alt="image description" />
             </div>
             </div>
             <div className='flex gap-[300px]'>
@@ -56,6 +56,8 @@ function Footer() {
                 </div>
             </div>
         </div>
+        <div className='lines'></div>
+        
 
     </div>
   )

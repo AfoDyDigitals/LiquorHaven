@@ -29,4 +29,15 @@ border-radius: 0px 8px 8px 0px;
 border: 1px solid var(--Foundation-Primary-Normal, #E66B66);
 background-color: var(--Foundation-Primary-Normal, #E66B66);
 margin-top: 45px;
+color: var(--White, #FFF);
+font-weight: 500;
+font-size: 16px;
+font-family: rubik;
+}
+.lines{
+    width: 1400px;
+    height: 0.33px;
+    border-radius: 0.3125rem;
+    background: #000;
+    margin: 170px auto 40px auto;
 }
