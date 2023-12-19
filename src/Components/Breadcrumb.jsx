@@ -1,4 +1,5 @@
 import React from "react";
+import ShopDropdown from "../ShopDropdown";
 
 function Breadcrumb() {
   return (
@@ -78,6 +79,7 @@ function Breadcrumb() {
           <div className="md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">Sign in</div>
         </button>
       </div>
+      <ShopDropdown />
     </>
   );
 }
