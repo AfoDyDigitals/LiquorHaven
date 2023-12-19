@@ -1,7 +1,9 @@
 import React from "react";
+import CurrencyConverter from "./CurrencyConverter";
 
 function Header() {
   return (
+    <>
     <div className="flex justify-center items-center  justify-between mx-[16px] md:flex justify-center items-center  justify-between mx-[32px] lg:mx-[45px]">
       <img className="w-[70px] h-[24px] md:w-[146px] lg:w-[226px]" src="../src/assets/LiquorHAVEN LOGO_.svg" alt="LiquorHaven Logo" />
 
@@ -49,6 +51,8 @@ function Header() {
         </div>
       </div>
     </div>
+      <CurrencyConverter />
+    </>
   );
 }
 

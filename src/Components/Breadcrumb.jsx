@@ -1,5 +1,6 @@
 import React from "react";
-import ShopDropdown from "../ShopDropdown";
+import ShopDropdown from "./ShopDropdown";
+import CurrencyConverter from "./CurrencyConverter";
 
 function Breadcrumb() {
   return (
@@ -80,6 +81,7 @@ function Breadcrumb() {
         </button>
       </div>
       <ShopDropdown />
+      <CurrencyConverter />
     </>
   );
 }
