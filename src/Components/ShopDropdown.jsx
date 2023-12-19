@@ -3,7 +3,7 @@ import React from "react";
 function ShopDropdown() {
   return (
     <>
-    <div className="hidden flex justify-center items-center">
+    <div className="hidden bg-amber-500 flex justify-center items-center">
       <div className="hidden text-black md:hidden lg:flex px-[40px] py-[30px] gap-[80px] bg-white rounded-[5px] w-[677px]">
         <div className="flex flex-col text-left ">
           <div className="text-[16px] font-semibold">SHOP BY CATEGORY</div>
