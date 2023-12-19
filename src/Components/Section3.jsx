@@ -1,7 +1,7 @@
 function Section3()  {
   return (
     <>
-      <div className=" md:w-full lg:w-[1370px] bg-rose-100 mx-auto md:p-0">
+      <div className=" md:w-[744] lg:w-[1728px] sm:w-[375] bg-rose-100 mx-auto ">
         <div className="md:mt-14 md:text-left text-center">
           <div className="text-black font-bold text-3xl pt-6 md:pt-10 font-'Rubik' leading-10">
             <h1 className="text-center">Why Liquor Haven?</h1>
