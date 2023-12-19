@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import CurrencyConverter from "./CurrencyConverter";
 import SideBar from "./SideBar";
 
 function Header() {
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
+  function toggleSidebar() {
+    setIsSidebarVisible(!isSidebarVisible);
+  }
   return (
     <>
-      <div className="relative flex justify-center items-center  justify-between mx-[16px] md:flex justify-center items-center  justify-between mx-[32px] lg:mx-[45px]">
+      <div className="relative z-20 flex justify-center items-center  justify-between mx-[16px] md:flex justify-center items-center  justify-between mx-[32px] lg:mx-[45px]">
         <img
           className="w-[70px] h-[24px] md:w-[146px] lg:w-[226px]"
           src="../src/assets/LiquorHAVEN LOGO_.svg"
@@ -26,7 +31,21 @@ function Header() {
             />
           </button>
         </div>
-        <img className=" lg:hidden" src="../src/assets/menuBar.svg" />
+        {isSidebarVisible && (
+          <img
+            onClick={toggleSidebar}
+            className=" lg:hidden"
+            src="../src/assets/menuBar.svg"
+          />
+        )}
+
+        {!isSidebarVisible && (
+          <img
+            onClick={toggleSidebar}
+            className=" lg:hidden"
+            src="../src/assets/menuBar.svg"
+          />
+        )}
 
         {/* currency and icons */}
         <div className="sm:hidden md:hidden lg:flex gap-[45px] w-[260px] h-[32px]">
@@ -59,7 +78,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <SideBar />
+      {isSidebarVisible && <SideBar toggleSidebar={toggleSidebar} />}
       <CurrencyConverter />
     </>
   );

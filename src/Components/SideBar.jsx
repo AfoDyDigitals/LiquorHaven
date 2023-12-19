@@ -1,10 +1,11 @@
 import React from "react";
 
-function SideBar() {
+function SideBar({ isVisible, toggleSidebar }) {
   return (
     <>
-      <div className="relative flex flex-col w-[250px] h-[768px] bg-amber-500 top-[0px] left-[100px] md:hidden lg:hidden">
+      <div className="relative flex flex-col w-[250px] h-[768px] bg-amber-500 top-[0px] left-[100px] z-20 md:hidden lg:hidden">
         <img
+          onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
           src="../src/assets/CloseIcon.svg"
         />
@@ -22,8 +23,9 @@ function SideBar() {
         </div>
       </div>
 
-      <div className="hidden md:block relative bg-amber-500 md:w-[450px] h-[768px] top-[10px] left-[180px] lg:hidden">
+      <div className="hidden md:block relative bg-amber-500 md:w-[450px] h-[768px] top-[10px] left-[180px] z-20 lg:hidden">
         <img
+          onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
           src="../src/assets/CloseIcon.svg"
         />
