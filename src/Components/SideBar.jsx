@@ -3,7 +3,8 @@ import React from "react";
 function SideBar({ isVisible, toggleSidebar }) {
   return (
     <>
-      <div className="fixed flex flex-col w-[250px] h-[768px] bg-amber-500 top-[50px] left-[100px] z-20 md:hidden lg:hidden">
+      {/* sm Sidebar */}
+      <div className="fixed flex flex-col w-[250px] h-[768px] bg-amber-500  ml-[120px] z-20 md:hidden lg:hidden">
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
@@ -23,7 +24,8 @@ function SideBar({ isVisible, toggleSidebar }) {
         </div>
       </div>
 
-      <div className="hidden md:block fixed bg-amber-500 md:w-[450px] h-[768px] top-[50px] left-[180px] z-20 lg:hidden">
+      {/* md sidebar */}
+      <div className="hidden md:block fixed bg-amber-500 md:w-[450px] h-[768px] ml-[180px] z-20 lg:hidden">
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
