@@ -1,7 +1,7 @@
 function Section3()  {
   return (
     <>
-      <div className=" md:w-[744] lg:w-[1728px] sm:w-[375] bg-rose-100 mx-auto ">
+      <div className=" md:w-[744] lg:w-[1728px] sm:w-[375] bg-rose-100 mx-auto">
         <div className="md:mt-14 md:text-left text-center">
           <div className="text-black font-bold text-3xl pt-6 md:pt-10 font-'Rubik' leading-10">
             <h1 className="text-center">Why Liquor Haven?</h1>
@@ -50,15 +50,15 @@ function Section3()  {
         </div>
       </div>
 
-      <div>
+      <div className="md:w-[744] lg:w-[1728px] sm:w-[375]">
          <div className="mt-16">
             <h1 className="text-center text-3xl font-bold leading-10 font-'Rubik' mb-4">Best Selling Drinks</h1>
             <h3 className="text-center text-l font-normal leading-none font-'Rubik'">The best selection of Whisky, Vodka and beer</h3>
          </div>
 
-         <div className=" flex flex-wrap justify-center mt-10 gap-16 mb-8">
+         <div className=" flex flex-wrap justify-center mt-10 gap-20 mb-8">
            <div>
-            <img className=" w-40 h-50 " src={'src/assets/valent6.png'} />
+            <img className=" w-40 h-50" src={'src/assets/valent6.png'} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">Valentino Finest</h1>
             <div className="flex w-4 h-4 ml-8">
                <img src={'src/assets/star_FILL1.png '} />
