@@ -1,5 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Mulish:ital,wght@0,300;0,400;1,200&family=Poppins:ital,wght@0,300;0,400;1,500&family=Rubik:wght@300&display=swap");
-:root {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Mulish:ital,wght@0,300;0,400;1,200&family=Poppins:ital,wght@0,300;0,400;1,500&family=Rubik:wght@300;500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,4 +76,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
