@@ -32,7 +32,7 @@ function Breadcrumb() {
       </div>
 
       {/* breadcrumb */}
-      <div className=" flex justify-center items-center bg-[#A22634] text-white justify-evenly h-[60px] mt-[22px] md:h-[60px] mt-[40px] lg:h-[108px] mt-[60px]">
+      <div className=" flex justify-evenly items-center bg-[#A22634] text-white  h-[60px] mt-[22px] md:h-[60px] mt-[40px] justify-between lg:h-[108px] mt-[60px] justify-between">
         <div className="flex gap-[10px] justify-center items-center md:ml-[32px]">
           <img
             className="w-[16px] md:w-[24px] lg:w-[32px]"
@@ -108,7 +108,7 @@ function Breadcrumb() {
           </div>
         </div>
 
-        <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[93px] h-[46px] ">
+        <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[95px] h-[46px] ">
           <div className="md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
             Sign in
           </div>
