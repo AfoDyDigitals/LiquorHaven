@@ -1,162 +1,248 @@
-function Section3()  {
+function Section3() {
+
+   
   return (
     <>
-      <div className=" md:w-[744] lg:w-[1728px] sm:w-[375] bg-rose-100 mx-auto">
-        <div className="md:mt-14 md:text-left text-center">
-          <div className="text-black font-bold text-3xl pt-6 md:pt-10 font-'Rubik' leading-10">
-            <h1 className="text-center">Why Liquor Haven?</h1>
+      <div className=" w-[100%] bg-rose-100 px-[30px]  md:py-[80px] px-[88px] lg:px-[100px] ">
+        <div className="text-center">
+          <div className="text-center mb-[7px] text-black font-bold text-xl pt-6 font-'Rubik' leading-normal">
+            Why Liquor Haven?
           </div>
-          <div className="text-black text-l font-normal font-'Rubik' leading-normal" >
-            <h3 className="text-center ">The best selection of Whisky, Vodka and beer</h3>
+          <div className="justify-center items-center text-center text-black text-[13px] font-normal font-'Rubik' leading-none md:text-base">
+            The best selection of Whisky, Vodka and beer
           </div>
-        </div> 
-        <div className="flex flex-col md:flex-row mt-16 md:px-20 pb-5">
-        <div className="flex mb-8 md:mb-0 md:w-1/2 ">
-            <div className=" mr-4 ml-10">
-               <img src={'src/assets/local_shipping.png'} />
-            </div> 
-            <div> 
-               <h2 className="mb-1 -mt-2 font-bold text-1xl font-'Rubik' leading-7">World-Wide Delivery</h2>
-               <h3 className="text-sm font-normal leading-none text-black font-'Rubik'">Fast shipping and free in-<br/>store pick up</h3>
-            </div>
         </div>
-        <div className="flex mb-8 md:mb-0 md:w-1/2 ">
-            <div className="mr-4 ml-10">
-               <img src={'src/assets/lock_FILL.png'} />
-            </div> 
-            <div> 
-               <h2 className="mb-1 -mt-2 font-bold text-1xl font-'Rubik' leading-7 ">Safe Packaging</h2>
-               <h3 className="text-sm font-normal leading-normal text-black font-'Rubik'">100% Guarantee</h3>
+
+        <div className="grid grid-cols-1 mt-[25px] pb-[40px] gap-[32px] md:grid-cols-2 lg:flex flex-row lg:mt-[63px] gap-[60px] ">
+          <div className="flex gap-[12px] justify-center items-center ">
+            <img
+              className="w-[24px] md:w-[32px]  lg:w-[60px]"
+              src="src/assets/local_shipping.png"
+            />
+            <div>
+              <div className="mb-2  font-bold text-xl font-'Rubik' leading-none">
+                Worldwide Delivery
+              </div>
+              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+                Fast shipping and free in store pick up
+              </div>
             </div>
-        </div>
-        <div className="flex mb-8 md:mb-0 md:w-1/2 ">
-            <div className="mr-4 ml-10">
-               <img src={'src/assets/storefront_FILL.png'} />
-            </div> 
-            <div> 
-               <h2 className="mb-1 -mt-2 font-bold text-1xl  font-'Rubik' leading-7 ">Trusted Marketplace</h2>
-               <h3 className="text-sm font-normal leading-none text-black font-'Rubik'">Purchased guaranteed<br/>and anti-fraud protection</h3>
+          </div>
+          <div className="flex gap-[12px] justify-center items-center ">
+            <img
+              className="w-[24px] md:w-[32px]  lg:w-[60px]"
+              src="src/assets/lock_FILL.png"
+            />
+
+            <div>
+              <div className="mb-2 font-bold text-xl font-'Rubik' leading-none ">
+                Safe Packaging
+              </div>
+              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+                100% Guarantee
+              </div>
             </div>
-        </div>
-        <div className="flex mb-8 md:mb-0 md:w-1/2">
-            <div className="mr-4 ml-10">
-               <img src={'src/assets/payments_FILL.png'} />
-            </div> 
-            <div> 
-               <h2 className="mb-1 -mt-2 font-bold text-1xl font-'Rubik' leading-7">Competitive Prices</h2>
-               <h3 className="text-sm font-normal leading-none text-black font-'Rubik'">Unbeatable convenience,<br/>service and value at best<br/> price</h3>
+          </div>
+          <div className="flex gap-[12px] justify-center items-center ">
+            <img
+              className="w-[24px] md:w-[32px]  lg:w-[60px]"
+              src="src/assets/storefront_FILL.png"
+            />
+            <div>
+              <div className="mb-2 font-bold text-xl  font-'Rubik' leading-none ">
+                Trusted Marketplace
+              </div>
+              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+                Purchased guaranteed and anti-fraud protection.
+              </div>
             </div>
-        </div>
+          </div>
+          <div className="flex gap-[12px] justify-center items-center ">
+            <img
+              className="w-[24px] md:w-[32px]  lg:w-[60px]"
+              src="src/assets/payments_FILL.png"
+            />
+            <div>
+              <div className="mb-2 font-bold text-xl font-'Rubik' leading-none">
+                Competitive Prices
+              </div>
+              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+                Unbeatable convenience, service and value at best price.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="md:w-[744] lg:w-[1728px] sm:w-[375]">
-         <div className="mt-16">
-            <h1 className="text-center text-3xl font-bold leading-10 font-'Rubik' mb-4">Best Selling Drinks</h1>
-            <h3 className="text-center text-l font-normal leading-none font-'Rubik'">The best selection of Whisky, Vodka and beer</h3>
-         </div>
+      <div className="justify-center items-center ">
+        <div className="mt-16 mx-auto">
+          <h1 className="text-center text-3xl font-bold leading-10 font-'Rubik' mb-4">
+            Best Selling Drinks
+          </h1>
+          <div className="text-center text-l font-normal leading-none font-'Rubik'">
+            The best selection of Whisky, Vodka and beer
+          </div>
+        </div>
 
-         <div className=" flex flex-wrap justify-center mt-10 gap-20 mb-8">
-           <div>
-            <img className=" w-40 h-50" src={'src/assets/valent6.png'} />
-            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">Valentino Finest</h1>
+        <div className="hidden md:flex flex-wrap justify-center mt-7 gap-20 mb-5">
+          <div>
+            <img className=" w-40 h-50" src={"src/assets/valent6.png"} />
+            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
+              Valentino Finest
+            </h1>
             <div className="flex w-4 h-4 ml-8">
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL0.png '} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL0.png "} />
             </div>
-            <h3 className="font-['Rubik'] ml-12 text-sm text-rose-900 font-semibold ">$150.00</h3>
+            <div className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">
+              $150.00
+            </div>
             <div className="flex ml-9 mt-2 gap-1">
-               <img className="w-2 h-2 mt-1.5 " src={'src/assets/Ellipse 2.png'} />
-               <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">In Stock</h4>
+              <img
+                className="w-2 h-2 mt-1.5 "
+                src={"src/assets/Ellipse 2.png"}
+              />
+              <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">
+                In Stock
+              </h4>
             </div>
             <div className="w-[113px] h-[46px] ml-4 p-3 mt-2 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-               <div className="text-white text-base font-medium font-'Rubik' leading-tight">Add To Cart</div>
+              <div className="text-white text-base font-medium font-'Rubik' leading-tight">
+                Add To Cart
+              </div>
             </div>
-         </div>
+          </div>
 
-         <div>
-            <img className=" w-40 h-50" src={'src/assets/Best Selling - 2.png'} />
-            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">Valentino Finest</h1>
+          <div>
+            <img
+              className=" w-40 h-50"
+              src={"src/assets/Best Selling - 2.png"}
+            />
+            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
+              Valentino Finest
+            </h1>
             <div className="flex w-4 h-4 ml-8">
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL0.png '} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL0.png "} />
             </div>
-            <h3 className="font-['Rubik'] ml-12 text-sm text-rose-900 font-semibold ">$150.00</h3>
+            <div className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">
+              $150.00
+            </div>
             <div className="flex ml-9 mt-2 gap-1">
-               <img className="w-2 h-2 mt-1.5 " src={'src/assets/Ellipse 2.png'} />
-               <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">In Stock</h4>
+              <img
+                className="w-2 h-2 mt-1.5 "
+                src={"src/assets/Ellipse 2.png"}
+              />
+              <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">
+                In Stock
+              </h4>
             </div>
             <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-               <div className="text-white text-base font-medium font-'Rubik' leading-tight">Add To Cart</div>
+              <div className="text-white text-base font-medium font-'Rubik' leading-tight">
+                Add To Cart
+              </div>
             </div>
-         </div>
+          </div>
 
-         <div>
-            <img className=" w-40 h-50" src={'src/assets/valent8.png'} />
-            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">Valentino Finest</h1>
+          <div>
+            <img className=" w-40 h-50" src={"src/assets/valent8.png"} />
+            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
+              Valentino Finest
+            </h1>
             <div className="flex w-4 h-4 ml-8">
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL0.png '} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL0.png "} />
             </div>
-            <h3 className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">$150.00</h3>
+            <div className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">
+              $150.00
+            </div>
             <div className="flex ml-9 mt-2 gap-1">
-               <img className="w-2 h-2 mt-1.5 " src={'src/assets/Ellipse 2.png'} />
-               <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">In Stock</h4>
+              <img
+                className="w-2 h-2 mt-1.5 "
+                src={"src/assets/Ellipse 2.png"}
+              />
+              <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">
+                In Stock
+              </h4>
             </div>
             <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-               <div className="text-white text-base font-medium font-'Rubik' leading-tight">Add To Cart</div>
+              <div className="text-white text-base font-medium font-'Rubik' leading-tight">
+                Add To Cart
+              </div>
             </div>
-         </div>
+          </div>
 
-         <div>
-            <img className=" w-40 h-50 " src={'src/assets/valent9.png'} />
-            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">Valentino Finest</h1>
+          <div>
+            <img className=" w-40 h-50 " src={"src/assets/valent9.png"} />
+            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
+              Valentino Finest
+            </h1>
             <div className="flex w-4 h-4 ml-8">
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL0.png '} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL0.png "} />
             </div>
-            <h3 className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">$150.00</h3>
+            <div className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">
+              $150.00
+            </div>
             <div className="flex ml-9 mt-2 gap-1">
-               <img className="w-2 h-2 mt-1.5 " src={'src/assets/Ellipse 2.png'} />
-               <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">In Stock</h4>
+              <img
+                className="w-2 h-2 mt-1.5 "
+                src={"src/assets/Ellipse 2.png"}
+              />
+              <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">
+                In Stock
+              </h4>
             </div>
             <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-               <div className="text-white text-base font-medium font-'Rubik' leading-tight">Add To Cart</div>
+              <div className="text-white text-base font-medium font-'Rubik' leading-tight">
+                Add To Cart
+              </div>
             </div>
-         </div>
+          </div>
 
-         <div>
-            <img className=" w-40 h-50 " src={'src/assets/valent10.png'} />
-            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">Valentino Finest</h1>
+          <div>
+            <img className=" w-40 h-50 " src={"src/assets/valent10.png"} />
+            <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
+              Valentino Finest
+            </h1>
             <div className="flex w-4 h-4 ml-8">
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL1.png '} />
-               <img src={'src/assets/star_FILL0.png '} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL1.png "} />
+              <img src={"src/assets/star_FILL0.png "} />
             </div>
-            <h3 className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">$150.00</h3>
+            <div className="font-'Rubik' ml-12 text-sm text-rose-900 font-semibold ">
+              $150.00
+            </div>
             <div className="flex ml-9 mt-2 gap-1">
-               <img className="w-2 h-2 mt-1.5 " src={'src/assets/Ellipse 2.png'} />
-               <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">In Stock</h4>
+              <img
+                className="w-2 h-2 mt-1.5 "
+                src={"src/assets/Ellipse 2.png"}
+              />
+              <h4 className="text-stone-500 font-normal leading-normal font-'Rubik' text-sm">
+                In Stock
+              </h4>
             </div>
             <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-               <div className="text-white text-base font-medium font-'Rubik' leading-tight">Add To Cart</div>
+              <div className="text-white text-base font-medium font-'Rubik' leading-tight">
+                Add To Cart
+              </div>
             </div>
-         </div>
-         </div>
+          </div>
+        </div>
       </div>
     </>
   );
