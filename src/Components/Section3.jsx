@@ -3,27 +3,27 @@ function Section3() {
    
   return (
     <>
-      <div className=" w-[100%] bg-rose-100 px-[30px]  md:py-[80px] px-[88px] lg:px-[100px] ">
+      <div className=" items-center justify-center bg-rose-100 px-[30px]  md:py-[80px] px-[88px] font-[Rubik] ">
         <div className="text-center">
-          <div className="text-center mb-[7px] text-black font-bold text-xl pt-6 font-'Rubik' leading-normal">
+          <div className="sm:text-center mb-[7px] text-lg font-bold font-[Rubik] md:text-[25px] pt-6 leading-normal lg:px-[680] text-[39px] ">
             Why Liquor Haven?
           </div>
-          <div className="justify-center items-center text-center text-black text-[13px] font-normal font-'Rubik' leading-none md:text-base">
+          <div className="justify-center items-center text-center text-[13px] font-normal font-[Rubik] leading-none md:text-base">
             The best selection of Whisky, Vodka and beer
           </div>
         </div>
 
-        <div className="grid grid-cols-1 mt-[25px] pb-[40px] gap-[32px] md:grid-cols-2 lg:flex flex-row lg:mt-[63px] gap-[60px] ">
+        <div className="grid grid-cols-1 mt-[25px] pb-[40px] gap-[32px] md:grid-cols-2 lg:flex flex-row lg:mt-[63px] gap-[68px] items-center justify-center ">
           <div className="flex gap-[12px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
               src="src/assets/local_shipping.png"
             />
             <div>
-              <div className="mb-2  font-bold text-xl font-'Rubik' leading-none">
+              <div className="sm:font-semibold w-[174px] font-[Rubik] leading-tight text-base mb-2 md:mb-2 font-bold text-xl font-'Rubik' leading-none">
                 Worldwide Delivery
               </div>
-              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+              <div className="sm:w-[180px] -mb-7 text-[13px] leading-none font-[Rubik] font-normal w-[180px] leading-none font-'Rubik' justify-center md:w-[203px] text-base">
                 Fast shipping and free in store pick up
               </div>
             </div>
@@ -35,10 +35,10 @@ function Section3() {
             />
 
             <div>
-              <div className="mb-2 font-bold text-xl font-'Rubik' leading-none ">
+              <div className="sm:font-semibold w-[174px] font-[Rubik] leading-tight text-base mb-2 md:font-bold text-xl font-[Rubik] leading-none ">
                 Safe Packaging
               </div>
-              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+              <div className="sm:w-[180px] -mb-7 text-[13px] font-normal w-[180px] leading-none font-[Rubik] justify-center md:w-[203px] text-base">
                 100% Guarantee
               </div>
             </div>
@@ -49,10 +49,10 @@ function Section3() {
               src="src/assets/storefront_FILL.png"
             />
             <div>
-              <div className="mb-2 font-bold text-xl  font-'Rubik' leading-none ">
+              <div className="sm:font-semibold w-[190px] font-[Rubik] leading-tight text-base mb-2 md:font-bold text-xl  font-[Rubik] leading-none ">
                 Trusted Marketplace
               </div>
-              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+              <div className="text-[13px] -mb-7 font-normal w-[180px] leading-none text-black font-[Rubik] justify-center md:w-[203px] text-base">
                 Purchased guaranteed and anti-fraud protection.
               </div>
             </div>
@@ -63,10 +63,10 @@ function Section3() {
               src="src/assets/payments_FILL.png"
             />
             <div>
-              <div className="mb-2 font-bold text-xl font-'Rubik' leading-none">
+              <div className="sm:font-semibold w:[203px] font-[Rubik] leading-tight text-base mb-2 font-bold text-xl font-'Rubik' leading-none">
                 Competitive Prices
               </div>
-              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-'Rubik' justify-center md:w-[203px] text-base">
+              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-[Rubik] justify-center md:w-[203px] text-base">
                 Unbeatable convenience, service and value at best price.
               </div>
             </div>
@@ -76,17 +76,18 @@ function Section3() {
 
       <div className="justify-center items-center ">
         <div className="mt-16 mx-auto">
-          <h1 className="text-center text-3xl font-bold leading-10 font-'Rubik' mb-4">
+          <h1 className="text-center text-3xl font-bold leading-10 font-[Rubik] mb-4">
             Best Selling Drinks
           </h1>
-          <div className="text-center text-l font-normal leading-none font-'Rubik'">
+          <div className="text-center text-l font-normal leading-none font-[Rubik]">
             The best selection of Whisky, Vodka and beer
           </div>
         </div>
 
-        <div className="hidden md:flex flex-wrap justify-center mt-7 gap-20 mb-5">
-          <div>
-            <img className=" w-40 h-50" src={"src/assets/valent6.png"} />
+        <div className="sm:flex items-center justify-center  md:flex flex-wrap items-center justify-center mt-7 gap-20 mb-5 lg: gap-38">
+          <div className="lg:w-[200px] h-[313px]">
+            <img className=" w-40 h-50"
+             src={"src/assets/valent6.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
             </h1>
@@ -116,9 +117,9 @@ function Section3() {
             </div>
           </div>
 
-          <div>
+          <div className="sm:mt-5 lg:w-[200px] h-[313px]" >
             <img
-              className=" w-40 h-50"
+              className=" w-40 h-50 "
               src={"src/assets/Best Selling - 2.png"}
             />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
@@ -150,7 +151,7 @@ function Section3() {
             </div>
           </div>
 
-          <div>
+          <div className="sm:mt-5 lg:w-[200px] h-[313px]" >
             <img className=" w-40 h-50" src={"src/assets/valent8.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
@@ -181,8 +182,8 @@ function Section3() {
             </div>
           </div>
 
-          <div>
-            <img className=" w-40 h-50 " src={"src/assets/valent9.png"} />
+          <div className="sm:mt-5 lg:w-[200px] h-[313px]">
+            <img className=" w-40 h-50 md:mt-10 lg:mt-0" src={"src/assets/valent9.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
             </h1>
@@ -212,8 +213,8 @@ function Section3() {
             </div>
           </div>
 
-          <div>
-            <img className=" w-40 h-50 " src={"src/assets/valent10.png"} />
+          <div className="sm:mt-5 lg:w-[200px] h-[313px]" >
+            <img className=" w-40 h-50 md:mt-10 lg:mt-0 " src={"src/assets/valent10.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
             </h1>
