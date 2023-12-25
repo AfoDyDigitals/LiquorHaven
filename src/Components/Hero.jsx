@@ -18,11 +18,24 @@ export const Hero = () => {
 
   useEffect(() => {
     const container = containerRef.current;
+
+    // Auto-advance the carousel every 5 seconds
+    let intervalId = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+
+    // Pause the carousel when the tab is not visible
     const handleVisibilityChange = () => {
       if (document.visibilityState === "hidden") {
         container.classList.add("paused");
+        clearInterval(intervalId);
       } else {
         container.classList.remove("paused");
+        // Resume the carousel when the tab becomes visible again
+        setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+        intervalId = setInterval(() => {
+          setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 5000);
       }
     };
 
@@ -30,8 +43,9 @@ export const Hero = () => {
 
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);
+      clearInterval(intervalId);
     };
-  }, []);
+  }, [images]);
 
   const changeSubTitle = [
     "Toast to New Beginnings",
@@ -60,35 +74,36 @@ export const Hero = () => {
               <img
                 src={image}
                 alt={`slide-${index}`}
-                className="w-full h-[85vh] medium:w-full medium:h-[70vh] wide:w-full wide:h-full object-cover"
+                className="w-full h-[85vh] medium:w-full medium:h-[55vh] wide:w-full wide:h-full object-cover"
               />
-              <div className="absolute top-0 left-0 right-0 bottom-0 flex items-start justify-start ">
-                <div className="font-rubik text-white  md:mt-28 mt-20 md:ml-20 ml-5">
-                  <p className="text-[20px] font-[400] opacity-70">
+
+              <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50" />
+              <div className="absolute top-0 left-0 right-0 bottom-0 medium:flex medium:items-center medium:ml-0  ml-[21px] mt-28 medium:mt-0">
+                <div className="font-rubik text-white  md:mt-0 mt-20 md:ml-20 wide:ml-36 z-10">
+                  <p className="text-[13px] md:text-[20] font-[400] opacity-70">
                     {changeParaagraph[activeIndex]}
                   </p>
-                  <h1 className="text-[36px] md:text-[61px]  font-[700]">
+                  <h1 className="text-[25px] medium:text-[39px] wide:text[61px]  font-[700]">
                     New Year's Eve Celebration
                   </h1>
-                  <h2 className="text-[32px]md:text-[39px] md:text-[39px] font-[400] opacity-90  medium:opacity-100">
+                  <h2 className="text-[16px] md:text-[20px] wide:text-[39px] font-[400] opacity-90   medium:opacity-100">
                     {changeSubTitle[activeIndex]}
                   </h2>
                   <div className="flex gap-8 mt-4 md:mt-8 ml-0 md:ml-1">
                     <Button label={"Sign Up"} />
-                    <Button label={"Sign In"} />
+                    <Button label={"Register"} />
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {images.map((_, index) => (
             <div
               key={index}
               onClick={() => handleDotClick(index)}
-              className={`w-4 h-4 rounded-full cursor-pointer ${
+              className={`w-3 h-3 rounded-full cursor-pointer ${
                 activeIndex === index ? "bg-[#A22634]" : "bg-[#E66B66]"
               }`}
             />

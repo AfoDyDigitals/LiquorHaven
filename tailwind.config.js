@@ -8,7 +8,7 @@ export default {
       },
       screens: {
         wide: "1200px",
-        medium: "740px",
+        medium: "744px",
       },
     },
   },
