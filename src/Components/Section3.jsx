@@ -2,11 +2,11 @@ function Section3() {
   return (
     <>
       <div className=" items-center justify-center bg-rose-100 px-[30px]  md:py-[80px] px-[88px] font-[Rubik] ">
-        <div className="text-center">
-          <div className="sm:text-center mb-[7px] text-lg font-bold font-[Rubik] md:text-[25px] pt-6 leading-normal lg:px-[680] text-[39px] ">
+        <div className="text-center ">
+          <div className="sm:text-center mb-[7px] text-[20px] font-bold font-[Rubik] md:text-[25px] pt-6 leading-normal lg:px-[680] text-[39px] ">
             Why Liquor Haven?
           </div>
-          <div className="justify-center items-center text-center text-[13px] font-normal font-[Rubik] leading-none md:text-base">
+          <div className="text-[13px] items-center justify-center text-center font-normal font-[Rubik] leading-none text-base">
             The best selection of Whisky, Vodka and beer
           </div>
         </div>
@@ -82,8 +82,8 @@ function Section3() {
           </div>
         </div>
 
-        <div className="hidden md:flex flex-wrap items-center justify-center mt-7 gap-20 mb-5 lg: gap-38">
-          <div className="lg:w-[200px] h-[313px]">
+        <div className="hidden md:flex flex-wrap  md:gap-10 justify-center mt-7 mb-5 lg:justify-center items-center lg:gap-28 ">
+          <div>
             <img className=" w-40 h-50" src={"src/assets/valent6.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
@@ -114,7 +114,7 @@ function Section3() {
             </div>
           </div>
 
-          <div className="sm:mt-5 lg:w-[200px] h-[313px]">
+          <div>
             <img
               className=" w-40 h-50 "
               src={"src/assets/Best Selling - 2.png"}
@@ -148,8 +148,8 @@ function Section3() {
             </div>
           </div>
 
-          <div className="sm:mt-5 lg:w-[200px] h-[313px]">
-            <img className=" w-40 h-50" src={"src/assets/valent8.png"} />
+          <div>
+            <img className=" w-40 h-50 " src={"src/assets/valent8.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
             </h1>
@@ -179,11 +179,8 @@ function Section3() {
             </div>
           </div>
 
-          <div className="sm:mt-5 lg:w-[200px] h-[313px]">
-            <img
-              className=" w-40 h-50 md:mt-10 lg:mt-0"
-              src={"src/assets/valent9.png"}
-            />
+          <div>
+            <img className=" w-40 h-50" src={"src/assets/valent9.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
             </h1>
@@ -213,11 +210,8 @@ function Section3() {
             </div>
           </div>
 
-          <div className="sm:mt-5 lg:w-[200px] h-[313px]">
-            <img
-              className=" w-40 h-50 md:mt-10 lg:mt-0 "
-              src={"src/assets/valent10.png"}
-            />
+          <div>
+            <img className=" w-40 h-50 " src={"src/assets/valent10.png"} />
             <h1 className=" mt-1 ml-6 leading-normal font-normal font-'Rubik'">
               Valentino Finest
             </h1>
@@ -248,7 +242,7 @@ function Section3() {
           </div>
         </div>
 
-        <div className="flex overflow-x-auto mt-7 px-5 gap-5 md:hidden lg:hidden">
+        <div className="flex overflow-x-auto mt-7 px-5 mb-5 gap-5 md:hidden lg:hidden">
           <div className="w-[200px] h-[313px]">
             <img className=" w-40 h-50" src={"src/assets/valent6.png"} />
             <h1 className=" mt-1 leading-normal text-center font-normal font-'Rubik'">
