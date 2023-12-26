@@ -3,7 +3,7 @@ function Section3() {
     <>
       <div className=" items-center justify-center bg-rose-100 px-[30px]  md:py-[80px] px-[88px] font-[Rubik] ">
         <div className="text-center ">
-          <div className="sm:text-center mb-[7px] text-[20px] font-bold font-[Rubik] md:text-[25px] pt-6 leading-normal lg:px-[680] text-[39px] ">
+          <div className="sm:text-center mb-[7px] text-xl font-bold font-[Rubik] md:text-[25px] pt-6 leading-normal lg:px-[680] text-[39px] ">
             Why Liquor Haven?
           </div>
           <div className="text-[13px] items-center justify-center text-center font-normal font-[Rubik] leading-none text-base">
