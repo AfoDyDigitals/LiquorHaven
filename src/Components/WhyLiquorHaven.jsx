@@ -2,9 +2,9 @@ import React from 'react'
 
 function WhyLiquorHaven() {
   return (
-    <div className="font-rubik w-[100vw] items-center justify-center bg-rose-100 px-[30px] md:py-[80px] px-[]">
+    <div className="font-rubik w-[100vw] items-center justify-center bg-rose-100 px-[30px] md:py-[80px] lg:px-[100px]">
         <div className="text-center ">
-          <div className="text-center mb-[7px] text-xl font-bold  md:text-[25px] pt-6 leading-6 lg:px-[680] text-[39px] ">
+          <div className="text-center mb-[7px] text-[20px] font-bold  md:text-[25px] pt-6 leading-6 lg:px-[680] text-[39px] ">
             Why Liquor Haven?
           </div>
           <div className="text-[13px] items-center justify-center text-center font-normal leading-none text-base">
