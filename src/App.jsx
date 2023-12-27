@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Home } from "./Pages/Home";
-/* import CarouselComponent from "./Components/CariuselLesson"; */
+import Section3 from "./Components/Section3";
 
 function App() {
   return (
     <>
       <Home />
-      {/* <CarouselComponent /> */}
+
+      <Section3 />
     </>
   );
 }

@@ -67,6 +67,7 @@ export const Hero = () => {
           className="flex transition-transform duration-500"
           style={{
             transform: `translateX(-${activeIndex * 100}%)`,
+            animation: `carouselAnimation 500ms ease-in-out 5s forwards`,
           }}
         >
           {images.map((image, index) => (
@@ -74,19 +75,19 @@ export const Hero = () => {
               <img
                 src={image}
                 alt={`slide-${index}`}
-                className="w-full h-[85vh] medium:w-full medium:h-[55vh] wide:w-full wide:h-full object-cover"
+                className="w-full h-[85vh] md:w-full md:h-[55vh] lg:w-full lg:h-full object-cover"
               />
 
               <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50" />
-              <div className="absolute top-0 left-0 right-0 bottom-0 medium:flex medium:items-center medium:ml-0  ml-[21px] mt-28 medium:mt-0">
-                <div className="font-rubik text-white  md:mt-0 mt-20 md:ml-20 wide:ml-36 z-10">
+              <div className="absolute top-0 left-0 right-0 bottom-0 md:flex md:items-center md:ml-0  ml-[21px] mt-28 md:mt-0">
+                <div className="font-rubik text-white  md:mt-0 mt-20 md:ml-20 lg:ml-36 z-10">
                   <p className="text-[13px] md:text-[20] font-[400] opacity-70">
                     {changeParaagraph[activeIndex]}
                   </p>
-                  <h1 className="text-[25px] medium:text-[39px] wide:text[61px]  font-[700]">
+                  <h1 className="text-[25px] md:text-[39px] lg:text[61px]  font-[700]">
                     New Year's Eve Celebration
                   </h1>
-                  <h2 className="text-[16px] md:text-[20px] wide:text-[39px] font-[400] opacity-90   medium:opacity-100">
+                  <h2 className="text-[16px] md:text-[20px] lg:text-[39px] font-[400] opacity-90   md:opacity-100">
                     {changeSubTitle[activeIndex]}
                   </h2>
                   <div className="flex gap-8 mt-4 md:mt-8 ml-0 md:ml-1">

@@ -1,14 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      sm: "375px",
+      md: "744px",
+      lg: "1200px",
+    },
     extend: {
       fontFamily: {
-        rubik: ["Rubik", "sans-serif"],
-      },
-      screens: {
-        wide: "1200px",
-        medium: "744px",
+        rubik: ["Rubik", "Sans-serif"],
       },
     },
   },
