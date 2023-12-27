@@ -4,7 +4,7 @@ function SideBar({ isVisible, toggleSidebar }) {
   return (
     <>
       {/* sm Sidebar */}
-      <div className="fixed flex flex-col w-[250px] h-[768px] bg-white  ml-[120px] z-20 md:hidden lg:hidden">
+      <div className="font-rubik fixed flex flex-col w-[250px] h-[768px] bg-white  ml-[120px] z-20 md:hidden lg:hidden">
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
@@ -25,7 +25,7 @@ function SideBar({ isVisible, toggleSidebar }) {
       </div>
 
       {/* md sidebar */}
-      <div className="hidden md:block fixed bg-white md:w-[450px] h-[768px] ml-[180px] z-20 lg:hidden">
+      <div className="font-rubik hidden md:block fixed bg-white md:w-[450px] h-[768px] ml-[180px] z-20 lg:hidden">
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"

@@ -15,7 +15,7 @@ function Breadcrumb() {
   }
 
   return (
-    <>
+    <div className="font-rubik">
       {/* searchbar */}
       <div className="relative flex items-center justify-center justify-between border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mx-[16px] mt-[16px] md:hidden lg:hidden">
         <input
@@ -109,14 +109,14 @@ function Breadcrumb() {
         </div>
 
         <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[95px] h-[46px] ">
-          <div className="md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
+          <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
             Sign in
           </div>
         </button>
       </div>
       {isShopDropdownVisible && (<ShopDropdown toggleShopDropdown={toggleShopDropdown} />)}
       {isCurrencyConverterVisible && (<CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />)}
-    </>
+    </div>
   );
 }
 

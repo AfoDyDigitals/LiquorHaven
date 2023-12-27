@@ -16,7 +16,7 @@ function Header() {
 
   return (
     <>
-      <div className="relative z-20 flex justify-center items-center  justify-between mx-[16px] md:flex justify-center items-center justify-between mx-[32px] lg:flex gap-[60px] mx-[20px] justify-evenly">
+      <div className="font-rubik relative z-20 flex justify-center items-center  justify-between mx-[16px] md:flex justify-center items-center justify-between mx-[32px] lg:flex gap-[60px] mx-[20px] justify-evenly">
         <img
           className="w-[70px] h-[24px] md:w-[146px] h-[24px] mr-[10px] lg:w-[260px] h-[50px]"
           src="../src/assets/LiquorHAVEN LOGO_.svg"
