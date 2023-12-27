@@ -31,7 +31,7 @@ export const Ranges = () => {
 
         {/* Mobile Screen View */}
         <div className="flex overflow-x-auto mt-4 px-5 mb-5 md:hidden lg-hidden">
-          <div className="flex flex-row medium:flex-wrap justify-start items-center gap-[13px]">
+          <div className="flex flex-row  items-center gap-[13px]">
             <Wine style={{ width: "100%", paddingRight: "20px" }} />
             <Beer style={{ width: "100%", paddingRight: "20px" }} />
             <Spirit style={{ width: "100%", paddingRight: "20px" }} />
