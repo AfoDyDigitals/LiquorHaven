@@ -2,7 +2,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 
-function ShoppingCart() {
+function ShoppingCartHero() {
   return (
     <div>
       <div>
@@ -15,8 +15,11 @@ function ShoppingCart() {
         </div>
       </div>
       
+      <div className="w-[368px] py-[29px] left-[121px] top-[1566px] absolute bg-red-500 rounded-lg justify-center items-center gap-2.5 inline-flex">
+        <div className="text-red-50 text-[31px] font-medium font-['Rubik'] leading-[37.20px]">Continue Shopping</div>
+      </div>
     </div>
   );
 }
 
-export default ShoppingCart;
+export default ShoppingCartHero;

@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import NavBar from './Components/NavBar';
 import Section3 from './Components/Section3';
-import ShoppingCart from './Components/ShoppingCart';
+import ShoppingCartHero from './Components/ShoppingCartHero';
 
 import './App.css';
 
@@ -14,7 +14,7 @@ function App() {
    <>
    <NavBar /> 
    <Section3 />
-   <ShoppingCart /> 
+   <ShoppingCartHero /> 
    </>
   )
 }
