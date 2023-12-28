@@ -186,7 +186,7 @@ function BestSelling() {
           </div>
         </div>
 
-        <div className="flex overflow-x-auto mt-[16px] mb-5 items-center md:hidden lg:hidden ">
+        <div className="flex overflow-x-auto  mt-[16px] mb-5 items-center md:hidden lg:hidden ">
           <div className="items-center gap-[15px]">
             <div className="justify-center items-center text-center">
               <img
@@ -212,7 +212,7 @@ function BestSelling() {
                   In Stock
                 </div>
               </div>
-              <div className="w-[113px] h-[46px] mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
+              <div className="w-[113px] h-[46px] mt-2 p-3 bg-red-400 rounded-lg border  border-red-400 justify-center items-center gap-2.5 inline-flex">
                 <div className="text-white text-base font-medium  leading-tight">
                   Add To Cart
                 </div>
