@@ -17,7 +17,7 @@ function Breadcrumb() {
   return (
     <>
       {/* searchbar */}
-      <div className="relative flex items-center justify-center justify-between border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mx-[16px] mt-[16px] md:hidden lg:hidden">
+      <div className="relative flex items-center  justify-between border-solid border border-[#9E9496] w-[90%] h-[35px] mx-auto rounded-[4px] mt-[16px] mb-0 md:hidden lg:hidden">
         <input
           className="font-normal focus:outline-none focus:ring-1 focus:ring-[#E66B66] w-[343px] h-[16px] text-[13px] p-[15px] "
           type="text"
@@ -32,8 +32,8 @@ function Breadcrumb() {
       </div>
 
       {/* breadcrumb */}
-      <div className=" flex justify-evenly items-center bg-[#A22634] text-white  h-[60px] mt-[22px] md:h-[60px] mt-[40px] justify-between lg:h-[108px] mt-[60px] justify-between">
-        <div className="flex gap-[10px] justify-center items-center md:ml-[32px]">
+      <div className=" flex justify-evenly items-center bg-[#A22634] text-white  h-[60px] mt-[22px] md:h-[60px] md:mt-[40px] md:justify-between lg:h-[108px] lg:mt-[60px] lg:justify-between">
+        <div className="flex gap-[4px]  justify-center items-center md:ml-[32px] md:gap-[10px]">
           <img
             className="w-[16px] md:w-[24px] lg:w-[32px]"
             src="../src/assets/call_FILL1_wght400_GRAD0_opsz24 1.svg"
@@ -68,7 +68,7 @@ function Breadcrumb() {
         </div>
 
         {/* currency & icons */}
-        <div className="flex justify-center items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
+        <div className="flex items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
           <div className="flex justify-center items-center gap-[5px] ml-[50px] md:ml-[120px]">
             <div className="text-[10px] font-normal md:text-[13px]">USD</div>
             {isCurrencyConverterVisible && (
@@ -89,33 +89,37 @@ function Breadcrumb() {
 
           <div className="flex">
             <img
-              className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
+              className="w-[16px] h-[16px] md:w-[18px] md:h-[18px]"
               src="../src/assets/favorite_FILL0_white.svg"
             />
-            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
+            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1 rounded-full lg:text-[10px] lg:h-[12.5px]">
               1
             </div>
           </div>
 
           <div className="flex">
             <img
-              className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
+              className="w-[16px] h-[16px] md:w-[18px] md:h-[18px]"
               src="../src/assets/shopping_cart_white.svg"
             />
-            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
+            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1 rounded-full lg:text-[10px] lg:h-[12.5px]">
               1
             </div>
           </div>
         </div>
 
-        <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[95px] h-[46px] ">
-          <div className="md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
+        <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] md:w-[95px] md:h-[46px] ">
+          <div className="md:text-[13px] p-[10px] lg:text-[16px] lg:p-[20px]">
             Sign in
           </div>
         </button>
       </div>
-      {isShopDropdownVisible && (<ShopDropdown toggleShopDropdown={toggleShopDropdown} />)}
-      {isCurrencyConverterVisible && (<CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />)}
+      {isShopDropdownVisible && (
+        <ShopDropdown toggleShopDropdown={toggleShopDropdown} />
+      )}
+      {isCurrencyConverterVisible && (
+        <CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />
+      )}
     </>
   );
 }

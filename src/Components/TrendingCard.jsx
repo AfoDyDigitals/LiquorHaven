@@ -32,7 +32,7 @@ const TrendingCard = ({ imgURL }) => {
           <p className="ml-1 text-[#7A9B57]">In Stock</p>
         </div>
         <div className="mb-2">
-          <Button label={"Add to Cart"} />
+          <Button label={"Add To Cart"} />
         </div>
       </div>
     </>

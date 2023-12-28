@@ -75,7 +75,7 @@ export const Hero = () => {
               <img
                 src={image}
                 alt={`slide-${index}`}
-                className="w-full h-[85vh] md:w-full md:h-[55vh] lg:w-full lg:h-full object-cover"
+                className="w-full h-[78vh] md:w-full md:h-[55vh] lg:w-full lg:h-full object-cover"
               />
 
               <div className="w-full h-full absolute top-0 left-0 bg-black opacity-50" />
@@ -90,7 +90,7 @@ export const Hero = () => {
                   <h2 className="text-[16px] md:text-[20px] lg:text-[39px] font-[400] opacity-90   md:opacity-100">
                     {changeSubTitle[activeIndex]}
                   </h2>
-                  <div className="flex gap-8 mt-4 md:mt-8 ml-0 md:ml-1">
+                  <div className="flex gap-4 md:gap-8 mt-4 md:mt-8 ml-0 md:ml-1">
                     <Button label={"Sign Up"} />
                     <Button label={"Register"} />
                   </div>
