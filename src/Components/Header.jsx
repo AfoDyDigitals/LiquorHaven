@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import CurrencyConverter from "./CurrencyConverter";
 import SideBar from "./SideBar";

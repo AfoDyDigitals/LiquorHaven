@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 
+// eslint-disable-next-line react/prop-types, no-unused-vars
 function CurrencyConverter({isVisible, toggleCurrencyConverter}) {
   return (
     <div className='bg-amber-500 fixed ml-[170px] flex flex-col justify-start items-center w-[150px]  pl-[10px] pr-[23px] py-[10px] gap-[5px]  md:ml-[300px] w-[200px]  gap-[15px] ml-[18px] mr-[50px] lg:ml-[900px] w-[200px]  gap-[25px] pl-[16px] mr-[87px]'>
