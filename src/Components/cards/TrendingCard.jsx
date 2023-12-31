@@ -1,13 +1,13 @@
 import React from "react";
-import { not_starred, starred } from "../assets";
-import { Button } from "./Button";
+import { not_starred, starred } from "../../assets";
+import { Button } from "../Button";
 
 const TrendingCard = ({ imgURL }) => {
   return (
     <>
       <div
-        className="hover:opacity-90 hover:rounded-[1rem]  py-0 hover:border hover:border-gray-300 
-    cursor-pointer flex shrink-0 medium:shrink flex-col justify-center items-center   mt-[16px] medium:mt-[47px]"
+        className=" mt-[10px] md:mt-[22px] lg:mt[47px]hover:opacity-90 hover:rounded-[1rem]  py-0 hover:border hover:border-gray-300 
+    cursor-pointer flex shrink-0 medium:shrink flex-col justify-center items-center    medium:mt-[47px]"
       >
         <img
           src={imgURL}
