@@ -84,7 +84,7 @@ export const Hero = () => {
                   <p className="text-[13px] md:text-[20] font-[400] opacity-70">
                     {changeParaagraph[activeIndex]}
                   </p>
-                  <h1 className="text-[25px] md:text-[39px] lg:text[61px]  font-[700]">
+                  <h1 className="text-[25px] md:text-[39px] lg:text-[61px]  font-[700]">
                     New Year's Eve Celebration
                   </h1>
                   <h2 className="text-[16px] md:text-[20px] lg:text-[39px] font-[400] opacity-90   md:opacity-100">
