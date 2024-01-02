@@ -16,23 +16,25 @@ function Breadcrumb() {
 
   return (
     <div className="font-rubik">
-      {/* searchbar */}
-      <div className="relative flex items-center justify-center justify-between border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mx-[16px] mt-[16px] md:hidden lg:hidden">
-        <input
-          className="font-normal focus:outline-none focus:ring-1 focus:ring-[#E66B66] w-[343px] h-[16px] text-[13px] p-[15px] "
-          type="text"
-          placeholder="Search over 3,000 quality drinks..."
-        />
-        <button className="flex justify-center items-center bg-[#A22634] w-[60px] h-[35px] rounded-l">
-          <img
-            className=" "
-            src="../src/assets/search_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
+      {/* searchbar sm*/}
+      <div className="flex justify-center items-center">
+        <div className=" flex justify-center items-center  border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden">
+          <input
+            className="font-normal focus:outline-none focus:ring-1 focus:ring-[#E66B66] w-[343px] h-[16px] text-[13px] p-[15px] "
+            type="text"
+            placeholder="Search over 3,000 quality drinks..."
           />
-        </button>
+          <button className="flex justify-center items-center bg-[#A22634] w-[60px] h-[35px] rounded-l">
+            <img
+              className=" "
+              src="../src/assets/search_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
+            />
+          </button>
+        </div>
       </div>
 
       {/* breadcrumb */}
-      <div className=" flex justify-evenly items-center bg-[#A22634] text-white  h-[60px] mt-[22px] md:h-[60px] mt-[40px] justify-between lg:h-[108px] mt-[60px] justify-between">
+      <div className=" flex justify-evenly items-center bg-[#A22634] text-white  h-[60px] mt-[20px] md:h-[60px] mt-[40px] justify-between lg:h-[108px] mt-[60px] justify-between">
         <div className="flex gap-[10px] justify-center items-center md:ml-[32px]">
           <img
             className="w-[16px] md:w-[24px] lg:w-[32px]"
@@ -67,9 +69,9 @@ function Breadcrumb() {
           <div>Contact Us</div>
         </div>
 
-        {/* currency & icons */}
+        {/* currency & icons sm md */}
         <div className="flex justify-center items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
-          <div className="flex justify-center items-center gap-[5px] ml-[50px] md:ml-[120px]">
+          <div className="flex relative justify-center items-center gap-[5px] ml-[40px] mr-[10px]  md:ml-[110px] mr-[10px]">
             <div className="text-[10px] font-normal md:text-[13px]">USD</div>
             {isCurrencyConverterVisible && (
               <img
@@ -85,24 +87,29 @@ function Breadcrumb() {
                 src="../src/assets/Dropdown white.svg"
               />
             )}
+            {isCurrencyConverterVisible && (
+              <CurrencyConverter
+                toggleCurrencyConverter={toggleCurrencyConverter}
+              />
+            )}
           </div>
 
-          <div className="flex">
+          <div className="flex w-[26px] md:w-[30px]">
             <img
               className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
               src="../src/assets/favorite_FILL0_white.svg"
             />
-            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
+            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1.5 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
               1
             </div>
           </div>
 
-          <div className="flex">
+          <div className="flex w-[26px] md:w-[30px]">
             <img
               className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
               src="../src/assets/shopping_cart_white.svg"
             />
-            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
+            <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1.5 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
               1
             </div>
           </div>
@@ -114,8 +121,9 @@ function Breadcrumb() {
           </div>
         </button>
       </div>
-      {isShopDropdownVisible && (<ShopDropdown toggleShopDropdown={toggleShopDropdown} />)}
-      {isCurrencyConverterVisible && (<CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />)}
+      {isShopDropdownVisible && (
+        <ShopDropdown toggleShopDropdown={toggleShopDropdown} />
+      )}
     </div>
   );
 }
