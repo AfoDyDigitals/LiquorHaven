@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SideBar({ isVisible, toggleSidebar }) {
   return (
@@ -12,14 +13,20 @@ function SideBar({ isVisible, toggleSidebar }) {
         />
 
         <div className="flex flex-col  justify-center items-center ml-[0px] mr-[0px] gap-[31px] mt-[108px] text-center md:hidden lg:hidden">
-          <div className="text-[16px] font-normal md:text-[20px]">Home</div>
-          <div className="text-[16px] font-normal md:text-[20px]">Shop</div>
-          <div className="text-[16px] font-normal md:text-[20px]">About Us</div>
           <div className="text-[16px] font-normal md:text-[20px]">
-            Contact Us
+            <Link to="/">Home</Link>
+          </div>
+          <div className="text-[16px] font-normal md:text-[20px]">
+            <Link to="/shop">Shop</Link>
+          </div>
+          <div className="text-[16px] font-normal md:text-[20px]">
+            <Link to="/about">About Us</Link>
+          </div>
+          <div className="text-[16px] font-normal md:text-[20px]">
+            <Link to="/product">Contact Us</Link>
           </div>
           <button className="bg-[#E66B66] flex justify-center items-center w-[132px] p-[12px] rounded-[8px]">
-            Sign in
+            <Link to="/signin">Sign in</Link>
           </button>
         </div>
       </div>
