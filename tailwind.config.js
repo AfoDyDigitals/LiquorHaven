@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-<<<<<<< HEAD
   content:  [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -19,7 +18,7 @@ export default {
       rubik: ['Rubik', 'sans-serif'],
     },
     extend: {},
-=======
+
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
@@ -32,7 +31,7 @@ export default {
         rubik: ["Rubik", "Sans-serif"],
       },
     },
->>>>>>> f70ecddcce38252b039d42937605b5d121d235e0
   },
   plugins: [],
-};
+}
+}
