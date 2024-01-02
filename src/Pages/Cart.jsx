@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import CartItem from '../Components/CartItem';
+import ShoppingCartHero from '../Components/ShoppingCartHero';
 
 const Cart = () => {
   const [products, setProducts] = useState([
@@ -26,8 +27,9 @@ const Cart = () => {
   }, 0);
 
   return (
-    <div className='w-[1500px] h-[2167px] bg-white border mx-[114px] border-gray-400 items-center justify-center mt-[49px] py-[121px]'>
-      <div className=''>
+    <div>
+      <ShoppingCartHero /> 
+      <div className='w-[1500px] h-[2167px] bg-white font-rubik border mx-[114px] border-gray-400 items-center justify-center mt-[49px] py-[121px]'>
         {products.map((product) => (
           <CartItem
             key={product.id}
@@ -42,12 +44,13 @@ const Cart = () => {
             <div>${grandTotal.toFixed(2)}</div>
           </div>
         </div>
-      </div>
-      <div className="w-[636px] h-[38px] text-black text-[31px] font-medium font-rubik leading-[37.20px] mx-[438px] text-center my-[36px] ">
+      
+      <div className="w-[636px] h-[38px] text-black text-[31px] font-medium leading-[37.20px] mx-[438px] text-center my-[36px] ">
         Shipping and taxes calculated at checkout
       </div>
       <div className="w-[368px] h-[95px] py-[29px] mx-[572px] bg-red-500 rounded-lg justify-center items-center gap-2.5 inline-flex">
-        <div className="text-red-50 text-[31px] font-medium font-rubik leading-[37.20px]">Checkout</div>
+        <div className="text-red-50 text-[31px] font-medium  leading-[37.20px] ">Checkout</div>
+      </div>
       </div>
     </div>
   );

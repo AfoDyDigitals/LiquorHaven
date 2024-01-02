@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 function ShoppingCartHero() {
   return (
     <>
-      <div>
         <div className="mt-20">
           <NavBar />
           <div className="flex relative font-rubik mt-[9px] text-black">
@@ -23,7 +22,6 @@ function ShoppingCartHero() {
             Continue Shopping
           </div>
         </div>
-      </div>
     </>
   );
 }

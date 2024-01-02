@@ -37,14 +37,14 @@ const CartItem = ({ id, name, price, image, quantity, onDelete, onUpdateQuantity
   
 
   return (
-    <>
-    <div className="w-[894px] h-[452px] pl-[47.05px] mx-[303px] pr-[87.69px] pt-[74.86px] pb-[26.05px] text-center items-center justify-center inline-flex ">
+    <div>
+    <div className=" w-[894px] h-[452px] pl-[47.05px] font-rubik mx-[303px] pr-[87.69px] pt-[74.86px] pb-[26.05px] text-center items-center justify-center inline-flex  ">
       <div className="flex mt-[74px] gap-[51px]">
         <img className="w-[254px] h[299.90px]" src={`src/assets/${image}`} alt={name} />
         <div className="w-[383px] h-[191.83px] flex-col justify-start items-start gap-[19.25px] inline-flex -mt-3 ">
           <div style={productNameStyle}>{name}</div>
           <div>
-          <p className="text-neutral-500 text-[42.78px] font-normal font-[Rubik] leading-[51.33px]">
+          <p className="text-neutral-500 text-[42.78px] font-normal  leading-[51.33px]">
               ${displayedPrice}
             </p>
 
@@ -83,7 +83,7 @@ const CartItem = ({ id, name, price, image, quantity, onDelete, onUpdateQuantity
       </div>
     </div>
     <div className="w-[1058px] h-[0px] border border-gray-400 mx-[221px] justify-center items-center  "></div>
-    </>
+    </div>
   
     
   );
