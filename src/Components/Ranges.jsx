@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import { RangesCard } from "./cards/RangesCard";
 import { drinkSelections } from "./constants/index";

@@ -1,7 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { not_starred, starred } from "../../assets";
 import { Button } from "../Button";
 
+// eslint-disable-next-line react/prop-types
 const TrendingCard = ({ imgURL }) => {
   return (
     <>

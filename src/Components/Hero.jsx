@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import { carousel_image1, carousel_image2, carousel_image3 } from "../assets";
 import { Button } from "./Button";
@@ -85,7 +86,7 @@ export const Hero = () => {
                     {changeParaagraph[activeIndex]}
                   </p>
                   <h1 className="text-[25px] md:text-[39px] lg:text-[61px]  font-[700]">
-                    New Year's Eve Celebration
+                    New Years Eve Celebration
                   </h1>
                   <h2 className="text-[16px] md:text-[20px] lg:text-[39px] font-[400] opacity-90   md:opacity-100">
                     {changeSubTitle[activeIndex]}
