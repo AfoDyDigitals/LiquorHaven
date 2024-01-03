@@ -6,7 +6,7 @@ function Home() {
   return (
     <div>
         <WhyLiquorHaven />
-        <Section3 />
+        {/* <Section3 /> */}
     </div>
   )
 }

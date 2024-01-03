@@ -2,9 +2,9 @@ import React from "react";
 
 function WhoWeAre() {
   return (
-    <div className="text-center text-rubik my-[64px] mx-[32px] lg:mx-[140.5px]">
-      <div className="text-[39px] font-bold">Who We Are</div>
-      <div className="text-[20px] font-normal text-justify mt-[48px]">
+    <div className="w-[100vw] overflow-none text-center text-rubik my-[64px]">
+      <div className="text-[20px] md:text-[25px] lg:text-[39px] font-bold">Who We Are</div>
+      <div className="flex flex-col justify-center items-center text-[20px] font-normal text-justify mt-[48px] mx-8">
         <p>Liquor Haven is more than just an online liquor store. It is a gateway
         to carefully curated experiences, a hub for refined palates, and a
         vibrant community of spirit enthusiasts. We meticulously select the
