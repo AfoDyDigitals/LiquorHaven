@@ -1,3 +1,28 @@
+:root {
+  font-family: 'Rubik';
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #E66B66;
+}
+
+body {
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Mulish:ital,wght@0,300;0,400;1,200&family=Poppins:ital,wght@0,300;0,400;1,500&family=Rubik:wght@300;500&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Mulish:ital,wght@0,300;0,400;1,200&family=Poppins:ital,wght@0,300;0,400;1,500&family=Rubik:wght@300;500&display=swap");
@@ -10,3 +35,30 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: Rub;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #E66B66;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
