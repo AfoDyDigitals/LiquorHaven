@@ -14,6 +14,7 @@ import { WhyUs } from "../Components/WhyUs";
 import TrendingCard from "../Components/cards/TrendingCard";
 import { products } from "../Components/constants";
 import StateDropdown from "../Components/cards/StateDropdown";
+import Footer from "../Components/Footer";
 
 const Product = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -168,6 +169,7 @@ const Product = () => {
         </div>
       </div>
       <WhyUs />
+      <Footer />
     </section>
   );
 };

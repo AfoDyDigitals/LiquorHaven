@@ -23,15 +23,6 @@ import valentino_finest5 from "./unsplash_xTmIOJCd23U.png";
 import starred from "./star_FILL1_wght400_GRAD0_opsz24 (1) 1.png";
 import not_starred from "./star_FILL0_wght400_GRAD0_opsz24 1.png";
 
-import navigation_left from "./navigate_next.png";
-import maltell1 from "./maltell1.png";
-import maltell2 from "./maltell2.png";
-import heart_icon from "./Vector.png";
-import default_img from "./Group 49429.png";
-
-import delivery_truck from "./local_shipping_FILL0_wght400_GRAD0_opsz24 2.png";
-import return_icon from "./autorenew_FILL0_wght400_GRAD0_opsz24 1.png";
-
 export {
   hero_dot,
   carousel_image1,
@@ -53,11 +44,4 @@ export {
   valentino_finest4,
   valentino_finest5,
   tequila,
-  navigation_left,
-  maltell1,
-  maltell2,
-  heart_icon,
-  default_img,
-  delivery_truck,
-  return_icon,
 };
