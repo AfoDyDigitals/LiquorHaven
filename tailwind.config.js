@@ -1,18 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-
   content:  [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-],
+  ],
   theme: {
-    screens:{
+    screens: {
       'sm': '375px',
+
       'md': '744px',
+
       'lg': '1200px',
     },
-    extend: {fontFamily: { rubik: ["Rubik", "Sans-serif"] }},
+    fontFamily: {
+      sans: ['Graphik', 'sans-serif'],
+      serif: ['Merriweather', 'serif'],
+      rubik: ['Rubik', 'sans-serif'],
+    },
+    extend: {},
+
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    screens: {
+      sm: "375px",
+      md: "744px",
+      lg: "1200px",
+    },
+    extend: {
+      fontFamily: {
+        rubik: ["Rubik", "Sans-serif"],
+      },
+    },
   },
   plugins: [],
-};
-
+}
+}

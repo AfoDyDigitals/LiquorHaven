@@ -16,8 +16,8 @@ function Header() {
   }
 
   return (
-    <>
-      <div className="relative z-20 flex justify-center items-center  justify-between mx-[16px] md:flex justify-center items-center justify-between mx-[32px] lg:flex gap-[60px] mx-[20px] justify-evenly">
+    <div className="w-[100vw] overflow-none">
+      <div className="font-rubik relative z-20 flex justify-center items-center mt-[25px]  mx-[16px] md:flex justify-center items-center justify-between mx-[32px] lg:flex gap-[0px] mx-[20px] mt-[25px]  justify-between">
         <img
           className="w-[70px] h-[24px] md:w-[146px] h-[24px] mr-[10px] lg:w-[260px] h-[50px]"
           src="../src/assets/LiquorHAVEN LOGO_.svg"
@@ -27,10 +27,11 @@ function Header() {
         {/* searchbar */}
         <div className="hidden md:flex justify-center items-center w-[381px] h-[46px] rounded-[4px] border border-[#9E9496] lg:w-[600px] h-[62px] flex justify-center items-center justify-between rounded-[4px]">
           <input
-            className="font-normal focus:outline-none  w-[343px]  md:w-[381px] lg:w-[600px] h-[16px] text-[13px] p-[15px] "
+            className="font-normal  w-full md:focus:outline-none focus:none w-[343px] lg:w-[600px] h-[46px] text-[13px] p-[15px] rounded-[4px] border-none"
             type="text"
             placeholder="Search over 3,000 quality drinks..."
           />
+
           <button className="flex justify-center items-center bg-[#A22634]  rounded-l md:w-[74px] h-[46px] lg:w-[125px] h-[62px] ">
             <img
               className=" "
@@ -55,7 +56,7 @@ function Header() {
         )}
 
         {/* currency and icons */}
-        <div className="sm:hidden md:hidden lg:flex gap-[20px] w-[260px] h-[32px]">
+        <div className="sm:hidden md:hidden lg:flex gap-[20px]  h-[32px] justify-end">
           <div className="flex justify-center items-center gap-[2px] ">
             <div className="text-[16px] font-normal">USD</div>
             {isCurrencyConverterVisible && (
@@ -96,7 +97,10 @@ function Header() {
         </div>
       </div>
       {isSidebarVisible && <SideBar toggleSidebar={toggleSidebar} />}
-      {isCurrencyConverterVisible && (<CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />)}    </>
+      {isCurrencyConverterVisible && (
+        <CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />
+      )}
+    </div>
   );
 }
 
