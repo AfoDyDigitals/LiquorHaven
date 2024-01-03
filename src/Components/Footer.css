@@ -1,4 +1,4 @@
-input[type="text"]{
+.email{
     border-radius: 10px 0 0 10px;
     width: 60%;
     height: 3rem;
@@ -12,7 +12,7 @@ form{
     justify-content: center;
     align-items: center;
 }
-input[placeholder="Your Email Address"]{
+.email[placeholder="Your Email Address"]{
     color: #666161;
     font-family: Inter;
     font-size: 16px;
@@ -38,12 +38,12 @@ font-family: rubik;
 
 
 @media only screen and (min-width: 744px){
-    input[type="text"]{
+    .email[type="text"]{
         width: 33rem;
         height: 3rem;
         margin-top: 45px;
     }
-    input[placeholder="Your Email Address"]{
+    .email[placeholder="Your Email Address"]{
         color: #666161;
         font-size: 0.8125rem;
         font-weight: 400;
@@ -65,11 +65,11 @@ font-family: rubik;
         
 }
 @media only screen and (min-width: 1200px){
-    input[type="text"]{
+    .email[type="text"]{
         width: 48rem;
         height: 3.8rem;
     }
-    input[placeholder="Your Email Address"]{
+    .email[placeholder="Your Email Address"]{
         color: #666161;
         font-size: 1rem;
         font-weight: 500;

@@ -13,7 +13,7 @@ function Footer() {
             <h1 className=' lg:text-[2.4rem]  md:text-[1.85rem] text-[1.25rem]  font-bold text-[#1E1E1E] font-rubik leading-[46.8px]'>Get Exclusive Offers & Rewards</h1>
             <p className='lg:text-[20px] md:text-[1rem] text-[0.8rem] font-normal font-rubik leading-[24px] w-[18rem] md:w-[29.5625rem] lg:w-[53.0265rem]'>Sign up for our members portal to receive some exclusive offer & rewards.It’s easy and free!</p>
             <form action="">
-            <input type="text" placeholder="Your Email Address" />
+            <input type="text" placeholder="Your Email Address" className='email' />
             <button className='footerButton'>Sign in</button>
             </form>
         </div>
