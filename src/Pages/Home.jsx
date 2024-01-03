@@ -1,14 +1,16 @@
-import React from 'react'
-import Section3 from '../Components/Section3'
-import WhyLiquorHaven from '../Components/WhyLiquorHaven'
+import React from "react";
+import { Hero } from "../Components/Hero";
+import { Ranges } from "../Components/Ranges";
+import NavBar from "../Components/NavBar";
+import { Trending } from "../Components/Trending";
 
-function Home() {
+export const Home = () => {
   return (
-    <div>
-        <WhyLiquorHaven />
-        {/* <Section3 /> */}
-    </div>
-  )
-}
-
-export default Home
+    <>
+      <NavBar />
+      <Hero />
+      <Ranges />
+      <Trending />
+    </>
+  );
+};

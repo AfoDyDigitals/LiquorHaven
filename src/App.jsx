@@ -1,21 +1,17 @@
-
-import React from 'react'
-import './App.css';
-import NavBar from './Components/NavBar';
-import Section3 from './Components/Section3';
-import AboutUs from './Pages/AboutUs';
-import Home from './Pages/Home';
+import Footer from './Components/Footer'
+import { useState } from "react";
+import { Home } from "./Pages/Home";
+import Section3 from "./Components/Section3";
 
 function App() {
-  
   return (
+    <>
 
-   <>
-   <NavBar /> 
-   {/* <Home /> */}
-   <AboutUs />
-   </>
-  )
+    <Home />
+    <Section3 />
+    <Footer />
+    </>
+  )    
 }
 
 export default App;

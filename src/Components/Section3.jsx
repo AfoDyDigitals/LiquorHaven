@@ -3,11 +3,12 @@ import WhyLiquorHaven from "./WhyLiquorHaven";
 function Section3() {
   return (
     <>
+
       <WhyLiquorHaven />
 
-      <div className="font-rubik justify-center items-center ">
-        <div className="mt-[30px]">
-          <div className="text-center text-[20px] font-bold leading-6  mb-4">
+      <div className="justify-center items-center ">
+        <div className="mt-16 mx-auto">
+          <div className="text-center text-3xl font-bold leading-10 font-[Rubik] mb-4">
             Best Selling Drinks
           </div>
           <div className="text-center text-l font-normal leading-none ">
