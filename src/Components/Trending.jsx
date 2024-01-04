@@ -5,6 +5,7 @@ import { products } from "./constants";
 
 export const Trending = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const cardsRef = useRef(null);
 
   const handleDotClick = (index) => {
@@ -36,7 +37,12 @@ export const Trending = () => {
           ref={cardsRef}
         >
           {products.map((product, index) => (
-            <TrendingCard key={index} imgURL={product.imgURL} />
+            <TrendingCard
+              key={index}
+              imgURL={product.imgURL}
+              selectedCurrency={selectedCurrency}
+              price={product.price}
+            />
           ))}
         </div>
 
@@ -51,7 +57,8 @@ export const Trending = () => {
                 <TrendingCard
                   key={index}
                   imgURL={product.imgURL}
-                  // Adjust the opacity based on the activeIndex
+                  selectedCurrency={selectedCurrency}
+                  price={product.price}
                   style={{ opacity: activeIndex === index ? 1 : 0.5 }}
                 />
               ))}

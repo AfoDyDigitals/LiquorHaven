@@ -6,6 +6,7 @@ import { Trending } from "../Components/Trending";
 import { WhyUs } from "../Components/WhyUs";
 import { Section3 } from "../Components/Section3";
 import Footer from "../Components/Footer";
+import Testimonial from "../Components/Testimonial";
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
       <Trending />
       <WhyUs />
       <Section3 />
+      <Testimonial />
       <Footer />
     </>
   );

@@ -93,7 +93,7 @@ const StateDropdown = () => {
             Enter your address:
           </label>
           <input
-            type="text"
+            type=""
             id="addressInput"
             value={address}
             onChange={handleAddressChange}

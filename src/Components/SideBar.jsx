@@ -46,7 +46,7 @@ function SideBar({ isVisible, toggleSidebar }) {
             Contact Us
           </div>
           <button className="bg-[#E66B66] font-rubik flex justify-center items-center w-[132px] p-[12px] rounded-[8px]">
-            Sign in
+            <Link to="/signin">Sign In</Link>
           </button>
         </div>
       </div>
