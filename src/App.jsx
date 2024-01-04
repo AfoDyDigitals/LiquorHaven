@@ -5,6 +5,7 @@ import { Home } from "./Pages/Home";
 import Product from "./Pages/Product";
 import { SignIn } from "./Pages/SignIn";
 import AboutUs from "./Pages/AboutUs";
+// import ResetPasswordCode from "./Pages/ResetPasswordCode";
 // import ResetPasswordMail from "./Pages/ResetPasswordMail";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
       </Routes>
         {/* <ResetPasswordMail /> */}
+        {/* <ResetPasswordCode /> */}
     </Router>
   );
 }
