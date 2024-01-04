@@ -74,7 +74,7 @@ function Testimonial() {
 
       {/* // md testimonial carousel */}
       <div
-        className="relative hidden md:block w-full h-[502px] mt-[77px] font-rubik h-[509px] lg:hidden"
+        className="relative hidden md:block w-full mt-[77px] font-rubik h-[509px] lg:hidden"
         style={containerStyle}
       >
         <div className="text-[20px] text-white font-bold text-center pt-[85px] md:pt-[72px]">
@@ -119,7 +119,7 @@ function Testimonial() {
 
       {/* // sm testimonial carousel */}
       <div
-        className="relative w-full h-[520px] mt-[77px] font-rubik h-[509px] md:hidden lg:hidden"
+        className="relative w-full h-[520px] mt-[77px] font-rubik md:hidden lg:hidden"
         style={containerStyle}
       >
         <div className="text-[20px] text-white font-bold text-center pt-[85px] md:pt-[72px]">

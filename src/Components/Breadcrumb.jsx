@@ -20,8 +20,8 @@ function Breadcrumb() {
       <div className="flex justify-center items-center">
         <div className=" flex justify-center items-center  border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden">
           <input
-            className="font-normal focus:outline-none focus:none  w-[343px] h-[16px] text-[13px] p-[15px] border-none"
-            type="text"
+            className="mt-0 font-normal focus:outline-none focus:none  w-[343px] h-[16px] text-[13px] p-[15px] border-none"
+            type=""
             placeholder="Search over 3,000 quality drinks..."
           />
           <button className="flex justify-center items-center bg-[#A22634] w-[60px] h-[35px] rounded-l">
