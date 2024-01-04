@@ -47,34 +47,44 @@ export const drinkSelections = [
 export const products = [
   {
     imgURL: valentino_finest1,
+    price: "$150",
   },
   {
     imgURL: valentino_finest2,
+    price: "$150",
   },
   {
     imgURL: valentino_finest3,
+    price: "$150",
   },
   {
     imgURL: valentino_finest4,
+    price: "$150",
   },
   {
     imgURL: valentino_finest5,
+    price: "$150",
   },
 ];
 export const products2 = [
   {
     imgURL: valentino_finest6,
+    price: "$150",
   },
   {
     imgURL: valentino_finest7,
+    price: "$150",
   },
   {
     imgURL: valentino_finest8,
+    price: "$150",
   },
   {
     imgURL: valentino_finest9,
+    price: "$150",
   },
   {
     imgURL: valentino_finest10,
+    price: "$150",
   },
 ];

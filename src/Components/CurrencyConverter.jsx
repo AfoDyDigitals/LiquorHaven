@@ -16,7 +16,7 @@ function CurrencyConverter({ isVisible, toggleCurrencyConverter }) {
             className="w-[32px] m-[10px]"
             src="../src/assets/united-kingdom-flag-icon 1.png"
           />
-          <div className="text-[16px] font-normal">GBP</div>
+          <div className="text-[16px] font-normal ">GBP</div>
         </div>
         <div className="flex justify-center items-center gap-[20px]">
           <img

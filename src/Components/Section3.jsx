@@ -5,6 +5,7 @@ import { products2 } from "./constants";
 
 export const Section3 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+
   const cardsRef = useRef(null);
 
   const handleDotClick = (index) => {
@@ -23,11 +24,11 @@ export const Section3 = () => {
     <section className="my-[30px] md:mt-14">
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-[20px] md:text-[39px] font-[700] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px] ">
-          Trending Today
+          Best Selling Drinks
         </h2>
 
         <p className="font-[400] text-[13px] ml-3 md:ml-0 text-center">
-          The best selection of Whisky, Vodka, and beer
+          The best selection of Whisky, Vodka and beer
         </p>
 
         {/* Desktop Screen View */}

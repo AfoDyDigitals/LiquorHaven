@@ -32,25 +32,24 @@ export const SignIn = () => {
   return (
     <section className="w-full h-full">
       <NavBar />
-      <div className="bg-[#F9F2F3] w-full pt-8 md:pt-16 ">
-        <div className="pt-[71.48px] mx-auto w-[82%] md:w-[70%] lg:w-[60%] bg-white shadow-md shadow-gray-300">
+      <div className="bg-[#F9F2F3] w-full pt-8 md:pt-16">
+        <div className="pt-[71.48px] mx-auto w-[80%] md:w-[70%] lg:w-[60%] bg-white shadow-md shadow-gray-300">
           <form onSubmit={handleSignIn}>
-            <div className="bg-inherit mx-auto w-[86%] flex flex-col items-center justify-center">
+            <div className="bg-inherit mx-auto w-full md:w-[86%] flex flex-col items-center justify-center">
               <img src={default_img} alt="default" className="" />
               <h1 className="mt-[10px] md:mt-[32px] lg:mt-[59px] font-rubik text-[24px] md:text-[32px] lg:text-[39px] font-bold leading-[120%]">
                 Sign In
               </h1>
               {/* Email or Phone input */}
               <input
-                type="text"
+                type=""
                 value={emailOrPhone}
                 onChange={(e) => setEmailOrPhone(e.target.value)}
                 name=""
                 id="emailOrPhone"
                 required
                 autoComplete="username"
-                className="mt-[56px] md:mt-[45px] lg:mt-[59px] w-full bg-[#F7F6F6] py-[20px] px-6 outline-none font-rubik font-[300] leading-none text-[13px] md:text-[16px] lg:text-[20px] text-[#E66B66] rounded-sm placeholder:font-[300] placeholder-[#000] focus:placeholder-[#E66B66]
-                focus:border-l-2 focus:border-t-2 focus:border-[#E66B66]"
+                className="mt-[56px] md:mt-[45px] lg:mt-[59px] w-[80%] md:w-full bg-[#F7F6F6] py-[20px] px-6 outline-none  font-rubik font-[300] leading-none text-[13px] md:text-[16px] lg:text-[20px] text-[#E66B66] rounded-sm placeholder:font-[300] placeholder-[#000] focus:placeholder-[#E66B66] focus:border-l-2 focus:border-t-2 focus:border-[#E66B66]"
                 placeholder="Email or Phone number"
               />
               {/* Password input */}
@@ -62,8 +61,7 @@ export const SignIn = () => {
                 autoComplete="current-password" // tells browser to suggest password
                 id="password"
                 required
-                className="mt-[41px] md:mt-[51px] lg:mt-[59px] w-full bg-[#F7F6F6] py-[20px] px-6 outline-none font-rubik font-[300] leading-none text-[13px] md:text-[16px] lg:text-[20px] text-[#E66B66] rounded-sm placeholder:font-[300] placeholder-[#000] focus:placeholder-[rgb(230,107,102)]
-                focus:border-l-2 focus:border-t-2 focus:border-[#E66B66]"
+                className="mt-[41px] md:mt-[51px] lg:mt-[59px] w-full bg-[#F7F6F6] py-[20px] px-6 outline-none font-rubik font-[300] leading-none text-[13px] md:text-[16px] lg:text-[20px] text-[#E66B66] rounded-sm placeholder:font-[300] placeholder-[#000] focus:placeholder-[rgb(230,107,102)] focus:border-l-2 focus:border-t-2 focus:border-[#E66B66]"
                 placeholder="Password"
               />
               <div className="flex flex-row gap-[20px] mt-[43px] md:mt-[29.43px] lg:mt-[46px] justify-center items-center">
@@ -84,11 +82,11 @@ export const SignIn = () => {
             </div>
           </form>
         </div>
-        <div className="w-[80%] md:w-[50%] flex justify-between items-center  mt-[560px] md:mt-[607px] lg:mt-[87px] pb-[13px] md:pb-[23px] mx-auto">
-          <p className="font-[400] text-[10px]  md:text-[13px] lg:text-[14px] leading-none font-rubik">
+        <div className="w-[80%] md:w-[50%] flex justify-between items-center mt-[560px] md:mt-[607px] lg:mt-[87px] pb-[13px] md:pb-[23px] mx-auto">
+          <p className="font-[400] text-[10px] md:text-[13px] lg:text-[14px] leading-none font-rubik">
             All rights reserved © 2024 LiquorHaven
           </p>
-          <p className="font-[400] text-[10px]  md:text-[13px] lg:text-[14px] leading-none font-rubik">
+          <p className="font-[400] text-[10px] md:text-[13px] lg:text-[14px] leading-none font-rubik">
             Privacy | Terms
           </p>
         </div>

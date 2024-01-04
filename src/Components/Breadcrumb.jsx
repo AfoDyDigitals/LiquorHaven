@@ -23,7 +23,6 @@ function Breadcrumb() {
           <input
             className="font-normal focus:outline-none focus:none  w-[343px] h-[16px] text-[13px] p-[15px] border-none"
             type=""
-
             placeholder="Search over 3,000 quality drinks..."
           />
           <button className="flex justify-center items-center bg-[#A22634] w-[60px] h-[35px] rounded-l">
