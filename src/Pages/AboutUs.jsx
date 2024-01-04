@@ -3,6 +3,7 @@ import NavBar from '../Components/NavBar'
 import WhoWeAre from '../Components/WhoWeAre'
 import WhyLiquorHaven from '../Components/WhyLiquorHaven'
 import MeetOurTeam from '../Components/MeetOurTeam'
+import Testimonial from '../Components/Testimonial'
 
 function AboutUs() {
   return (
@@ -15,6 +16,7 @@ function AboutUs() {
         <WhoWeAre />
         <WhyLiquorHaven />
         <MeetOurTeam />
+        <Testimonial />
     </div>
   )
 }
