@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ShopDropdown from "./ShopDropdown";
 import CurrencyConverter from "./CurrencyConverter";
+import { Link } from "react-router-dom";
 
 function Breadcrumb() {
   const [isShopDropdownVisible, setIsShopDropdownVisible] = useState(false);
@@ -50,7 +51,7 @@ function Breadcrumb() {
         </div>
 
         <div className="sm:hidden md:hidden lg:flex gap-[50px]">
-          <div>Home</div>
+          <Link to="/">Home</Link>
           <div className="flex gap-[5px] justify-center items-center">
             <div>Shop</div>
             {isShopDropdownVisible && (
@@ -66,8 +67,8 @@ function Breadcrumb() {
               />
             )}
           </div>
-          <div>About Us</div>
-          <div>Contact Us</div>
+          <Link to="/about">About Us</Link>
+          <Link to="/product">Contact Us</Link>
         </div>
 
         {/* currency & icons sm md */}
@@ -118,7 +119,7 @@ function Breadcrumb() {
 
         <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[95px] h-[46px] ">
           <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
-            Sign in
+            <Link to="/signin">Sign in</Link>
           </div>
         </button>
       </div>

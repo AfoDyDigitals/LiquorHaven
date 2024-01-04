@@ -1,18 +1,22 @@
-import Footer from './Components/Footer'
-import { useState } from "react";
+import React from "react";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
-import Section3 from "./Components/Section3";
-import AboutUs from "./pages/AboutUs";
+import Product from "./Pages/Product";
+import { SignIn } from "./Pages/SignIn";
+import AboutUs from "./Pages/AboutUs";
 
 function App() {
   return (
-    <>
-    <Home />
-    <Section3 />
-    <AboutUs />
-    <Footer />
-    </>
-  )    
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/about" element={<AboutUs />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

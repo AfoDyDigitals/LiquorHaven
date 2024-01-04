@@ -1,332 +1,75 @@
-import WhyLiquorHaven from "./WhyLiquorHaven";
+import React, { useState, useRef, useEffect } from "react";
+import TrendingCard from "./cards/TrendingCard";
 
-function Section3() {
+import { products2 } from "./constants";
+
+export const Section3 = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cardsRef = useRef(null);
+
+  const handleDotClick = (index) => {
+    setActiveIndex(index);
+  };
+
+  // Scroll to the active card when activeIndex changes
+  useEffect(() => {
+    if (cardsRef.current) {
+      const cardWidth = cardsRef.current.offsetWidth * 0.6;
+      const scrollLeft = cardWidth * activeIndex;
+      cardsRef.current.scrollLeft = scrollLeft;
+    }
+  }, [activeIndex]);
   return (
-    <>
+    <section className="my-[30px] md:mt-14">
+      <div className="flex flex-col justify-center items-center">
+        <h2 className="text-[20px] md:text-[39px] font-[700] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px] ">
+          Trending Today
+        </h2>
 
-      <WhyLiquorHaven />
+        <p className="font-[400] text-[13px] ml-3 md:ml-0 text-center">
+          The best selection of Whisky, Vodka, and beer
+        </p>
 
-      <div className="justify-center items-center ">
-        <div className="mt-16 mx-auto">
-          <div className="text-center text-3xl font-bold leading-10 font-[Rubik] mb-4">
-            Best Selling Drinks
-          </div>
-          <div className="text-center text-l font-normal leading-none ">
-            The best selection of Whisky, Vodka and beer
-          </div>
+        {/* Desktop Screen View */}
+        <div
+          className="hidden md:flex flex-wrap justify-center  items-center md:gap-12 lg:gap-[100px] mx-auto"
+          ref={cardsRef}
+        >
+          {products2.map((product, index) => (
+            <TrendingCard key={index} imgURL={product.imgURL} />
+          ))}
         </div>
 
-        <div className="hidden md:flex flex-wrap  md:gap-10 justify-center mt-7 mb-5 lg:justify-center items-center lg:gap-28 ">
-          <div>
-            <img className=" w-40 h-50" src={"src/assets/valent6.png"} />
-            <div className=" mt-1 ml-6 leading-normal font-normal ">
-              Valentino Finest
+        {/* Mobile Screen View */}
+        <div className="relative">
+          <div
+            className="flex overflow-x-auto mt-4 px-5 mb-5 md:hidden lg:hidden w-[70%] mx-auto"
+            ref={cardsRef}
+          >
+            <div className="flex flex-row items-center gap-[13px]">
+              {products2.map((product, index) => (
+                <TrendingCard
+                  key={index}
+                  imgURL={product.imgURL}
+                  // Adjust the opacity based on the activeIndex
+                  style={{ opacity: activeIndex === index ? 1 : 0.5 }}
+                />
+              ))}
             </div>
-            <div className="flex w-4 h-4 ml-8">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className=" ml-12 text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex ml-9 mt-2 gap-1">
-              <img
-                className="w-2 h-2 mt-1.5 "
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[113px] h-[46px] ml-4 p-3 mt-2 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-              <div className="text-white text-base font-medium  leading-tight">
-                Add To Cart
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <img
-              className=" w-40 h-50 "
-              src={"src/assets/Best Selling - 2.png"}
-            />
-            <div className=" mt-1 ml-6 leading-normal font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex w-4 h-4 ml-8">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className=" ml-12 text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex ml-9 mt-2 gap-1">
-              <img
-                className="w-2 h-2 mt-1.5 "
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-              <div className="text-white text-base font-medium  leading-tight">
-                Add To Cart
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <img className=" w-40 h-50 " src={"src/assets/valent8.png"} />
-            <div className=" mt-1 ml-6 leading-normal font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex w-4 h-4 ml-8">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className=" ml-12 text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex ml-9 mt-2 gap-1">
-              <img
-                className="w-2 h-2 mt-1.5 "
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-              <div className="text-white text-base font-medium  leading-tight">
-                Add To Cart
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <img className=" w-40 h-50" src={"src/assets/valent9.png"} />
-            <div className=" mt-1 ml-6 leading-normal font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex w-4 h-4 ml-8">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className=" ml-12 text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex ml-9 mt-2 gap-1">
-              <img
-                className="w-2 h-2 mt-1.5 "
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-              <div className="text-white text-base font-medium  leading-tight">
-                Add To Cart
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <img className=" w-40 h-50 " src={"src/assets/valent10.png"} />
-            <div className=" mt-1 ml-6 leading-normal font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex w-4 h-4 ml-8">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className=" ml-12 text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex ml-9 mt-2 gap-1">
-              <img
-                className="w-2 h-2 mt-1.5 "
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
-              <div className="text-white text-base font-medium  leading-tight">
-                Add To Cart
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="w-[100vw] px-[16px] flex justify-center items-center justify-between overflow-x-auto mt-[16px] mb-5 gap-5 md:hidden lg:hidden">
-          <div className="flex flex-col justify-center items-center w-[200px] h-[313px]">
-            <img className=" " src={"src/assets/valent6.png"} />
-            <div className=" mt-1 leading-normal text-center font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex justify-center items-center w-6">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className="text-center text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex justify-center items-center mt-2 gap-1">
-              <img
-                className="w-2 h-2"
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[120px] h-[40px] ml-4 p-[12px] mt-2 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex text-white text-base font-medium  leading-tight">
-                Add To Cart
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center justify-center w-[200px] h-[313px] ">
-            <img
-              className=" "
-              src={"src/assets/Best Selling - 2.png"}
-            />
-            <div className=" mt-1 leading-normal text-center font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex justify-center items-center w-6">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className="text-center text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex justify-center items-center mt-2 gap-1">
-              <img
-                className="w-2 h-2"
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[120px] h-[40px] ml-4 p-[12px] mt-2 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex text-white text-base font-medium  leading-tight">
-                Add To Cart
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[200px] h-[313px] items-center justify-center">
-            <img className="" src={"src/assets/valent8.png"} />
-            <div className=" mt-1 leading-normal text-center font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex justify-center items-center w-6">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className="text-center text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex justify-center items-center mt-2 gap-1">
-              <img
-                className="w-2 h-2"
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[120px] h-[40px] ml-4 p-[12px] mt-2 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex text-white text-base font-medium  leading-tight">
-                Add To Cart
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[200px] h-[313px] items-center justify-center">
-            <img className=" " src={"src/assets/valent9.png"} />
-            <div className=" mt-1 leading-normal text-center font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex justify-center items-center w-6">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className="text-center text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex justify-center items-center mt-2 gap-1">
-              <img
-                className="w-2 h-2"
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[120px] h-[40px] ml-4 p-[12px] mt-2 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex text-white text-base font-medium  leading-tight">
-                Add To Cart
-            </div>
-          </div>
-
-          <div className="flex flex-col w-[200px] h-[313px] items-center justify-center">
-            <img className=" " src={"src/assets/valent10.png"} />
-            <div className=" mt-1 leading-normal text-center font-normal ">
-              Valentino Finest
-            </div>
-            <div className="flex justify-center items-center w-6">
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL1.png "} />
-              <img src={"src/assets/star_FILL0.png "} />
-            </div>
-            <div className="text-center text-sm text-rose-900 font-semibold ">
-              $150.00
-            </div>
-            <div className="flex justify-center items-center mt-2 gap-1">
-              <img
-                className="w-2 h-2"
-                src={"src/assets/Ellipse 2.png"}
-              />
-              <div className="text-stone-500 font-normal leading-normal  text-sm">
-                In Stock
-              </div>
-            </div>
-            <div className="w-[120px] h-[40px] ml-4 p-[12px] mt-2 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex text-white text-base font-medium  leading-tight">
-                Add To Cart
+            <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2">
+              {products2.map((_, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  className={`w-3 h-3 rounded-full cursor-pointer ${
+                    activeIndex === index ? "bg-[#A22634]" : "bg-[#E66B66]"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
-}
-export default Section3;
+};

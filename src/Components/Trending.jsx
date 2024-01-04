@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
-import { products } from "./constants/index";
 import TrendingCard from "./cards/TrendingCard";
+
+import { products } from "./constants";
 
 export const Trending = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -13,16 +14,15 @@ export const Trending = () => {
   // Scroll to the active card when activeIndex changes
   useEffect(() => {
     if (cardsRef.current) {
-      const cardWidth = cardsRef.current.offsetWidth * 0.7;
+      const cardWidth = cardsRef.current.offsetWidth * 0.6;
       const scrollLeft = cardWidth * activeIndex;
       cardsRef.current.scrollLeft = scrollLeft;
     }
   }, [activeIndex]);
-
   return (
     <section className="my-[30px] md:mt-14">
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-[20px] md:text-[39px] font-[700] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px]">
+        <h2 className="text-[20px] md:text-[39px] font-[700] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px] ">
           Trending Today
         </h2>
 
@@ -32,7 +32,7 @@ export const Trending = () => {
 
         {/* Desktop Screen View */}
         <div
-          className="hidden md:flex flex-wrap justify-center items-center gap-6 wide:gap-14 "
+          className="hidden md:flex flex-wrap justify-center  items-center md:gap-12 lg:gap-[100px] mx-auto"
           ref={cardsRef}
         >
           {products.map((product, index) => (

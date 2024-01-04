@@ -20,8 +20,22 @@ import valentino_finest2 from "./unsplash_Xez19XDdbrI.png";
 import valentino_finest3 from "./unsplash_paHLSTGqydI.png";
 import valentino_finest4 from "./unsplash_tZDHMFU3Dm0.png";
 import valentino_finest5 from "./unsplash_xTmIOJCd23U.png";
+import valentino_finest6 from "./valent6.png";
+import valentino_finest7 from "./Best Selling - 2.png";
+import valentino_finest8 from "./valent8.png";
+import valentino_finest9 from "./valent9.png";
+import valentino_finest10 from "./valent10.png";
+
 import starred from "./star_FILL1_wght400_GRAD0_opsz24 (1) 1.png";
 import not_starred from "./star_FILL0_wght400_GRAD0_opsz24 1.png";
+
+import delivery_truck from "./local_shipp_black.png";
+import local_shipping from "./shipp_black.png";
+import heart_icon from "./vector.png";
+import maltell1 from "./maltell1.png";
+import maltell2 from "./maltell2.png";
+import navigation_left from "./navigate_next.png";
+import default_img from "./Group 49429.png";
 
 export {
   hero_dot,
@@ -43,5 +57,17 @@ export {
   valentino_finest3,
   valentino_finest4,
   valentino_finest5,
+  valentino_finest6,
+  valentino_finest7,
+  valentino_finest8,
+  valentino_finest9,
+  valentino_finest10,
   tequila,
+  delivery_truck,
+  local_shipping,
+  heart_icon,
+  maltell1,
+  maltell2,
+  navigation_left,
+  default_img,
 };
