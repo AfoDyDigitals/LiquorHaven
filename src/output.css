@@ -960,6 +960,34 @@ video {
   margin-top: 90px;
 }
 
+.mt-\[83px\] {
+  margin-top: 83px;
+}
+
+.mb-\[\] {
+  margin-bottom: ;
+}
+
+.mt-\[287px\] {
+  margin-top: 287px;
+}
+
+.mt-\[423px\] {
+  margin-top: 423px;
+}
+
+.mt-\[269px\] {
+  margin-top: 269px;
+}
+
+.mb-\[40px\] {
+  margin-bottom: 40px;
+}
+
+.mb-\[240px\] {
+  margin-bottom: 240px;
+}
+
 .block {
   display: block;
 }
@@ -1074,6 +1102,18 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-7 {
+  height: 1.75rem;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
+.h-\[800px\] {
+  height: 800px;
 }
 
 .w-3 {
@@ -1448,6 +1488,14 @@ video {
 
 .gap-\[35px\] {
   gap: 35px;
+}
+
+.gap-\[60px\] {
+  gap: 60px;
+}
+
+.gap-\[30px\] {
+  gap: 30px;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1919,6 +1967,14 @@ video {
   padding-left: 42px;
 }
 
+.pt-\[83px\] {
+  padding-top: 83px;
+}
+
+.pt-\[60px\] {
+  padding-top: 60px;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2134,6 +2190,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\] {
+  color: ;
 }
 
 .underline {
@@ -2417,6 +2477,14 @@ video {
     margin-top: 58px;
   }
 
+  .md\:mb-\[\] {
+    margin-bottom: ;
+  }
+
+  .md\:mt-\[423px\] {
+    margin-top: 423px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2525,6 +2593,10 @@ video {
     width: 500px;
   }
 
+  .md\:w-\[398px\] {
+    width: 398px;
+  }
+
   .md\:max-w-\[28rem\] {
     max-width: 28rem;
   }
@@ -2604,6 +2676,10 @@ video {
     padding-top: 72px;
   }
 
+  .md\:pt-\[83px\] {
+    padding-top: 83px;
+  }
+
   .md\:text-\[1\.85rem\] {
     font-size: 1.85rem;
   }
@@ -2669,6 +2745,12 @@ video {
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
+
+  @media (min-width: 1200px) {
+    .md\:lg\:mb-\[240px\] {
+      margin-bottom: 240px;
+    }
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2702,6 +2784,14 @@ video {
 
   .lg\:mt-\[87px\] {
     margin-top: 87px;
+  }
+
+  .lg\:mb-\[\] {
+    margin-bottom: ;
+  }
+
+  .lg\:mb-\[240px\] {
+    margin-bottom: 240px;
   }
 
   .lg\:block {
@@ -2794,6 +2884,10 @@ video {
 
   .lg\:w-\[1000px\] {
     width: 1000px;
+  }
+
+  .lg\:w-\[797px\] {
+    width: 797px;
   }
 
   .lg\:flex-row {
