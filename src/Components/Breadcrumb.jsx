@@ -72,7 +72,7 @@ function Breadcrumb() {
 
         {/* currency & icons sm md */}
         <div className="flex justify-center items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
-          <div className="flex relative justify-center items-center gap-[5px] ml-[40px] mr-[10px]  md:ml-[110px] mr-[10px]">
+          <div className="flex relative justify-center items-center gap-[5px] ml-[40px] mr-[10px]  md: mr-[10px]">
             <div className="text-[10px] font-normal md:text-[13px]">USD</div>
             {isCurrencyConverterVisible && (
               <img
@@ -116,11 +116,18 @@ function Breadcrumb() {
           </div>
         </div>
 
-        <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[95px] h-[46px] ">
-          <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
-            <Link to="/signin">Sign in</Link>
-          </div>
-        </button>
+        <div className="flex  md:gap-[25px] lg:gap-[35px]">
+          <button className="hidden md:flex justify-center items-center  w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent  lg:rounded-[8px] w-[95px] h-[46px] ">
+            <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
+              <Link to="/signin">Sign in</Link>
+            </div>
+          </button>
+          <button className="hidden md:flex justify-center items-center bg-zinc-400  w-[66px] h-[32px]  rounded-[5px]  lg:rounded-[8px] w-[95px] h-[46px] ">
+            <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
+              <Link to="/signup">Register</Link>
+            </div>
+          </button>
+        </div>
       </div>
       {isShopDropdownVisible && (
         <ShopDropdown toggleShopDropdown={toggleShopDropdown} />
