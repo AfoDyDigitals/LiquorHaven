@@ -26,7 +26,7 @@ function Header() {
         {/* searchbar */}
         <div className="hidden md:flex justify-center items-center w-[381px] h-[46px] rounded-[4px] border border-[#9E9496] lg:w-[600px] h-[62px] flex justify-center items-center justify-between rounded-[4px]">
           <input
-            className="font-normal  w-full md:focus:outline-none focus:none w-[343px] lg:w-[600px] h-[46px] text-[13px] p-[15px] rounded-[4px] border-none"
+            className="w-[100%] font-normal   md:focus:outline-none focus:none w-[343px] lg:w-[600px] h-[46px] text-[13px] p-[15px] rounded-[4px] border-none"
             type="text"
             placeholder="Search over 3,000 quality drinks..."
           />
