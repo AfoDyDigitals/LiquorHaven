@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
 import { default_img } from "../assets";
+import { Link } from "react-router-dom";
 
 export const SignIn = () => {
   // State variables to store user input
@@ -69,7 +70,7 @@ export const SignIn = () => {
                   Forgot your password?
                 </p>
                 <p className="leading-none text-[12px] md:text-[16px] lg:text-[20px] font-[400] text-[#E66B66] hover:underline hover:cursor-pointer">
-                  Click here
+                  <Link to="/forgotpassword">click here</Link>{" "}
                 </p>
               </div>
               {/* Sign In button */}

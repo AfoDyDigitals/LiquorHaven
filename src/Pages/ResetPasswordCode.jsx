@@ -1,6 +1,7 @@
 import React from "react";
 import SubmitButton from "../Components/SubmitButton";
 import NavBar from "../Components/NavBar";
+import { Link } from "react-router-dom";
 
 function ResetPasswordCode() {
   return (
@@ -37,8 +38,8 @@ function ResetPasswordCode() {
             />
           </div>
           <SubmitButton />
-          <div className="text-[13px] mt-[30px] font-normal underline underline-offset-6 mb-30px md:text-[16px] lg:text-[20px] mb-[240px]">
-            Cancel
+          <div className="text-[13px] mt-[30px] font-normal hover:underline cursor-pointer hover:underline-offset-6 mb-30px md:text-[16px] lg:text-[20px] mb-[240px]">
+            <Link to="/">Cancel</Link>
           </div>
         </div>
 
