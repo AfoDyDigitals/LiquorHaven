@@ -5,6 +5,7 @@ import { Home } from "./Pages/Home";
 import Product from "./Pages/Product";
 import { SignIn } from "./Pages/SignIn";
 import AboutUs from "./Pages/AboutUs";
+import ResetPasswordMail from "./Pages/ResetPasswordMail";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/about" element={<AboutUs />} />
       </Routes>
+        <ResetPasswordMail />
     </Router>
   );
 }
