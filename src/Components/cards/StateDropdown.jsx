@@ -85,7 +85,7 @@ const StateDropdown = () => {
       </select>
 
       {selectedState && (
-        <div className="mt-4">
+        <div className="mt-4 w-full">
           <label
             htmlFor="addressInput"
             className="block text-sm font-medium text-gray-700"
@@ -98,7 +98,7 @@ const StateDropdown = () => {
             value={address}
             onChange={handleAddressChange}
             placeholder="Enter your address"
-            className="mt-1 p-2 border rounded-md w-full"
+            className="mt-1 p-2 border w-full  md:max-w-[28rem]"
           />
 
           <p className="mt-2 text-sm text-gray-500">{verifyAddress()}</p>

@@ -32,7 +32,7 @@ export const Trending = () => {
 
         {/* Desktop Screen View */}
         <div
-          className="hidden md:flex flex-wrap justify-center  items-center md:gap-12 lg:gap-[100px] "
+          className="hidden md:flex flex-wrap justify-center  items-center md:gap-12 lg:gap-[100px] mx-auto"
           ref={cardsRef}
         >
           {products.map((product, index) => (

@@ -29,7 +29,7 @@ export const Ranges = () => {
         </p>
         {/*Desktop Screen */}
         <div
-          className="hidden md:flex flex-wrap justify-center items-center gap-6 wide:gap-14 "
+          className="hidden md:flex flex-wrap justify-center items-center gap-6 lg:gap-[100px] mx-auto "
           ref={cardsRef}
         >
           {drinkSelections.map((drinkselection, index) => (
