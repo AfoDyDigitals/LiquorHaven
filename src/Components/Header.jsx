@@ -28,6 +28,7 @@ function Header() {
           <input
             className="text-[13px] font-normal  md:focus:outline-none focus:none w-[343px] lg:w-[600px]   p-[15px] rounded-[4px] border-none"
             type=""
+
             placeholder="Search over 3,000 quality drinks..."
           />
 
