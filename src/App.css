@@ -10,6 +10,7 @@
     background-image: url(./assets/ventbg02.png);
     width: 780px;
     height: 682px;
+    padding-right: 10px;
     background-size: cover;
     filter: brightness(50%);
 }

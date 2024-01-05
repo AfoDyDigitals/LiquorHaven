@@ -4,17 +4,17 @@ function Section4() {
   
     return (
       <>
-      <div className="flex gap-2 mt-16 mx-10">
+      <div className="flex gap-5 mt-16  align-center ">
         
         <div className="bg">
-          <div>
+          <div className=""> 
           <div className="mt-16 mx-16 text-2 font-normal leading-none font-[Rubik] text-white">Mix and sip</div>
-          <div className="mt-20 mx-auto">Best Cocktails Limited Edition</div>
-            <div className="mt-20 mx-auto">Toast to a New Beginings</div>
+          <div className="mt-20 mx-auto text-white text-3x1 font-bold font-[Rubik]">Best Cocktails Limited Edition</div>
+            <div className="mt-20 mx-auto text white">Toast to a New Beginings</div>
             <div className="text-white text-base font-medium font-'Rubik' leading-tight">See More</div>
         </div></div>
         <div className="bg2">
-          <div className="mt-20 mx-auto text-2 font-normal leading-none font-[Rubik]">Mix and sip</div>
+          <div className="ml-10 mt-20 mx-auto text-[40px] font-normal leading-none font-[Rubik]">Mix and sip</div>
           <div className="mt-20 mx-auto">Best Cocktails Limited Edition</div>
             <div className="mt-20 mx-auto">Toast to a New Beginings</div>
             <div className="text-white text-base font-medium font-'Rubik' leading-tight">See More</div>
