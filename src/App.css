@@ -1,0 +1,7 @@
+.bg {
+    background-image: url(./assets/ventbg01.png);
+    width: 500px;
+    height: 400px;
+    background-size: cover;
+
+}
