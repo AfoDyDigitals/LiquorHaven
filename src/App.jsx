@@ -14,7 +14,7 @@ function App() {
     <Home />
     <Section3 />
     <Footer />
-    <Account />
+    {/* <Account /> */}
     </>
   )
     
