@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import BestSelling from "./BestSelling";
-
-function Section3() {
-=======
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import TrendingCard from "./cards/TrendingCard";
 
@@ -25,7 +21,6 @@ export const Section3 = () => {
       cardsRef.current.scrollLeft = scrollLeft;
     }
   }, [activeIndex]);
->>>>>>> 225a8ae69334eb74e2d322f19e4309bbd3a81399
   return (
     <section className="my-[30px] md:mt-14">
       <div className="flex flex-col justify-center items-center">
@@ -63,50 +58,6 @@ export const Section3 = () => {
                 />
               ))}
             </div>
-<<<<<<< HEAD
-          </div>
-          <div className="flex gap-[12px] justify-center items-center ">
-            <img
-              className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/lock_FILL.png"
-            />
-
-            <div>
-              <div className="sm:font-semibold w-[174px] font-rubik leading-tight text-base mb-2 md:font-bold md:text-xl  md:leading-none ">
-                Safe Packaging
-              </div>
-              <div className="sm:w-[180px] -mb-7 text-[13px] font-normal w-[180px] leading-none font-[Rubik] justify-center md:w-[203px] text-base">
-                100% Guarantee
-              </div>
-            </div>
-          </div>
-          <div className="flex gap-[12px] justify-center items-center ">
-            <img
-              className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/storefront_FILL.png"
-            />
-            <div>
-              <div className="sm:font-semibold w-[190px] font-rubik leading-tight text-base mb-2 md:font-bold md:text-xl  md:leading-none ">
-                Trusted Marketplace
-              </div>
-              <div className="text-[13px] -mb-7 font-normal w-[180px] leading-none font-[Rubik] justify-center md:w-[203px] text-base">
-                Purchased guaranteed and anti-fraud protection.
-              </div>
-            </div>
-          </div>
-          <div className="flex gap-[12px] justify-center items-center ">
-            <img
-              className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/payments_FILL.png"
-            />
-            <div>
-              <div className="sm:font-semibold w:[203px] font-rubik leading-tight text-base mb-2 font-bold md:text-xl  md:leading-none">
-                Competitive Prices
-              </div>
-              <div className="text-[13px] font-normal w-[180px] leading-none text-black font-[Rubik] justify-center md:w-[203px] text-base">
-                Unbeatable convenience, service and value at best price.
-              </div>
-=======
             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2">
               {products2.map((_, index) => (
                 <div
@@ -117,19 +68,10 @@ export const Section3 = () => {
                   }`}
                 />
               ))}
->>>>>>> 225a8ae69334eb74e2d322f19e4309bbd3a81399
             </div>
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-
-      <BestSelling/>
-      </>
-    
-
-=======
     </section>
->>>>>>> 225a8ae69334eb74e2d322f19e4309bbd3a81399
   );
 };
