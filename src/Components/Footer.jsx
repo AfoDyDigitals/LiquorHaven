@@ -67,16 +67,16 @@ function Footer() {
               About Us
             </p>
             <p className="lg:text-[1rem] lg:font-normal  font-rubik text-[0.8125rem] font-normal leading-5 text-[#1E1E1E] ">
-              Careers
+              Company Info
             </p>
             <p className="lg:text-[1rem] lg:font-normal font-rubik text-[0.8125rem] font-normal leading-5 text-[#1E1E1E] ">
               Careers
             </p>
             <p className="lg:text-[1rem] lg:font-normal font-rubik text-[0.8125rem] font-normal leading-5 text-[#1E1E1E] ">
-              Careers
+              Reviews
             </p>
             <p className="lg:text-[1rem] lg:font-normal font-rubik text-[0.8125rem] font-normal leading-5 text-[#1E1E1E] ">
-              Careers
+              Return Policy
             </p>
           </div>
 
