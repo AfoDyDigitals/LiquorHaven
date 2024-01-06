@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import ShopDropdown from "./ShopDropdown";
 import CurrencyConverter from "./CurrencyConverter";
+import { Link } from "react-router-dom";
 
 function Breadcrumb() {
   const [isShopDropdownVisible, setIsShopDropdownVisible] = useState(false);
@@ -22,7 +23,7 @@ function Breadcrumb() {
         <div className=" flex justify-center items-center  border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden">
           <input
             className="font-normal focus:outline-none focus:none  w-[343px] h-[16px] text-[13px] p-[15px] border-none"
-            type="text"
+            type=""
             placeholder="Search over 3,000 quality drinks..."
           />
           <button className="flex justify-center items-center bg-[#A22634] w-[60px] h-[35px] rounded-l">
@@ -50,7 +51,7 @@ function Breadcrumb() {
         </div>
 
         <div className="sm:hidden md:hidden lg:flex gap-[50px]">
-          <div>Home</div>
+          <Link to="/">Home</Link>
           <div className="flex gap-[5px] justify-center items-center">
             <div>Shop</div>
             {isShopDropdownVisible && (
@@ -66,13 +67,13 @@ function Breadcrumb() {
               />
             )}
           </div>
-          <div>About Us</div>
-          <div>Contact Us</div>
+          <Link to="/about">About Us</Link>
+          <Link to="/product">Contact Us</Link>
         </div>
 
         {/* currency & icons sm md */}
         <div className="flex justify-center items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
-          <div className="flex relative justify-center items-center gap-[5px] ml-[40px] mr-[10px]  md:ml-[110px] mr-[10px]">
+          <div className="flex relative justify-center items-center gap-[5px] ml-[40px] mr-[10px]  md: mr-[10px]">
             <div className="text-[10px] font-normal md:text-[13px]">USD</div>
             {isCurrencyConverterVisible && (
               <img
@@ -116,11 +117,18 @@ function Breadcrumb() {
           </div>
         </div>
 
-        <button className="hidden md:flex justify-center items-center p-0 w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent ml-[40px] mr-[32px] lg:rounded-[8px] w-[95px] h-[46px] ">
-          <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
-            Sign in
-          </div>
-        </button>
+        <div className="flex  md:gap-[25px] lg:gap-[35px]">
+          <button className="hidden md:flex justify-center items-center  w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent  lg:rounded-[8px] w-[95px] h-[46px] ">
+            <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
+              <Link to="/signin">Sign in</Link>
+            </div>
+          </button>
+          <button className="hidden md:flex justify-center items-center bg-zinc-400  w-[66px] h-[32px]  rounded-[5px]  lg:rounded-[8px] w-[95px] h-[46px] ">
+            <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
+              <Link to="/signup">Register</Link>
+            </div>
+          </button>
+        </div>
       </div>
       {isShopDropdownVisible && (
         <ShopDropdown toggleShopDropdown={toggleShopDropdown} />

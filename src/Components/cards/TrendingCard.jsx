@@ -31,7 +31,9 @@ const TrendingCard = ({ imgURL }) => {
         </p>
         <div className="flex flex-row items-center justify-center mt-[15px] mb-[6px]">
           <div className="w-3 h-3 rounded-full bg-[#7A9B57] text-[20px]"></div>
-          <p className="ml-1 text-[#7A9B57]">In Stock</p>
+          <p className="ml-1 text-[#7A9B57]  text-[16px] lg:text-[20px]">
+            In Stock
+          </p>
         </div>
         <div className="mb-2">
           <Button label={"Add To Cart"} />
