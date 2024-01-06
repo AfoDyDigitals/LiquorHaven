@@ -9,15 +9,21 @@ function Section4() {
         <div className="bg">
           <div className=""> 
           <div className="mt-16 mx-16 text-2 font-normal leading-none font-[Rubik] text-white">Mix and sip</div>
-          <div className="mt-20 mx-auto text-white text-3x1 font-bold font-[Rubik]">Best Cocktails Limited Edition</div>
+          <div className="mt-20 mx-auto text-white text-[30px] font-bold font-[Rubik] text-white">Best Cocktails Limited Edition</div>
             <div className="mt-20 mx-auto text white">Toast to a New Beginings</div>
-            <div className="text-white text-base font-medium font-'Rubik' leading-tight">See More</div>
+            <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
+              <div className="text-white text-base font-medium font-'Rubik' leading-tight">
+                See More
+              </div></div>
         </div></div>
         <div className="bg2">
-          <div className="ml-10 mt-20 mx-auto text-[40px] font-normal leading-none font-[Rubik]">Mix and sip</div>
+          <div className="ml-10 mt-20 mx-auto text-[40px] font-normal leading-none font-[Rubik] text-white">Mix and sip</div>
           <div className="mt-20 mx-auto">Best Cocktails Limited Edition</div>
             <div className="mt-20 mx-auto">Toast to a New Beginings</div>
-            <div className="text-white text-base font-medium font-'Rubik' leading-tight">See More</div>
+            <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
+              <div className="text-white text-base font-medium font-'Rubik' leading-tight">
+                See More
+              </div></div>
         </div>
       </div>
 
