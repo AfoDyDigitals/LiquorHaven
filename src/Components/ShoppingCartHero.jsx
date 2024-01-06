@@ -5,23 +5,25 @@ import NavBar from "./NavBar";
 function ShoppingCartHero() {
   return (
     <>
-        <div className="mt-20">
-          <NavBar />
-          <div className="flex relative font-rubik mt-[9px] text-black">
-            <img className="" src="src/assets/Cartn.png" alt="Shopping Cart" />
-            <div
-              className="absolute 
-              mt-[304px] ml-[1225px] mr-[232px] w-[270px] h-[47px]text-center text-black text-[39px] font-medium  leading-[46.80px]"
-            >
-              Shopping Cart
-            </div>
+      <div>
+        <NavBar />
+        <div className="flex relative font-rubik mt-[9px] text-black">
+          <div className="">
+            <img src="src/assets/Cartn.png" alt="Shopping Cart" />
+          </div>
+          <div
+            className=" absolute  
+              mt-[304px] ml-[1225px] mr-[232px] w-[271px] h-[47px] text-center text-[39px] font-medium  leading-[46.80px] "
+          >
+            Shopping Cart
           </div>
         </div>
-        <div className="w-[368px] h-[95px] py-[29px] mt-[49px] ml-[121px] bg-red-500 rounded-lg justify-center items-center gap-2.5 inline-flex">
-          <div className="text-red-50 text-[31px] font-medium font-rubik leading-[37.20px]">
-            Continue Shopping
-          </div>
+      </div>
+      <div className="w-full md:w-[164px] md:py-[29px] md:h-[20px] md:ml-[22px] md:mr-[558px] lg:w-[368px] lg:h-[95px] mt-[49px] lg:ml-[112px] lg:mr-[1239px] bg-red-500 rounded-lg flex text-center justify-center items-center">
+        <div className="text-red-50 text-[18px] md:w-[150px] md:text-base md:py-[12px] md:leading-tight lg:text-[31px] lg:leading-[37.20px] lg:font-medium lg:w-[288px] h-[37px] font-rubik">
+          Continue Shopping
         </div>
+      </div>
     </>
   );
 }

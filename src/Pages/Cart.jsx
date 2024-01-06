@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import CartItem from '../Components/CartItem';
 import ShoppingCartHero from '../Components/ShoppingCartHero';
+import CartItem from '../Components/CartItem';
 
 const Cart = () => {
   const [products, setProducts] = useState([
-    { id: 1, name: 'Absolute Raspberry', price: 140.00, image: 'cart product.png', quantity: 0 },
+    { id: 1, name: 'Absolut Raspberry', price: 140.00, image: 'cart product.png', quantity: 0 },
     { id: 2, name: 'Corona Extra', price: 19.99, image: 'corona extra.png', quantity: 0 },
     { id: 3, name: 'MXCN Cola', price: 29.99, image: 'mxcn cola.png', quantity: 0 },
   ]);
@@ -29,7 +29,7 @@ const Cart = () => {
   return (
     <div>
       <ShoppingCartHero /> 
-      <div className='w-[1500px] h-[2167px] bg-white font-rubik border mx-[114px] border-gray-400 items-center justify-center mt-[49px] py-[121px]'>
+      <div className=' lg:w-[1500px] h-[2167px] bg-white font-rubik border mx-[114px] border-gray-400 items-center justify-center mt-[49px] py-[121px] md:w-[702px]'>
         {products.map((product) => (
           <CartItem
             key={product.id}
