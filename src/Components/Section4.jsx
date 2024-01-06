@@ -4,22 +4,22 @@ function Section4() {
   
     return (
       <>
-      <div className="flex gap-5 mt-16  align-center ">
+      <div className="flex gap-5 mt-16 align-justify">
         
         <div className="bg">
           <div className=""> 
-          <div className="mt-16 mx-16 text-2 font-normal leading-none font-[Rubik] text-white">Mix and sip</div>
-          <div className="mt-20 mx-auto text-white text-[30px] font-bold font-[Rubik] text-white">Best Cocktails Limited Edition</div>
-            <div className="mt-20 mx-auto text white">Toast to a New Beginings</div>
+          <div className="mt-16  px-[40px] mx-16 text-2 font-normal leading-none font-[Rubik] text-white">Mix and sip</div>
+          <div className="mt-20  px-[40px] mx-auto text-white text-[30px] font-bold font-[Rubik] text-white">Best Cocktails Limited Edition</div>
+            <div className="mt-20 px-[40px] mx-auto font-[Rubik] text-white">Toast to a New Beginings</div>
             <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
               <div className="text-white text-base font-medium font-'Rubik' leading-tight">
                 See More
               </div></div>
         </div></div>
         <div className="bg2">
-          <div className="ml-10 mt-20 mx-auto text-[40px] font-normal leading-none font-[Rubik] text-white">Mix and sip</div>
-          <div className="mt-20 mx-auto">Best Cocktails Limited Edition</div>
-            <div className="mt-20 mx-auto">Toast to a New Beginings</div>
+          <div className="ml-10 mt-16 mx-auto px-[40px] text-[40px] font-normal leading-none font-[Rubik] text-white">Classic Taste</div>
+          <div className="mt-20 px-[40px] mx-auto text-white font-[Rubik]">No. 1 Quality Vodka</div>
+            <div className="mt-20 px-[40px] mx-auto text-white font-[Rubik]">From $30.00</div>
             <div className="w-[113px] h-[46px] ml-4 mt-2 p-3 bg-red-400 rounded-lg border border-red-400 justify-center items-center gap-2.5 inline-flex">
               <div className="text-white text-base font-medium font-'Rubik' leading-tight">
                 See More
