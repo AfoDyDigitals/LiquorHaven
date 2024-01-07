@@ -59,8 +59,8 @@ function OrderSummary() {
 
                 {/* Enter Payment Delivery Method */}
                 <div className="section3 w-[349px] h-[103px] px-2 md:w-[712px] md:h-[897px] lg:w-[1000px] lg:h-[994px] flex flex-col items-center gap-[30px] md:gap-[32px] lg:gap-[36px] leading-[19.2px] md:leading-6">
-                    <button className="w-[170px] md:w-[233px] bg-black text-white font-medium text-base  md:text-xl px-4 md:px-10 md:py[15px] md:h-[54px] lg:h-[60px] h-[50px]">MAKE PAYMENT</button>
-                    <button className="sm:mt-[28px] sm:text-sm w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text[25px] md:mt-[37px] h-[20px] md:h-[30px] md:leading-[-px]">
+                    <button className="w-[170px] md:w-[233px] bg-black text-white font-medium text-base py-2 md:text-xl px-4 md:px-10 md:py[15px] md:h-[54px] lg:h-[60px] h-[50px]">MAKE PAYMENT</button>
+                    <button className=" sm:text-sm w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text[25px]  h-[20px] md:h-[30px] md:leading-[24px]">
                         Return to cart
                     </button>      </div>
             </div>
