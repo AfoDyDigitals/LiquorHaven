@@ -47,44 +47,54 @@ export const drinkSelections = [
 export const products = [
   {
     imgURL: valentino_finest1,
-    price: "$150",
+    price: "$120",
+    name: "Valentino Finest",
   },
   {
     imgURL: valentino_finest2,
-    price: "$150",
+    price: "$130",
+    name: "Vodka Finest",
   },
   {
     imgURL: valentino_finest3,
-    price: "$150",
+    price: "$140",
+    name: "Valentino Finest",
   },
   {
     imgURL: valentino_finest4,
     price: "$150",
+    name: "Martell",
   },
   {
     imgURL: valentino_finest5,
-    price: "$150",
+    price: "$110",
+    name: "St'Laurens",
   },
 ];
 export const products2 = [
   {
     imgURL: valentino_finest6,
-    price: "$150",
+    price: "$130",
+    name: "Ginger Beer",
   },
   {
     imgURL: valentino_finest7,
-    price: "$150",
+    price: "$180",
+    name: "Heineken",
   },
   {
     imgURL: valentino_finest8,
-    price: "$150",
+    price: "$170",
+    name: "Bailey's",
   },
   {
     imgURL: valentino_finest9,
-    price: "$150",
+    price: "$190",
+    name: "Gunness",
   },
   {
     imgURL: valentino_finest10,
-    price: "$150",
+    price: "$120",
+    name: "ESpJaerd Vodka",
   },
 ];

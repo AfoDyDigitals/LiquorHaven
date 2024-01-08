@@ -12,7 +12,7 @@ export const Ranges = () => {
   // Scroll to the active card when activeIndex changes
   useEffect(() => {
     if (cardsRef.current) {
-      const cardWidth = cardsRef.current.offsetWidth * 0.6;
+      const cardWidth = cardsRef.current.offsetWidth * 0.58;
       const scrollLeft = cardWidth * activeIndex;
       cardsRef.current.scrollLeft = scrollLeft;
     }

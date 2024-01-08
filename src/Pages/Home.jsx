@@ -10,7 +10,7 @@ import Testimonial from "../Components/Testimonial";
 
 export const Home = () => {
   return (
-    <>
+    <div className="overflow-hidden">
       <NavBar />
       <Hero />
       <Ranges />
@@ -19,6 +19,6 @@ export const Home = () => {
       <Section3 />
       <Testimonial />
       <Footer />
-    </>
+    </div>
   );
 };

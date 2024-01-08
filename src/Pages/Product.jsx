@@ -1,13 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
 import NavBar from "../Components/NavBar";
 import {
   delivery_truck,
   heart_icon,
   local_shipping,
+  navigation_left,
   maltell1,
   maltell2,
-  navigation_left,
 } from "../assets";
 import { WhyUs } from "../Components/WhyUs";
 import TrendingCard from "../Components/cards/TrendingCard";
@@ -19,19 +19,26 @@ import { DescriptionReview } from "../Components/cards/DescriptionReview";
 
 const Product = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const cardsRef = useRef(null);
-
-  const handleDotClick = (index) => {
-    setActiveIndex(index);
-  };
+  const location = useLocation();
+  const navigate = useNavigate(); // Use useNavigate
 
   useEffect(() => {
-    if (cardsRef.current) {
-      const cardWidth = cardsRef.current.offsetWidth * 0.8;
-      const scrollLeft = cardWidth * activeIndex;
-      cardsRef.current.scrollLeft = scrollLeft;
+    // Extract product details from location state
+    if (location.state) {
+      const { imgURL, name, price } = location.state;
+      const index = products.findIndex((product) => product.imgURL === imgURL);
+      setActiveIndex(index);
+      setSelectedProduct({ imgURL, name, price });
     }
-  }, [activeIndex]);
+  }, [location.state]);
+
+  const handleCardClick = (index) => {
+    setActiveIndex(index);
+    setSelectedProduct(products[index]);
+    navigate("/product", { state: products[index] });
+  };
 
   return (
     <section className="overflow-hidden ">
@@ -46,15 +53,18 @@ const Product = () => {
         <div className="mx-2">
           <img src={navigation_left} alt="nav left" />
         </div>
-        <p>Martell</p>
+        <p> {selectedProduct?.name || "Product Name"}</p>
       </div>
       <div className="mx-auto w-[90%]">
-        <div className="flex flex-col lg:flex-row justify-center items-center ">
+        <div className="flex flex-col lg:flex-row lg:gap-8 justify-center items-center ">
           <div className="flex justify-center items-start gap-6 mt-14">
-            <div className="flex flex-col justify-center items-center">
-              <div className="flex md:flex-1 justify-center items-center  hover:rounded-md hover:bg-gray-100">
+            <div className="flex flex-col  justify-center items-center">
+              <div
+                className="flex md:flex-1 justify-center items-center  hover:rounded-md hover:bg-gray-100"
+                onClick={() => handleCardClick(activeIndex)}
+              >
                 <img
-                  src={maltell1}
+                  src={selectedProduct?.imgURL || maltell1}
                   width={578}
                   height={473}
                   alt="maltell image"
@@ -81,10 +91,10 @@ const Product = () => {
               <img src={heart_icon} alt="" />
             </div>
             <p className="mt-[16px] font-bold text-[20px] md:text-[31px] font-rubik leading-[120%]">
-              Martell
+              {selectedProduct?.name || "Product Name"}
             </p>
             <p className="text-[20px] md:text-[25px] text-[#E66B66] font-[500] mt-[16px] leading-[120%]">
-              $99.00
+              {selectedProduct?.price || "$99.00"}
             </p>
             <p className="text-[16px] md:text-[20px] font-[500] mt-[16px] leading-[120%] text-black">
               Quantity
@@ -123,7 +133,7 @@ const Product = () => {
                 Delivery fee #500
               </p>
             </div>
-            <DeliveryMessage />
+
             <div className="flex items-center mt-5">
               <img
                 src={local_shipping}
@@ -139,7 +149,8 @@ const Product = () => {
             </p>
           </div>
         </div>
-        <DescriptionReview />
+
+        <DescriptionReview selectedProduct={selectedProduct} />
         <h2 className="text-[20px] md:text-[39px] font-[400] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px] leading-[120%] lg:leading-none font-inter ml-[2rem] md:ml-[4rem] lg:ml-[10rem] ">
           You may also Like
         </h2>
@@ -149,7 +160,12 @@ const Product = () => {
             ref={cardsRef}
           >
             {products.map((product, index) => (
-              <TrendingCard key={index} imgURL={product.imgURL} />
+              <TrendingCard
+                key={index}
+                imgURL={product.imgURL}
+                name={product.name}
+                price={product.price}
+              />
             ))}
           </div>
         </div>
@@ -163,6 +179,8 @@ const Product = () => {
                 <TrendingCard
                   key={index}
                   imgURL={product.imgURL}
+                  name={product.name}
+                  price={product.price}
                   style={{ opacity: activeIndex === index ? 1 : 0.5 }}
                 />
               ))}

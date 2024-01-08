@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CurrencyConverter from "./CurrencyConverter";
 import SideBar from "./SideBar";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -28,7 +29,6 @@ function Header() {
           <input
             className="text-[13px] font-normal  md:focus:outline-none focus:none w-[343px] lg:w-[600px]   p-[15px] rounded-[4px] border-none"
             type=""
-
             placeholder="Search over 3,000 quality drinks..."
           />
 
@@ -86,10 +86,13 @@ function Header() {
           </div>
 
           <div className="flex">
-            <img
-              className="w-[32px] h-[32px]"
-              src="../src/assets/shopping_cart_FILL0_wght400_GRAD0_opsz24 1.svg"
-            />
+            <Link to="/cart">
+              <img
+                className="w-[32px] h-[32px] cursor-pointer"
+                src="../src/assets/shopping_cart_FILL0_wght400_GRAD0_opsz24 1.svg"
+              />
+            </Link>
+
             <div className="flex justify-center items-center text-[10px] font-normal bg-[#E66B66]  h-[12.5px] w-[5px] p-2 rounded-full">
               1
             </div>

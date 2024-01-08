@@ -4,10 +4,13 @@ import carousel_image1 from "./unsplash_aK6WGqxyHFw (1).png";
 import carousel_image2 from "./unsplash_ckjuMXBLu7o.png";
 import carousel_image3 from "./unsplash_2miYRwVSYNY.png";
 
+import cart_heroImg from "./Add a subheading.png";
+
 import elipse_one from "./Ellipse 1 (1).png";
 import elipse_two from "./Ellipse 1.png";
 import arrow_left from "./arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1 (1).png";
 import arrow_right from "./arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.png";
+import deleteIcon from "./Group 49512.png";
 
 import wine from "./unsplash_W4Gwb-xz_fA.png";
 import beer from "./unsplash_Gla6keSyoU0.png";
@@ -42,6 +45,7 @@ export {
   carousel_image1,
   carousel_image2,
   carousel_image3,
+  cart_heroImg,
   elipse_one,
   elipse_two,
   arrow_left,
@@ -66,6 +70,7 @@ export {
   delivery_truck,
   local_shipping,
   heart_icon,
+  deleteIcon,
   maltell1,
   maltell2,
   navigation_left,

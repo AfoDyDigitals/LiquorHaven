@@ -37,7 +37,12 @@ export const Section3 = () => {
           ref={cardsRef}
         >
           {products2.map((product, index) => (
-            <TrendingCard key={index} imgURL={product.imgURL} />
+            <TrendingCard
+              key={index}
+              imgURL={product.imgURL}
+              name={product.name}
+              price={product.price}
+            />
           ))}
         </div>
 
@@ -52,6 +57,8 @@ export const Section3 = () => {
                 <TrendingCard
                   key={index}
                   imgURL={product.imgURL}
+                  name={product.name}
+                  price={product.price}
                   // Adjust the opacity based on the activeIndex
                   style={{ opacity: activeIndex === index ? 1 : 0.5 }}
                 />

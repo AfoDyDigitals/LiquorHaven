@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const DescriptionReview = () => {
+export const DescriptionReview = ({ selectedProduct }) => {
   const [activeTab, setActiveTab] = useState("description");
 
   const handleTabClick = (tab) => {
@@ -32,7 +32,7 @@ export const DescriptionReview = () => {
         id="description"
       >
         <h3 className="font-[600] font-rubik text-[16px] md:text-[20px] leading-[120%] mb-6">
-          Martell Blue Swift Cognac VSOP Finished in Kentucky Bourbon Casks
+          {selectedProduct?.name || "Product Name"}
         </h3>
         <ul className="list-disc">
           <li className="font-[400] font-rubik text-[16px] md:text-[20px] leading-[120%] mb-1">
