@@ -7,7 +7,7 @@ import { SignIn } from "./Pages/SignIn";
 import AboutUs from "./Pages/AboutUs";
 import ResetPasswordCode from "./Pages/ResetPasswordCode";
 import ResetPasswordMail from "./Pages/ResetPasswordMail";
-import BillingDetails from "./Components/BillingDetails";
+import Checkout from "./Pages/Checkout";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/forgotpassword" element={<ResetPasswordMail />} />
         <Route path="/forgotpassword/code" element={<ResetPasswordCode />} />
         <Route path="/about" element={<AboutUs />} />
-        <Route path="/billingdetails" element={< BillingDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );
