@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react'
 
 function WhyLiquorHaven() {
@@ -13,7 +14,7 @@ function WhyLiquorHaven() {
         </div>
 
         <div className="font-rubik grid grid-cols-1 mt-[25px] pb-[40px] gap-[32px] md:grid-cols-2 lg:flex flex-row lg:mt-[63px] gap-[68px] items-center justify-center ">
-          <div className="flex gap-[12px] justify-center items-center ">
+          <div className="flex gap-[12px] justify-center items-center lg:gap-[60px]">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
               src="src/assets/local_shipping.png"
@@ -56,7 +57,7 @@ function WhyLiquorHaven() {
               </div>
             </div>
           </div>
-          <div className="flex gap-[12px] justify-center items-center ">
+          <div className="flex gap-[12px] justify-center items-center">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
               src="src/assets/payments_FILL.png"
