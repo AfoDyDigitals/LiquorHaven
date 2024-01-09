@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ShoppingCartHero from "../Components/ShoppingCartHero";
-import CartItem from "../Components/CartItem";
+import CartItem from "../Components/cartItem/CartItem";
 import {
   valentino_finest6,
   valentino_finest7,
@@ -8,6 +8,7 @@ import {
 } from "../assets";
 import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [products, setProducts] = useState([
@@ -73,11 +74,11 @@ const Cart = () => {
         <div className="w-[90%] md:w-full text-black text-[16px] leading-[120%] md:text-[20px] font-medium mx-4 my-4 text-center">
           Shipping and taxes calculated at checkout
         </div>
-        <div className="w-[40%] md:w-[260px] cursor-pointer max-w-[368px] bg-[#B85652]  hover:bg-[#A22634] rounded-lg p-4 justify-center items-center inline-flex">
-          <p className="text-red-50 text-lg md:text-[20px] f font-medium">
-            Checkout
-          </p>
-        </div>
+        <Link to="/checkout">
+          <div className="w-full md:w-[260px] cursor-pointer max-w-[368px] bg-[#B85652]   text-red-50 hover:text-[#000] hover:bg-rose-200  rounded-lg p-4 justify-center items-center inline-flex">
+            <p className="text-lg md:text-[20px]  font-medium">Checkout</p>
+          </div>
+        </Link>
       </div>
       <Testimonial />
       <Footer />

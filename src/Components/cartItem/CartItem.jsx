@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-import { not_starred, starred, deleteIcon } from "../assets";
+import { not_starred, starred, deleteIcon } from "../../assets";
+import "./cartitem.css";
 
 const CartItem = ({
   id,
@@ -13,6 +14,8 @@ const CartItem = ({
   onUpdateQuantity,
 }) => {
   const [localQuantity, setLocalQuantity] = useState(quantity);
+  const [isDeleted, setIsDeleted] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const displayedPrice = (price * localQuantity).toFixed(2);
 
@@ -23,19 +26,67 @@ const CartItem = ({
   };
 
   const handleDecrement = () => {
-    if (localQuantity > 1) {
+    if (localQuantity >= 1) {
       const newQuantity = localQuantity - 1;
       setLocalQuantity(newQuantity);
       onUpdateQuantity(id, newQuantity);
     }
   };
 
+  useEffect(() => {
+    if (isDeleted) {
+      setShowAlert(true);
+
+      const timeoutId = setTimeout(() => {
+        setShowAlert(false);
+        onDelete(id);
+      }, 2000); // 2000 milliseconds (2 seconds) delay
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [isDeleted, onDelete, id]);
+
   const handleDelete = () => {
-    onDelete(id);
+    setIsDeleted(true);
   };
 
+  useEffect(() => {
+    // This effect ensures that the item is removed after a page reload
+    if (localStorage.getItem("deletedItems")) {
+      const deletedItems = JSON.parse(localStorage.getItem("deletedItems"));
+
+      if (deletedItems.includes(id)) {
+        onDelete(id);
+      }
+    }
+  }, [id, onDelete]);
+
+  useEffect(() => {
+    // This effect adds the deleted item to local storage for persistence
+    if (isDeleted) {
+      const deletedItems = localStorage.getItem("deletedItems")
+        ? JSON.parse(localStorage.getItem("deletedItems"))
+        : [];
+
+      localStorage.setItem(
+        "deletedItems",
+        JSON.stringify([...deletedItems, id])
+      );
+    }
+  }, [isDeleted, id]);
+
   return (
-    <div className="overflow-hidden max-w-[96%]">
+    <div
+      className={`overflow-hidden max-w-[96%] ${
+        isDeleted ? "animate-fade-out" : ""
+      }`}
+    >
+      {showAlert && (
+        <div className="bg-red-500 text-white p-3 rounded-md mb-4">
+          <p>Item has been deleted!</p>
+        </div>
+      )}
+
       <div className="font-rubik pt-10 pb-6 text-center items-center justify-center  flex max-w-full md:max-w-2xl lg:max-w-4xl mx-auto">
         <div className="w-full h-full md:w-[195px] md:h-[60%] lg:h-full ml-2 md:ml-0 ">
           <img className="w-full  h-[60%]" src={image} alt={name} />
@@ -66,7 +117,13 @@ const CartItem = ({
               -
             </button>
 
-            <span className="w-10 h-10 sm:w-[44px] sm:h-[44px] md:w-16 md:h-16 p-4 bg-[#E66B66]  rounded-xl md:rounded-2xl lg:text-[28px] text-white border-2 border-red-400 justify-center items-center inline-flex transition-all duration-300">
+            <span
+              className={`w-10 h-10 sm:w-[44px] sm:h-[44px] md:w-16 md:h-16 p-4 rounded-xl md:rounded-2xl lg:text-[28px] border-2 justify-center items-center inline-flex transition-all duration-300 ${
+                localQuantity > 0
+                  ? "bg-rose-200 text-[#000] border-red-400"
+                  : "bg-[#E66B66] text-white border-red-400"
+              }`}
+            >
               {localQuantity}
             </span>
 

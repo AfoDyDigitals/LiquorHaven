@@ -1,21 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { not_starred, starred } from "../../assets";
 import { Button } from "../Button";
+import "../../App.css";
+import Notification from "./Notification";
 
 const TrendingCard = ({ imgURL, name, price }) => {
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState("");
   const navigate = useNavigate();
 
-  const openProductDetails = () => {
-    // Pass the product details to the product page
-    navigate("/product", { state: { imgURL, name, price } });
+  const openProductDetails = (event) => {
+    const target = event.target;
+    console.log("All Classes:", target.className);
+    // Check if the clicked element or its parent has the class "add-to-cart-button"
+    if (target.classList.contains("add-to-cart")) {
+      setShowNotification(true);
+      setNotificationMessage("Item has been Added to Cart Successfully!");
+
+      setTimeout(() => {
+        setShowNotification(false);
+        // Do not navigate to the product page if the button was clicked
+      }, 1500);
+    } else {
+      // Clicked outside the add to cart button, navigate to the product page
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      navigate("/product", { state: { imgURL, name, price } });
+    }
+  };
+
+  const handleAddToCartClick = (event) => {
+    event.stopPropagation();
+
+    // Simulate an asynchronous action (e.g., API call)
+    setShowNotification(true);
+    setNotificationMessage("Adding to cart...");
+
+    setTimeout(() => {
+      setNotificationMessage(`${name} added to the cart!`);
+      // Add your logic for updating the cart state or other actions here
+
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 2000); // Adjust the duration as needed
+    }, 1500); // Adjust the duration as needed
   };
 
   return (
     <>
       <div
-        className=" mt-[10px] md:mt-[22px] lg:mt[47px]hover:opacity-90 hover:rounded-[1rem]  py-0 hover:border hover:border-gray-300 
-    cursor-pointer flex shrink-0 medium:shrink flex-col justify-center items-center    medium:mt-[47px]"
+        className="mt-[10px] md:mt-[22px] lg:mt[47px] hover:opacity-90 hover:rounded-[1rem]  py-0 hover:border hover:border-gray-300 
+      cursor-pointer flex shrink-0 medium:shrink flex-col justify-center items-center    medium:mt-[47px]"
         onClick={openProductDetails}
       >
         <img
@@ -44,6 +79,13 @@ const TrendingCard = ({ imgURL, name, price }) => {
           <Button label={"Add To Cart"} />
         </div>
       </div>
+
+      {showNotification && (
+        <Notification
+          message={notificationMessage}
+          onClose={() => setShowNotification(false)}
+        />
+      )}
     </>
   );
 };

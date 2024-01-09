@@ -9,7 +9,7 @@ import Footer from "../Components/Footer";
 
 function AboutUs() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <NavBar />
       <div className="font-rubik w-[100vw]">
         <div className="flex justify-center items-center bg-[#E66B66] py-[24px] h-[60px] md:h-[70px] lg:h-[80px]">
@@ -30,7 +30,7 @@ function AboutUs() {
         <Testimonial />
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

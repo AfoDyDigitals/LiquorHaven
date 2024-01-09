@@ -66,7 +66,7 @@ function Breadcrumb() {
             )}
           </div>
           <Link to="/about">About Us</Link>
-          <Link to="/product">Contact Us</Link>
+          <p className="cursor-pointer">Contact Us</p>
         </div>
 
         {/* currency & icons sm md */}

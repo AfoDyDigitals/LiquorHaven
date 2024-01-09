@@ -35,6 +35,7 @@ import not_starred from "./star_FILL0_wght400_GRAD0_opsz24 1.png";
 import delivery_truck from "./local_shipp_black.png";
 import local_shipping from "./shipp_black.png";
 import heart_icon from "./vector.png";
+import tick_icon from "./tick.png";
 import maltell1 from "./maltell1.png";
 import maltell2 from "./maltell2.png";
 import navigation_left from "./navigate_next.png";
@@ -71,6 +72,7 @@ export {
   local_shipping,
   heart_icon,
   deleteIcon,
+  tick_icon,
   maltell1,
   maltell2,
   navigation_left,

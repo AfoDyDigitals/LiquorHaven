@@ -14,15 +14,48 @@ import TrendingCard from "../Components/cards/TrendingCard";
 import { products } from "../Components/constants";
 import StateDropdown from "../Components/cards/StateDropdown";
 import Footer from "../Components/Footer";
-import DeliveryMessage from "../Components/cards/DeliveryMessage";
 import { DescriptionReview } from "../Components/cards/DescriptionReview";
+import Notification from "../Components/cards/Notification";
 
 const Product = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const cardsRef = useRef(null);
+  const [deliveryDate, setDeliveryDate] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState("");
+
   const location = useLocation();
   const navigate = useNavigate(); // Use useNavigate
+
+  useEffect(() => {
+    // Calculate delivery date logic
+    const currentDate = new Date();
+    let deliveryDate = new Date(currentDate);
+    deliveryDate.setDate(deliveryDate.getDate() + 2);
+
+    // Check if the delivery date falls on a weekend
+    while (deliveryDate.getDay() === 0 || deliveryDate.getDay() === 6) {
+      deliveryDate.setDate(deliveryDate.getDate() + 1); // Move to the next day
+    }
+
+    // Format delivery date as a string
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    const formattedDeliveryDate = deliveryDate.toLocaleDateString(
+      undefined,
+      options
+    );
+
+    setDeliveryDate(formattedDeliveryDate);
+  }, []);
 
   useEffect(() => {
     // Extract product details from location state
@@ -30,9 +63,22 @@ const Product = () => {
       const { imgURL, name, price } = location.state;
       const index = products.findIndex((product) => product.imgURL === imgURL);
       setActiveIndex(index);
+      const initialQuantity = 1; // You can set the initial quantity as needed
+      setQuantity(initialQuantity);
+      const initialTotalPrice =
+        initialQuantity * parseFloat(price.replace("$", ""));
+      setTotalPrice(initialTotalPrice);
       setSelectedProduct({ imgURL, name, price });
     }
   }, [location.state]);
+
+  useEffect(() => {
+    // Recalculate total price whenever selectedProduct or quantity changes
+    if (selectedProduct && typeof selectedProduct.price === "string") {
+      const priceNumber = parseFloat(selectedProduct.price.replace("$", ""));
+      setTotalPrice(quantity * priceNumber);
+    }
+  }, [selectedProduct, quantity]);
 
   const handleCardClick = (index) => {
     setActiveIndex(index);
@@ -40,9 +86,78 @@ const Product = () => {
     navigate("/product", { state: products[index] });
   };
 
+  const handleQuantityChange = (newQuantity) => {
+    if (newQuantity < 1) {
+      return; // Prevent quantity from going less than 1
+    }
+
+    setQuantity(newQuantity);
+
+    if (selectedProduct && typeof selectedProduct.price === "number") {
+      setTotalPrice(newQuantity * selectedProduct.price);
+    }
+  };
+
+  const handleAddToCart = () => {
+    // Logic to add to cart goes here
+    const updatedProducts = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingProduct = updatedProducts.find(
+      (product) => product.id === selectedProduct.id
+    );
+
+    if (existingProduct) {
+      // Update quantity if the product is already in the cart
+      existingProduct.quantity += quantity;
+    } else {
+      // Add a new product to the cart
+      updatedProducts.push({ ...selectedProduct, quantity });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(updatedProducts));
+
+    // Set the notification message
+    const notificationMessage = `Added ${quantity} ${selectedProduct.name} to the cart!`;
+    setNotificationMessage(notificationMessage);
+
+    // Show the notification
+    setShowNotification(true);
+
+    // Log to check if the notification message is set correctly
+    console.log("Notification Message:", notificationMessage);
+
+    // Delay the navigation after showing the notification
+    setTimeout(() => {
+      setShowNotification(false);
+      console.log("Navigating to /cart");
+      // Navigate to the cart page or any other page
+      navigate("/cart");
+    }, 3000);
+  };
+
+  useEffect(() => {
+    if (showNotification) {
+      // Delay the navigation after showing the notification
+      const timeoutId = setTimeout(() => {
+        setShowNotification(false);
+        console.log("Navigating to /cart");
+        // Navigate to the cart page or any other page
+        navigate("/cart");
+      }, 3000);
+
+      // Clear the timeout if the component unmounts or showNotification becomes false
+      return () => clearTimeout(timeoutId);
+    }
+  }, [showNotification, navigate]);
+
   return (
-    <section className="overflow-hidden ">
+    <section className=" ">
       <NavBar />
+      {showNotification && (
+        <Notification
+          message={notificationMessage}
+          onClose={() => setShowNotification(false)}
+        />
+      )}
       <div className="bg-[#E66B66] w-full h-16 flex justify-center items-center  font-rubik">
         <Link
           to="/"
@@ -94,29 +209,42 @@ const Product = () => {
               {selectedProduct?.name || "Product Name"}
             </p>
             <p className="text-[20px] md:text-[25px] text-[#E66B66] font-[500] mt-[16px] leading-[120%]">
-              {selectedProduct?.price || "$99.00"}
+              Total Price: ${totalPrice.toFixed(2)}
             </p>
             <p className="text-[16px] md:text-[20px] font-[500] mt-[16px] leading-[120%] text-black">
               Quantity
             </p>
             <div className="flex justify-start flex-row ml-2 mt-4">
-              <button className="py-1.5 px-3 border-y-2 border-l-2 border-black text-[16px] lg:text-[25px] font-[500]  leading-[120%] text-black">
+              <button
+                className="py-1.5 px-3 border-y-2 border-l-2 border-black text-[16px] lg:text-[25px] font-[500] leading-[120%] text-black"
+                onClick={() => handleQuantityChange(quantity - 1)}
+              >
                 -
               </button>
-              <button className="py-1.5 px-3 border-y-2 border-l-2  border-black text-[16px] lg:text-[25px] font-[500] cursor-auto leading-[120%] text-black">
-                1
+              <button className="py-1.5 px-3 border-y-2 border-l-2 border-black text-[16px] lg:text-[25px] font-[500] cursor-auto leading-[120%] text-black">
+                {quantity}
               </button>
-              <button className="py-1.5 px-3 border-y-2 border-2  border-black text-[16px] lg:text-[25px] font-[500]  leading-[120%] text-black">
+              <button
+                className="py-1.5 px-3 border-y-2 border-x-2 border-black text-[16px] lg:text-[25px] font-[500] leading-[120%] text-black"
+                onClick={() => handleQuantityChange(quantity + 1)}
+              >
                 +
               </button>
             </div>
             <div className="flex flex-col">
-              <button className="text-[20px] md:text-[31px] font-[500] mt-4 py-[20px] px-20 leading-[120%] text-black bg-[#F7D1D0] rounded-md">
-                Add to Cart
-              </button>
-              <button className="text-[20px] md:text-[31px] font-[500] mt-4 py-[20px] px-20 leading-[120%] text-black bg-[#B85652] rounded-md">
-                Buy Now
-              </button>
+              <Link to="/cart">
+                <button
+                  className="w-full text-[20px] md:text-[31px] font-[500] mt-4 py-[20px] px-20 leading-[120%] text-black bg-[#F7D1D0] hover:bg-rose-300 rounded-md"
+                  onClick={handleAddToCart}
+                >
+                  Add to Cart
+                </button>
+              </Link>
+              <Link to="/checkout">
+                <button className="w-full text-[20px] md:text-[31px] font-[500] mt-4 py-[20px] px-20 leading-[120%] text-black bg-[#B85652] hover:bg-red-500 rounded-md">
+                  Buy Now
+                </button>
+              </Link>
             </div>
             <p className="text-[20px] font-[600] leading-[120%] mt-[20px] font-rubik">
               Delivery and Returns
@@ -133,6 +261,10 @@ const Product = () => {
                 Delivery fee #500
               </p>
             </div>
+            <p className="text-[13px] font-[400] leading-[120%] font-rubik text-black mt-[20px]">
+              Arriving at your address on {deliveryDate} when you order within
+              the next 24 hours
+            </p>
 
             <div className="flex items-center mt-5">
               <img
