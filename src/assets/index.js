@@ -28,6 +28,11 @@ import valentino_finest7 from "./Best Selling - 2.png";
 import valentino_finest8 from "./valent8.png";
 import valentino_finest9 from "./valent9.png";
 import valentino_finest10 from "./valent10.png";
+import valentino_finest11 from "./What's new - Image 1.png";
+import valentino_finest12 from "./What's new - Image 2.png";
+import valentino_finest13 from "./What's new - Image 3.png";
+import valentino_finest14 from "./What's new - Image 4.png";
+import valentino_finest15 from "./What's new - Image 5.png";
 
 import starred from "./star_FILL1_wght400_GRAD0_opsz24 (1) 1.png";
 import not_starred from "./star_FILL0_wght400_GRAD0_opsz24 1.png";
@@ -67,6 +72,11 @@ export {
   valentino_finest8,
   valentino_finest9,
   valentino_finest10,
+  valentino_finest11,
+  valentino_finest12,
+  valentino_finest13,
+  valentino_finest14,
+  valentino_finest15,
   tequila,
   delivery_truck,
   local_shipping,

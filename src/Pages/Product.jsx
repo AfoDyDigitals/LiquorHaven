@@ -180,8 +180,8 @@ const Product = () => {
               >
                 <img
                   src={selectedProduct?.imgURL || maltell1}
-                  width={578}
-                  height={473}
+                  width={458}
+                  height={443}
                   alt="maltell image"
                 />
               </div>

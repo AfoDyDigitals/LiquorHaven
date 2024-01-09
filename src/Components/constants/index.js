@@ -9,6 +9,11 @@ import {
   valentino_finest8,
   valentino_finest9,
   valentino_finest10,
+  valentino_finest11,
+  valentino_finest12,
+  valentino_finest13,
+  valentino_finest14,
+  valentino_finest15,
   wine,
   beer,
   cocktail,
@@ -96,5 +101,33 @@ export const products2 = [
     imgURL: valentino_finest10,
     price: "$120",
     name: "ESpJaerd Vodka",
+  },
+];
+
+export const products3 = [
+  {
+    imgURL: valentino_finest11,
+    price: "$130",
+    name: "Ginger Beer",
+  },
+  {
+    imgURL: valentino_finest12,
+    price: "$180",
+    name: "Heineken",
+  },
+  {
+    imgURL: valentino_finest13,
+    price: "$170",
+    name: "Jose Cuervo's Special",
+  },
+  {
+    imgURL: valentino_finest14,
+    price: "$190",
+    name: "ESpJaerd Cocktail",
+  },
+  {
+    imgURL: valentino_finest15,
+    price: "$120",
+    name: "White Wine",
   },
 ];
