@@ -11,7 +11,7 @@ const Checkout = () => {
   return (
     <>
       <NavBar />
-      <div className="font-rubik mt-[28px] w-[100vw]  mx-auto">
+      <div className="font-rubik w-[100vw]  mx-auto">
         <div className="w-[100vw] h-[75px] bg-rose-200 flex items-center text-center mx-auto justify-center gap-[52.9px]">
           <Link to="/">
             <p className="sm:w-[36px] md:text-[13px] md:w-[36px]   text-stone-500 lg:text-xl font-normal leading-normal">
