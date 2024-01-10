@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ShopDropdown from "./ShopDropdown";
 import CurrencyConverter from "./CurrencyConverter";
 import { Link } from "react-router-dom";
+import Caller from "./cards/Caller";
 
 function Breadcrumb() {
   const [isShopDropdownVisible, setIsShopDropdownVisible] = useState(false);
@@ -44,9 +45,7 @@ function Breadcrumb() {
           <div className="text-[13px] font-semibold md:text-[16px] lg:text-[20px]">
             Hotline:
           </div>
-          <div className="text-[13px] md:text-[16px] lg:text-[20px] font-normal">
-            +234 80197867
-          </div>
+          <Caller />
         </div>
 
         <div className="sm:hidden md:hidden lg:flex gap-[50px]">
@@ -67,7 +66,7 @@ function Breadcrumb() {
             )}
           </div>
           <Link to="/about">About Us</Link>
-          <Link to="/product">Contact Us</Link>
+          <p className="cursor-pointer">Contact Us</p>
         </div>
 
         {/* currency & icons sm md */}
@@ -106,10 +105,12 @@ function Breadcrumb() {
           </div>
 
           <div className="flex w-[26px] md:w-[30px]">
-            <img
-              className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
-              src="../src/assets/shopping_cart_white.svg"
-            />
+            <Link to="/cart">
+              <img
+                className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
+                src="../src/assets/shopping_cart_white.svg"
+              />
+            </Link>
             <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1.5 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
               1
             </div>

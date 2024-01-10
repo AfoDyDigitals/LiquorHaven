@@ -5,12 +5,17 @@ import { products } from "./constants";
 
 export const Trending = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+
   const cardsRef = useRef(null);
 
   const handleDotClick = (index) => {
     setActiveIndex(index);
   };
+
+  /* const handleCardClick = (index) => {
+    // Navigate to the product page with the selected product's details
+    history.push(`/product-details/${index}`);
+  }; */
 
   // Scroll to the active card when activeIndex changes
   useEffect(() => {
@@ -40,7 +45,7 @@ export const Trending = () => {
             <TrendingCard
               key={index}
               imgURL={product.imgURL}
-              selectedCurrency={selectedCurrency}
+              name={product.name}
               price={product.price}
             />
           ))}
@@ -57,9 +62,8 @@ export const Trending = () => {
                 <TrendingCard
                   key={index}
                   imgURL={product.imgURL}
-                  selectedCurrency={selectedCurrency}
+                  name={product.name}
                   price={product.price}
-                  style={{ opacity: activeIndex === index ? 1 : 0.5 }}
                 />
               ))}
             </div>

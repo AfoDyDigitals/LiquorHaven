@@ -5,6 +5,7 @@ import OrderSummary from "../Components/OrderSummary";
 import OrderOptional from "../Components/OrderOptional";
 import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   return (
@@ -12,9 +13,11 @@ const Checkout = () => {
       <NavBar />
       <div className="font-rubik w-[100vw]  mx-auto">
         <div className="w-[100vw] h-[75px] bg-rose-200 flex items-center text-center mx-auto justify-center gap-[52.9px]">
-          <div className="sm:w-[36px] md:text-[13px] md:w-[36px] text-stone-500 lg:text-xl font-normal leading-normal">
-            Home
-          </div>
+          <Link to="/">
+            <p className="sm:w-[36px] md:text-[13px] md:w-[36px]   text-stone-500 lg:text-xl font-normal leading-normal">
+              Home
+            </p>
+          </Link>
           <div className="w-3 h-3.5 relative origin-top-left rotate-[-3.87deg]">
             {" "}
             <img
@@ -28,7 +31,9 @@ const Checkout = () => {
         </div>
 
         <div className="w-[100vw] sm:mt-[53px] sm:ml-[24.18px] sm:text-xs lg:text-xl lg:mt-[77px] lg:-mb-[120px] lg:ml-[137px] font-normal font-rubik relative">
-          <div className=" z-10 text-[13px] md:text-[16px] lg:text-xl ">Add N7,000 to cart and get shipping!</div>
+          <div className=" z-10 text-[13px] md:text-[16px] lg:text-xl ">
+            Add N7,000 to cart and get shipping!
+          </div>
           <div className="absolute sm:-bottom-2 left-0 sm:w-[240px] lg:w-[350px] h-[1px] bg-red-500"></div>
         </div>
 
@@ -145,7 +150,7 @@ const Checkout = () => {
             </form>
           </div>
           <OrderSummary />
-        <OrderOptional />
+          <OrderOptional />
         </div>
       </div>
       <Testimonial />

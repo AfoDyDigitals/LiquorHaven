@@ -8,7 +8,7 @@ import AboutUs from "./Pages/AboutUs";
 import ResetPasswordCode from "./Pages/ResetPasswordCode";
 import ResetPasswordMail from "./Pages/ResetPasswordMail";
 import Checkout from "./Pages/Checkout";
-import Section4 from "./Components/Section4";
+import Cart from "./Pages/Cart";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
         <Route path="/forgotpassword/code" element={<ResetPasswordCode />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
-      <Section4 />
     </Router>
   );
 }

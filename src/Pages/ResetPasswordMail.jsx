@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import SubmitButton from "../Components/SubmitButton";
 import NavBar from "../Components/NavBar";
 import { Link } from "react-router-dom";
 
 function ResetPasswordMail() {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const checkEmail = (e) => {
+    setEmail(e.target.value);
+
+    if (emailRegex.test(e.target.value) === false) {
+      setError("Please enter a valid email address!");
+    } else {
+      setError(""); // Clear the error when the email is valid
+    }
+  };
+
+  const submit = () => {
+    // Validate the email before submitting
+    if (emailRegex.test(email) === false) {
+      setError("Please enter a valid email address!");
+      return;
+    }
+
+    // Perform other necessary validations or actions
+
+    // Navigate to the "/forgotpassword/code" route
+    window.location.href = "/forgotpassword/code";
+  };
   return (
     <>
       <NavBar />
@@ -20,11 +47,16 @@ function ResetPasswordMail() {
             We will send you an email to reset your password
           </div>
           <input
-            className="bg-[#F7F6F6] w-[252px] rounded-[4px] mt-[48px] mb-[51px] text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] text-base pl-[21px]  lg:w-[797px] text-[20px] mt-[90px] pl-[42px] "
-            type=" "
+            className="bg-[#F7F6F6] w-[252px] rounded-[4px] mt-[48px] mb-[6px] text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] text-base pl-[21px]  lg:w-[797px] text-[20px] mt-[90px] pl-[42px] "
+            type="email"
             placeholder="Email address"
+            onChange={checkEmail}
+            required
           />
-          <SubmitButton />
+          <p className="text-red-400 text-sm mb-[51px]">{error}</p>
+          <button onClick={submit}>
+            <SubmitButton />
+          </button>
           <div className="text-[13px] mt-[30px] font-normal hover:underline hover:underline-offset-6 mb-30px md:text-[16px] lg:text-[20px] mb-[240px] cursor-pointer ">
             <Link to="/">Cancel</Link>
           </div>
