@@ -5,7 +5,7 @@ import { Button } from "../Button";
 import "../../App.css";
 import Notification from "./Notification";
 
-const TrendingCard = ({ imgURL, name, price }) => {
+const TrendingCard = ({ imgURL, name, price, onAddToCart }) => {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ const TrendingCard = ({ imgURL, name, price }) => {
           </p>
         </div>
         <div className="mb-2">
-          <Button label={"Add To Cart"} />
+          <Button label={"Add To Cart"} onClick={onAddToCart} />
         </div>
       </div>
 

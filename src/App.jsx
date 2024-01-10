@@ -9,7 +9,6 @@ import ResetPasswordCode from "./Pages/ResetPasswordCode";
 import ResetPasswordMail from "./Pages/ResetPasswordMail";
 import Checkout from "./Pages/Checkout";
 import Cart from "./Pages/Cart";
-import Section4 from "./Components/Section4";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-      <Section4 />
     </Router>
   );
 }

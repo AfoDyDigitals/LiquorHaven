@@ -1,68 +1,87 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ShoppingCartHero from "../Components/ShoppingCartHero";
 import CartItem from "../Components/cartItem/CartItem";
-import {
-  valentino_finest6,
-  valentino_finest7,
-  valentino_finest8,
-} from "../assets";
+
 import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
+import { products } from "../Components/constants";
 
-const Cart = () => {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Absolut Raspberry",
-      price: 140.0,
-      image: valentino_finest8,
-      quantity: 0,
-    },
-    {
-      id: 2,
-      name: "Corona Extra",
-      price: 19.99,
-      image: valentino_finest7,
-      quantity: 0,
-    },
-    {
-      id: 3,
-      name: "MXCN Cola",
-      price: 29.99,
-      image: valentino_finest6,
-      quantity: 0,
-    },
-  ]);
+const Cart = ({ location }) => {
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleDelete = (productId) => {
-    const updatedProducts = products.filter(
-      (product) => product.id !== productId
-    );
-    setProducts(updatedProducts);
+  useEffect(() => {
+    // Retrieve cart items from local storage
+    const storedItems = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedItems);
+  }, []);
+  useEffect(() => {
+    const scrollTarget = location?.state?.scrollTarget;
+    if (scrollTarget) {
+      const element = document.getElementById(scrollTarget);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  const handleDeleteItem = (id) => {
+    // Update cart items after deleting an item
+    const updatedItems = cartItems.filter((item) => item.id !== id);
+    setCartItems(updatedItems);
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
   };
 
-  const handleUpdateQuantity = (productId, newQuantity) => {
-    const updatedProducts = products.map((product) =>
-      product.id === productId ? { ...product, quantity: newQuantity } : product
+  const handleUpdateQuantity = (id, newQuantity) => {
+    // Update cart items after updating quantity
+    const updatedItems = cartItems.map((item) =>
+      item.id === id ? { ...item, quantity: newQuantity } : item
     );
-    setProducts(updatedProducts);
+    setCartItems(updatedItems);
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
   };
 
-  const grandTotal = products.reduce((total, product) => {
-    return total + product.price * product.quantity;
+  const grandTotal = cartItems.reduce((total, item) => {
+    return total + item.price * item.quantity;
   }, 0);
 
+  const handleAddToCart = (productId) => {
+    // Check if the product is already in the cart
+    const existingProduct = cartItems.find((item) => item.id === productId);
+
+    if (existingProduct) {
+      // If the product is already in the cart, update its quantity
+      const updatedItems = cartItems.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCartItems(updatedItems);
+      localStorage.setItem("cart", JSON.stringify(updatedItems));
+    } else {
+      // If the product is not in the cart, add it
+      const productToAdd = products.find((product) => product.id === productId);
+
+      if (productToAdd) {
+        const updatedItems = [...cartItems, { ...productToAdd, quantity: 1 }];
+        setCartItems(updatedItems);
+        localStorage.setItem("cart", JSON.stringify(updatedItems));
+      }
+    }
+  };
+
   return (
-    <div className="">
+    <div id="cartItems" className="cart-items">
       <ShoppingCartHero />
-      <div className="md:w-90% lg:w-80% lg:mx-auto lg:max-w-4xl bg-white font-rubik border border-gray-400 flex flex-col items-center justify-center mt-4 py-8">
-        {products.map((product) => (
+      <div className="md:w-90% lg:w-80% lg:mx-auto lg:max-w-4xl bg-white font-rubik border border-gray-400 flex flex-col items-center justify-center mt-4 py-8 ">
+        {cartItems.map((product, index) => (
           <CartItem
-            key={product.id}
-            onDelete={handleDelete}
+            key={`${product.id}- ${index}`}
+            id={product.id}
+            name={product.name}
+            price={parseFloat(product.price.replace("$", ""))}
+            image={product.imgURL}
+            quantity={product.quantity}
+            onDelete={handleDeleteItem}
             onUpdateQuantity={handleUpdateQuantity}
-            {...product}
           />
         ))}
         <div className="xsm:w-[84%] md:w-[70%] md:max-w-[300px] bg-rose-200 rounded-lg mt-4 p-4 md-[p-8] border-none  max-w-[412px]">

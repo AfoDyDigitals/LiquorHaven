@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Import useNavigate
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import {
   delivery_truck,
@@ -11,6 +11,7 @@ import {
 } from "../assets";
 import { WhyUs } from "../Components/WhyUs";
 import TrendingCard from "../Components/cards/TrendingCard";
+
 import { products } from "../Components/constants";
 import StateDropdown from "../Components/cards/StateDropdown";
 import Footer from "../Components/Footer";
@@ -29,7 +30,7 @@ const Product = () => {
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const location = useLocation();
-  const navigate = useNavigate(); // Use useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Calculate delivery date logic
@@ -59,24 +60,29 @@ const Product = () => {
 
   useEffect(() => {
     // Extract product details from location state
+    console.log("Location State:", location.state);
     if (location.state) {
-      const { imgURL, name, price } = location.state;
+      const { imgURL, name, price, id } = location.state;
       const index = products.findIndex((product) => product.imgURL === imgURL);
       setActiveIndex(index);
-      const initialQuantity = 1; // You can set the initial quantity as needed
+      const initialQuantity = 1;
       setQuantity(initialQuantity);
       const initialTotalPrice =
         initialQuantity * parseFloat(price.replace("$", ""));
       setTotalPrice(initialTotalPrice);
-      setSelectedProduct({ imgURL, name, price });
+      setSelectedProduct({ id, imgURL, name, price });
+      const newSelectedProduct = { imgURL, name, price };
+
+      setSelectedProduct(newSelectedProduct);
     }
   }, [location.state]);
 
   useEffect(() => {
     // Recalculate total price whenever selectedProduct or quantity changes
     if (selectedProduct && typeof selectedProduct.price === "string") {
-      const priceNumber = parseFloat(selectedProduct.price.replace("$", ""));
-      setTotalPrice(quantity * priceNumber);
+      setTotalPrice(
+        quantity * parseFloat(selectedProduct.price.replace("$", ""))
+      );
     }
   }, [selectedProduct, quantity]);
 
@@ -88,7 +94,7 @@ const Product = () => {
 
   const handleQuantityChange = (newQuantity) => {
     if (newQuantity < 1) {
-      return; // Prevent quantity from going less than 1
+      return;
     }
 
     setQuantity(newQuantity);
@@ -99,55 +105,41 @@ const Product = () => {
   };
 
   const handleAddToCart = () => {
-    // Logic to add to cart goes here
+    console.log("Selected Product Before Adding to Cart:", selectedProduct);
     const updatedProducts = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = updatedProducts.find(
+    const existingProductIndex = updatedProducts.findIndex(
       (product) => product.id === selectedProduct.id
     );
 
-    if (existingProduct) {
-      // Update quantity if the product is already in the cart
-      existingProduct.quantity += quantity;
+    if (existingProductIndex !== -1) {
+      updatedProducts[existingProductIndex].quantity += quantity;
     } else {
-      // Add a new product to the cart
-      updatedProducts.push({ ...selectedProduct, quantity });
+      const newItem = {
+        ...selectedProduct,
+        quantity,
+        imgURL: selectedProduct.imgURL,
+        id: selectedProduct.id || 0,
+      };
+      console.log("New Item:", newItem);
+      updatedProducts.push(newItem);
     }
+    console.log("Updated Products:", updatedProducts);
 
     localStorage.setItem("cart", JSON.stringify(updatedProducts));
 
-    // Set the notification message
-    const notificationMessage = `Added ${quantity} ${selectedProduct.name} to the cart!`;
-    setNotificationMessage(notificationMessage);
-
-    // Show the notification
+    // Display a notification with item name and quantity added
     setShowNotification(true);
+    setNotificationMessage(
+      alert(
+        `Added ${quantity} ${selectedProduct.name}${
+          quantity > 1 ? "s" : ""
+        } to cart`
+      )
+    );
 
-    // Log to check if the notification message is set correctly
-    console.log("Notification Message:", notificationMessage);
-
-    // Delay the navigation after showing the notification
-    setTimeout(() => {
-      setShowNotification(false);
-      console.log("Navigating to /cart");
-      // Navigate to the cart page or any other page
-      navigate("/cart");
-    }, 3000);
+    // Navigate to the Cart page with scrollTarget in state
+    navigate("/cart", { state: { scrollTarget: "cartItems" } });
   };
-
-  useEffect(() => {
-    if (showNotification) {
-      // Delay the navigation after showing the notification
-      const timeoutId = setTimeout(() => {
-        setShowNotification(false);
-        console.log("Navigating to /cart");
-        // Navigate to the cart page or any other page
-        navigate("/cart");
-      }, 3000);
-
-      // Clear the timeout if the component unmounts or showNotification becomes false
-      return () => clearTimeout(timeoutId);
-    }
-  }, [showNotification, navigate]);
 
   return (
     <section className=" ">
@@ -297,6 +289,7 @@ const Product = () => {
                 imgURL={product.imgURL}
                 name={product.name}
                 price={product.price}
+                onAddToCart={() => handleAddToCart(product)}
               />
             ))}
           </div>
@@ -313,6 +306,7 @@ const Product = () => {
                   imgURL={product.imgURL}
                   name={product.name}
                   price={product.price}
+                  onAddToCart={() => handleAddToCart(product)}
                   style={{ opacity: activeIndex === index ? 1 : 0.5 }}
                 />
               ))}

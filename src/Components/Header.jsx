@@ -18,11 +18,13 @@ function Header() {
   return (
     <div className="w-[100vw] overflow-none">
       <div className="font-rubik relative z-20 flex justify-center items-center mt-[25px]  mx-[16px] md:flex  mx-[32px] lg:flex gap-[0px] mx-[20px]  justify-between">
-        <img
-          className="w-[70px] h-[24px] md:w-[146px] mr-[10px] lg:w-[260px] h-[50px]"
-          src="../src/assets/LiquorHAVEN LOGO_.svg"
-          alt="LiquorHaven Logo"
-        />
+        <Link to="/">
+          <img
+            className="w-[70px] h-[24px] md:w-[146px] mr-[10px] lg:w-[260px] h-[50px]"
+            src="../src/assets/LiquorHAVEN LOGO_.svg"
+            alt="LiquorHaven Logo"
+          />
+        </Link>
 
         {/* searchbar */}
         <div className="hidden md:flex  justify-center items-center w-[381px] h-[46px] rounded-[4px] border border-[#9E9496] lg:w-[600px] h-[62px]">

@@ -40,7 +40,7 @@ const CartItem = ({
       const timeoutId = setTimeout(() => {
         setShowAlert(false);
         onDelete(id);
-      }, 2000); // 2000 milliseconds (2 seconds) delay
+      }, 400);
 
       return () => clearTimeout(timeoutId);
     }
