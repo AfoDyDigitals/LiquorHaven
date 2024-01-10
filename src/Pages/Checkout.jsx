@@ -3,8 +3,7 @@ import React from "react";
 import NavBar from "../Components/NavBar";
 import OrderSummary from "../Components/OrderSummary";
 import OrderOptional from "../Components/OrderOptional";
-import Testimonial from "../Components/Testimonial";
-import Footer from "../Components/Footer";
+
 
 const Checkout = () => {
   return (
@@ -148,8 +147,7 @@ const Checkout = () => {
         <OrderOptional />
         </div>
       </div>
-      <Testimonial />
-      <Footer />
+  
     </>
   );
 };
