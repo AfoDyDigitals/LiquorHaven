@@ -67,31 +67,31 @@ function OrderSummary() {
             </button>
             </div>
           </div>
-          <div className="flex bg-[#F9F7F7] w-full  md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center  ">
-            <p className="text-[13px] md:text-lg lg:text-xl text-[#868889] font-normal  ">
+          <div className="flex bg-[#F9F7F7] w-full text-[13px] md:text-base lg:text-xl md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center  ">
+            <p className=" text-[#868889] font-normal  ">
               Payment Method
             </p>
-            <p className="text-[#FF4B55] ">CHANGE</p>
+            <p className="text-[#FF4B55]">CHANGE</p>
           </div>
-          <div className="flex bg-[#F9F7F7] w-full md:w-[660px] lg:w-[1000px] h-11 md:h-[50px] px-[13px] md:px-[16px] rounded justify-between items-center ">
-            <p className="text-xs font-normal md:text-lg lg:text-xl  text-[#868889] ">
+          <div className="flex bg-[#F9F7F7] w-full text-[13px] md:text-base lg:text-xl md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center ">
+            <p className=" font-normal text-[#868889] ">
               Delivery Address
             </p>
             <p className="text-[#FF4B55]">CHANGE</p>
           </div>
-          <div className="flex bg-[#F9F7F7] w-full md:w-[660px] lg:w-[1000px]  h-11 md:h-[50px] px-[13px] md:px-[16px] rounded justify-between items-center ">
-            <p className="text-xs md:text-lg lg:text-xl font-normal  text-[#868889]">
+          <div className="flex bg-[#F9F7F7] w-full text-[13px] md:text-base lg:text-xl md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center  ">
+            <p className="font-normal  text-[#868889]">
               Delivery Method
             </p>
             <p className="text-[#FF4B55]">CHANGE</p>
           </div>
         </div>
-        <div className="text-[#D92D20]  md:font-semibold sm:text-sm sm:-mt-[24px] sm:ml-[21px] md:-mt-[550px] md:ml-[14px] lg:text-xl lg:ml-[23px] lg:w-[266px] lg:-mt-[650px] cursor-pointer" onClick={handleAddressTextClick} >
+        <div className="text-[#D92D20]  md:font-semibold sm:text-sm sm:-mt-[40px] sm:ml-[21px] md:-mt-[550px] md:ml-[14px] lg:text-xl lg:ml-[23px] lg:w-[266px] lg:-mt-[650px] cursor-pointer" onClick={handleAddressTextClick} >
           Ship to a different address?
         </div>
         {showAddressTextarea && (
         <textarea
-          className="sm:mt-1 md:mt-2 w-full  h-14 p-2 sm:h-12 border border-gray-300 rounded lg:ml-[14px] sm:w-[310px] sm:ml-3 md:w-[660px] lg:w-[1000px]"
+          className="sm:mt-1 md:mt-2 w-full  h-14 p-2 sm:h-12 border border-gray-300 rounded lg:ml-[14px] sm:text-xs sm:w-[310px] sm:ml-3 md:w-[660px] lg:w-[1000px] lg:text-base"
           placeholder="Enter your new address..."
         ></textarea>
       )}

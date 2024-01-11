@@ -3,7 +3,6 @@ import React from "react";
 import NavBar from "../Components/NavBar";
 import OrderSummary from "../Components/OrderSummary";
 import OrderOptional from "../Components/OrderOptional";
-
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
@@ -11,29 +10,29 @@ const Checkout = () => {
     <>
       <NavBar />
       <div className="font-rubik w-[100vw]  mx-auto">
-        <div className="w-[100vw] h-[75px] bg-rose-200 flex items-center text-center mx-auto justify-center gap-[52.9px]">
+        <div className="w-[100vw] h-[75px] bg-zinc-800 flex items-center text-center mx-auto justify-center gap-[52.9px]">
           <Link to="/">
-            <p className="sm:w-[36px] md:text-[13px] md:w-[36px]   text-stone-500 lg:text-xl font-normal leading-normal">
+            <p className="sm:w-[36px] md:text-[13px] md:w-[36px]   text-white lg:text-xl font-normal leading-normal">
               Home
             </p>
           </Link>
-          <div className="w-3 h-3.5 relative origin-top-left rotate-[-3.87deg]">
+          <div className="w-3 h-3.5 sm:-mx-[30px] relative origin-top-left lg:-mx-5 rotate-[-3.87deg]">
             {" "}
             <img
               src="src/assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.png"
               alt=""
             />{" "}
           </div>
-          <div className="sm:w-[63px] md:w-[63px] md:text-[13px] md:leading-none text-pink-900 lg:text-xl font-bold leading-normal">
+          <div className="sm:w-[63px] md:w-[63px] md:text-[13px] md:leading-none text-red-400 lg:text-xl font-bold lg:leading-normal lg:w-[97px]">
             Checkout
           </div>
         </div>
 
         <div className="w-[100vw] sm:mt-[53px] sm:ml-[24.18px] sm:text-xs lg:text-xl lg:mt-[77px] lg:-mb-[120px] lg:ml-[137px] font-normal font-rubik relative">
           <div className=" z-10 text-[13px] md:text-[16px] lg:text-xl ">
-            Add N7,000 to cart and get shipping!
+            Add N7,000 more and get free shipping!
           </div>
-          <div className="absolute sm:-bottom-2 left-0 sm:w-[240px] lg:w-[350px] h-[1px] bg-red-500"></div>
+          <div className="absolute sm:-bottom-2 left-0 sm:w-[245px] md:w-[305px] lg:w-[380px] h-[1px] bg-red-500"></div>
         </div>
 
         <div className="sm:mt-[23px] md:w-[100vw] pb-[50px] bg-rose-100 border border-white lg:mt-[152px] font-rubik">
@@ -143,7 +142,7 @@ const Checkout = () => {
                 <textarea
                   className="w-[318px] sm:items-center md:w-[680px] lg:mt-1 p-2  lg:w-full border rounded-md bg-neutral-100"
                   name="additional_info"
-                  rows="2"
+                  rows="1"
                 ></textarea>
               </div>
             </form>
