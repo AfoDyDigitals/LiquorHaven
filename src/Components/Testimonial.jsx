@@ -91,7 +91,7 @@ function Testimonial() {
           ref={sliderRef}
           beforeChange={handleBeforeChange}
         >
-          <div style={{ width: "500px" }}>
+          <div style={{ width: "500px" }} className="">
             <TestimonialCard />
           </div>
           <div style={{ width: "500px" }}>

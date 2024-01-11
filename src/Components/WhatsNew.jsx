@@ -1,10 +1,9 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import TrendingCard from "./cards/TrendingCard";
 
-import { products } from "./constants";
+import { products3 } from "./constants";
 
-export const Trending = () => {
+export const WhatsNew = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const cardsRef = useRef(null);
@@ -30,7 +29,7 @@ export const Trending = () => {
     <section className="my-[30px] md:mt-14">
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-[20px] md:text-[39px] font-[700] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px] ">
-          Trending Today
+          What’s New?
         </h2>
 
         <p className="font-[400] text-[13px] ml-3 md:ml-0 text-center">
@@ -42,7 +41,7 @@ export const Trending = () => {
           className="hidden md:flex flex-wrap justify-center  items-center md:gap-12 lg:gap-[100px] mx-auto"
           ref={cardsRef}
         >
-          {products.map((product, index) => (
+          {products3.map((product, index) => (
             <TrendingCard
               key={index}
               imgURL={product.imgURL}
@@ -59,7 +58,7 @@ export const Trending = () => {
             ref={cardsRef}
           >
             <div className="flex flex-row items-center gap-[13px]">
-              {products.map((product, index) => (
+              {products3.map((product, index) => (
                 <TrendingCard
                   key={index}
                   imgURL={product.imgURL}
@@ -69,7 +68,7 @@ export const Trending = () => {
               ))}
             </div>
             <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {products.map((_, index) => (
+              {products3.map((_, index) => (
                 <div
                   key={index}
                   onClick={() => handleDotClick(index)}

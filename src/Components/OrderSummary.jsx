@@ -47,9 +47,9 @@ function OrderSummary() {
           </div>
         </div>
 
-        <div className="sm:text-sm mt-[39px] max-w-[333px] h-[318px]  flex flex-col justify-start items-start gap-[30px] md-gap-[32px] px-2 md:w-[660px] md:h-[897px] lg:w-[1000px] lg:h-[994px] md:text-lg md:leading-6">
+        <div className="sm:text-sm mt-[39px] max-w-[333px] h-[318px]  flex flex-col justify-start items-start gap-[30px] md-gap-[32px]  px-2 md:w-[660px] md:h-[897px] lg:w-[1000px] lg:h-[994px] md:text-lg md:leading-6">
           <div className="flex justify-between items-center sm:w-[240px] md:w-[660px] lg:w-[1000px]  h-[50px] sm:mt-2 ">
-            <div className="sm:w-80 md:w-[400px]  relative flex items-center ">
+            <div className="sm:w-[280px] md:w-[400px] relative flex items-center ">
               <img
                 className="absolute left-0 top-0 h-8 md:h-10 p-2"
                 src="src/assets/fluent payment.png"
@@ -67,7 +67,7 @@ function OrderSummary() {
             </button>
             </div>
           </div>
-          <div className="flex bg-[#F9F7F7] w-full  md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 h-11 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center  ">
+          <div className="flex bg-[#F9F7F7] w-full  md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center  ">
             <p className="text-[13px] md:text-lg lg:text-xl text-[#868889] font-normal  ">
               Payment Method
             </p>
@@ -86,21 +86,21 @@ function OrderSummary() {
             <p className="text-[#FF4B55]">CHANGE</p>
           </div>
         </div>
-        <div className="text-[#D92D20]  md:font-semibold sm:text-sm sm:-mt-[10px] sm:ml-[21px] md:-mt-[550px] md:ml-[14px] lg:text-xl lg:ml-[23px] lg:w-[266px] lg:-mt-[650px] cursor-pointer" onClick={handleAddressTextClick} >
+        <div className="text-[#D92D20]  md:font-semibold sm:text-sm sm:-mt-[24px] sm:ml-[21px] md:-mt-[550px] md:ml-[14px] lg:text-xl lg:ml-[23px] lg:w-[266px] lg:-mt-[650px] cursor-pointer" onClick={handleAddressTextClick} >
           Ship to a different address?
         </div>
         {showAddressTextarea && (
         <textarea
-          className="mt-2 w-full h-24 p-2 border border-gray-300 rounded"
+          className="sm:mt-1 md:mt-2 w-full  h-14 p-2 sm:h-12 border border-gray-300 rounded lg:ml-[14px] sm:w-[310px] sm:ml-3 md:w-[660px] lg:w-[1000px]"
           placeholder="Enter your new address..."
         ></textarea>
       )}
 
-        <div className="flex flex-col items-center sm:mt-[28px] md:mt-[42px] lg:mt-20">
-          <button className=" bg-black text-white justify-center sm:p-2 sm:text-sm md:p-3 md: text-lg lg:p-4 lg:w-[300px]  lg:-mt-[36px] lg:font-normal leading-normal lg:text-xl">
+        <div className="flex flex-col items-center sm:mt-[15px] md:mt-[42px] lg:mt-18">
+          <button className=" bg-black text-white justify-center sm:p-1 sm:text-xs md:p-3 md:text-lg lg:p-4 lg:w-[300px]  lg:font-normal leading-normal lg:text-xl">
             MAKE PAYMENT
           </button>
-          <button className="sm:mt-[28px] sm:text-sm w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text[25px] md:mt-[37px] h-[20px] md:h-[30px] md:leading-[-px]">
+          <button className="sm:mt-[10px] sm:text-[12px] w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text-[18px] md:mt-[25px] h-[20px] md:h-[30px] lg:mt-[15px] md:leading-[-px]">
             Return to cart
           </button>
         </div>

@@ -1,29 +1,27 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import NavBar from "./NavBar";
+import { cart_heroImg } from "../assets";
+import { Link } from "react-router-dom";
 
 function ShoppingCartHero() {
   return (
     <>
-      <div>
+      <div className="overflow-hidden">
         <NavBar />
-        <div className="flex relative font-rubik mt-[9px] text-black">
-          <div className="">
-            <img src="src/assets/Cartn.png" alt="Shopping Cart" />
-          </div>
-          <div
-            className=" absolute  
-              mt-[304px] ml-[1225px] mr-[232px] w-[271px] h-[47px] text-center text-[39px] font-medium  leading-[46.80px] "
-          >
-            Shopping Cart
+        <div className="flex relative mt-[4px] font-rubik  text-black w-full">
+          <div className="w-full h-full md:h-[56vh] lg:h-[80vh]">
+            <img
+              src={cart_heroImg}
+              alt="Shopping Cart"
+              className="w-full md:h-[100%]"
+            />
           </div>
         </div>
       </div>
-      <div className="w-full md:w-[164px] md:py-[29px] md:h-[20px] md:ml-[22px] md:mr-[558px] lg:w-[368px] lg:h-[95px] mt-[49px] lg:ml-[112px] lg:mr-[1239px] bg-red-500 rounded-lg flex text-center justify-center items-center">
-        <div className="text-red-50 text-[18px] md:w-[150px] md:text-base md:py-[12px] md:leading-tight lg:text-[31px] lg:leading-[37.20px] lg:font-medium lg:w-[288px] h-[37px] font-rubik">
-          Continue Shopping
-        </div>
-      </div>
+      <button className="mt-[49px] mx-[10%] sm:mx-[25%] md:mx-0 md:ml-6 lg:ml-[112px] mb-4 md:mb-8 bg-[#B85652] rounded-lg text-center text-[16px] lg:text-[31px] leading-[120%]  font-[500] py-5 px-4 md:px-8 text-[#FDF0F0] hover:text-[#000] hover:bg-rose-200 hover:ease-in-out ">
+        <Link to="/">Continue Shopping</Link>
+      </button>
     </>
   );
 }

@@ -1,57 +1,109 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
-import ShoppingCartHero from '../Components/ShoppingCartHero';
-import CartItem from '../Components/CartItem';
+import React, { useState, useEffect } from "react";
+import ShoppingCartHero from "../Components/ShoppingCartHero";
+import CartItem from "../Components/cartItem/CartItem";
+import Testimonial from "../Components/Testimonial";
+import Footer from "../Components/Footer";
+import { Link } from "react-router-dom";
+import { products } from "../Components/constants";
 
-const Cart = () => {
-  const [products, setProducts] = useState([
-    { id: 1, name: 'Absolut Raspberry', price: 140.00, image: 'cart product.png', quantity: 0 },
-    { id: 2, name: 'Corona Extra', price: 19.99, image: 'corona extra.png', quantity: 0 },
-    { id: 3, name: 'MXCN Cola', price: 29.99, image: 'mxcn cola.png', quantity: 0 },
-  ]);
+// eslint-disable-next-line react/prop-types
+const Cart = ({ location }) => {
+  const [cartItems, setCartItems] = useState([]);
 
-  const handleDelete = (productId) => {
-    const updatedProducts = products.filter(product => product.id !== productId);
-    setProducts(updatedProducts);
+  useEffect(() => {
+    // Retrieve cart items from local storage
+    const storedItems = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedItems);
+  }, []);
+  useEffect(() => {
+    // eslint-disable-next-line react/prop-types
+    const scrollTarget = location?.state?.scrollTarget;
+    if (scrollTarget) {
+      const element = document.getElementById(scrollTarget);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+
+  const handleDeleteItem = (id) => {
+    // Update cart items after deleting an item
+    const updatedItems = cartItems.filter((item) => item.id !== id);
+    setCartItems(updatedItems);
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
   };
 
-  const handleUpdateQuantity = (productId, newQuantity) => {
-    const updatedProducts = products.map((product) =>
-      product.id === productId ? { ...product, quantity: newQuantity } : product
+  const handleUpdateQuantity = (id, newQuantity) => {
+    // Update cart items after updating quantity
+    const updatedItems = cartItems.map((item) =>
+      item.id === id ? { ...item, quantity: newQuantity } : item
     );
-    setProducts(updatedProducts);
+    setCartItems(updatedItems);
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
   };
 
-  const grandTotal = products.reduce((total, product) => {
-    return total + product.price * product.quantity;
+  const grandTotal = cartItems.reduce((total, item) => {
+    return total + item.price * item.quantity;
   }, 0);
 
+  // eslint-disable-next-line no-unused-vars
+  const handleAddToCart = (productId) => {
+    // Check if the product is already in the cart
+    const existingProduct = cartItems.find((item) => item.id === productId);
+
+    if (existingProduct) {
+      // If the product is already in the cart, update its quantity
+      const updatedItems = cartItems.map((item) =>
+        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCartItems(updatedItems);
+      localStorage.setItem("cart", JSON.stringify(updatedItems));
+    } else {
+      // If the product is not in the cart, add it
+      const productToAdd = products.find((product) => product.id === productId);
+
+      if (productToAdd) {
+        const updatedItems = [...cartItems, { ...productToAdd, quantity: 1 }];
+        setCartItems(updatedItems);
+        localStorage.setItem("cart", JSON.stringify(updatedItems));
+      }
+    }
+  };
+
   return (
-    <div>
-      <ShoppingCartHero /> 
-      <div className=' lg:w-[1500px] h-[2167px] bg-white font-rubik border mx-[114px] border-gray-400 items-center justify-center mt-[49px] py-[121px] md:w-[702px]'>
-        {products.map((product) => (
+    <div id="cartItems" className="cart-items">
+      <ShoppingCartHero />
+      <div className="md:w-90% lg:w-80% lg:mx-auto lg:max-w-4xl bg-white font-rubik border border-gray-400 flex flex-col items-center justify-center mt-4 py-8 ">
+        {cartItems.map((product, index) => (
           <CartItem
-            key={product.id}
-            onDelete={handleDelete}
+            key={`${product.id}- ${index}`}
+            id={product.id}
+            name={product.name}
+            price={parseFloat(product.price.replace("$", ""))}
+            image={product.imgURL}
+            quantity={product.quantity}
+            onDelete={handleDeleteItem}
             onUpdateQuantity={handleUpdateQuantity}
-            {...product}
           />
         ))}
-        <div className="w-[606px] h-[102px] bg-rose-200 rounded-[5px] mt-[65.03px] border border-stone-500 mx-[453px] ">
-          <div className='flex text-[39px] font-normal leading-[46.80px] gap-[224px] text-center items-center justify-center my-[28px]'>
+        <div className="xsm:w-[84%] md:w-[70%] md:max-w-[300px] bg-rose-200 rounded-lg mt-4 p-4 md-[p-8] border-none  max-w-[412px]">
+          <div className="flex items-center justify-between leading-[120%] text-[16px] font-normal">
             <div>SubTotal </div>
             <div>${grandTotal.toFixed(2)}</div>
           </div>
         </div>
-      
-      <div className="w-[636px] h-[38px] text-black text-[31px] font-medium leading-[37.20px] mx-[438px] text-center my-[36px] ">
-        Shipping and taxes calculated at checkout
+        <div className="w-[90%] md:w-full text-black text-[16px] leading-[120%] md:text-[20px] font-medium mx-4 my-4 text-center">
+          Shipping and taxes calculated at checkout
+        </div>
+        <Link to="/checkout">
+          <div className="w-full md:w-[260px] cursor-pointer max-w-[368px] bg-[#B85652]   text-red-50 hover:text-[#000] hover:bg-rose-200  rounded-lg p-4 justify-center items-center inline-flex">
+            <p className="text-lg md:text-[20px]  font-medium">Checkout</p>
+          </div>
+        </Link>
       </div>
-      <div className="w-[368px] h-[95px] py-[29px] mx-[572px] bg-red-500 rounded-lg justify-center items-center gap-2.5 inline-flex">
-        <div className="text-red-50 text-[31px] font-medium  leading-[37.20px] ">Checkout</div>
-      </div>
-      </div>
+      <Testimonial />
+      <Footer />
     </div>
   );
 };

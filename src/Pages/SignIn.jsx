@@ -62,7 +62,7 @@ export const SignIn = () => {
                 autoComplete="current-password" // tells browser to suggest password
                 id="password"
                 required
-                className="mt-[41px] md:mt-[51px] lg:mt-[59px] w-full bg-[#F7F6F6] py-[20px] px-6 outline-none font-rubik font-[300] leading-none text-[13px] md:text-[16px] lg:text-[20px] text-[#E66B66] rounded-sm placeholder:font-[300] placeholder-[#000] focus:placeholder-[rgb(230,107,102)] focus:border-l-2 focus:border-t-2 focus:border-[#E66B66]"
+                className="w-[80%] md:w-full mt-[41px] md:mt-[51px] lg:mt-[59px]  bg-[#F7F6F6] py-[20px] px-6 outline-none font-rubik font-[300] leading-none text-[13px] md:text-[16px] lg:text-[20px] text-[#E66B66] rounded-sm placeholder:font-[300] placeholder-[#000] focus:placeholder-[rgb(230,107,102)] focus:border-l-2 focus:border-t-2 focus:border-[#E66B66]"
                 placeholder="Password"
               />
               <div className="flex flex-row gap-[20px] mt-[43px] md:mt-[29.43px] lg:mt-[46px] justify-center items-center">
@@ -70,7 +70,7 @@ export const SignIn = () => {
                   Forgot your password?
                 </p>
                 <p className="leading-none text-[12px] md:text-[16px] lg:text-[20px] font-[400] text-[#E66B66] hover:underline hover:cursor-pointer">
-                  <Link to="/forgotpassword">click here</Link>{" "}
+                  <Link to="/forgotpassword">click here</Link>
                 </p>
               </div>
               {/* Sign In button */}
