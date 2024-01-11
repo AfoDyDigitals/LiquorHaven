@@ -23,7 +23,7 @@ const Checkout = () => {
               alt=""
             />{" "}
           </div>
-          <div className="sm:w-[63px] md:w-[63px] md:text-[13px] md:leading-none text-red-400 lg:text-xl font-bold lg:leading-normal lg:w-[97px]">
+          <div className="sm:w-[63px] md:w-[63px] md:text-[13px] md:leading-none text-red-400 lg:text-xl font-bold lg:leading-normal lg:-ml-3">
             Checkout
           </div>
         </div>
