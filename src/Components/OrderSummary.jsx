@@ -15,11 +15,11 @@ function OrderSummary() {
       >
         <div className="flex sm:gap-[76px] md:gap-[217px] lg:gap-[258px] lg:ml-[70px]">
           <img
-            className="sm:w-[20px] h-[20px]"
+            className="sm:w-[20px] h-[20px] lg:w-[40px] lg:h-[30px] md:w-[28px] md:h-[20px]"
             src="src/assets/clarity_arrow-line.png"
             alt=""
           />
-          <div className="text-[#3B3B3B] text-base md:text-[25px] lg:text[31px] lg:font-bold leading-[19.2px] md:leading-6 lg:leading-9 text-center">
+          <div className="text-[#3B3B3B] text-base md:text-[25px] lg:text-[31px] lg:font-bold leading-[19.2px] md:leading-6 lg:leading-9 text-center">
             Order Summary
           </div>
         </div>
@@ -91,7 +91,8 @@ function OrderSummary() {
             placeholder="Enter your new address..."
           ></textarea>
         )}
-        <div className="text-[#3B3B3B] sm:mt-10 text-base md:text-[18px] md:mt-10 lg:text[31px] lg:font-bold leading-[19.2px] lg:mt-[101px] md:leading-6 lg:leading-9 text-center">
+        
+        <div className="text-[#3B3B3B] sm:mt-10 text-base md:text-[18px] md:mt-10 lg:text-[28px] lg:font-bold leading-[19.2px] lg:mt-[101px] md:leading-6 lg:leading-9 text-center">
           Orders note (optional)
         </div>
         <div className="sm:h-36 sm:w-80 sm:ml-1 sm:mt-2 lg:w-[1000px] lg:h-[196.34px] md:w-[680px]  md:h-38  lg:pl-[22px] lg:mt-5 bg-neutral-100 rounded justify-start items-center text-neutral-400 inline-flex">
