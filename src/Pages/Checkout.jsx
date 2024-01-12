@@ -2,7 +2,7 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
 import OrderSummary from "../Components/OrderSummary";
-import OrderOptional from "../Components/OrderOptional";
+
 import { Link } from "react-router-dom";
 
 const Checkout = () => {
@@ -55,8 +55,8 @@ const Checkout = () => {
               <div className="absolute sm:bottom-2 sm:w-[314px] sm:mx-[8px] md:w-[680px] md:mx-[16px]  lg:-bottom-2 lg:ml-0 lg:w-full h-[1px] bg-neutral-500"></div>
             </div>
 
-            <form className="lg:space-y-4 font-rubik">
-              <div className="sm:flex-row sm:mx-[8px]  md:grid md:grid-cols-2 md:gap-[12px] lg:grid grid-cols-2 lg:gap-[204px] lg:mx-[95px]">
+            <form className="lg:space-y-4 font-rubik ">
+              <div className="sm:flex-row sm:mx-[8px] md:grid md:grid-cols-2 md:gap-[12px] lg:grid grid-cols-2 lg:gap-[204px] lg:mx-[95px]">
                 <div>
                   <label className=" sm:text-xs sm:font-normal sm:leading-tight md:text-base lg:text-xl  text-stone-500 font-normal leading-normal w-[384px] h-[24px] ">
                     First Name*
@@ -110,7 +110,7 @@ const Checkout = () => {
               </div>
 
               <div className="sm:flex-row sm:mx-[8px] md:grid md:grid-cols-2 md:mt-5 md:gap-[12px] lg:grid grid-cols-2 lg:gap-[204px] lg:mx-[95px]">
-                <div>
+              <div>
                   <label className="sm:text-xs sm:font-normal sm:leading-tight md:text-base  lg:text-xl text-stone-500 font-normal leading-normal w-[384px] h-[24px] ">
                     Shipping Address*
                   </label>
@@ -118,7 +118,7 @@ const Checkout = () => {
                     className="sm:p-1 mt-1 md:p-2 lg:p-3 w-full border rounded-md bg-neutral-100"
                     name="shipping_address"
                     required
-                    rows="1.2"
+                    rows="2"
                   ></textarea>
                 </div>
 
@@ -148,7 +148,7 @@ const Checkout = () => {
             </form>
           </div>
           <OrderSummary />
-          <OrderOptional />
+          
         </div>
       </div>
   

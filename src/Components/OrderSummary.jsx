@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 
 function OrderSummary() {
-
   const [showAddressTextarea, setShowAddressTextarea] = useState(false);
   const handleAddressTextClick = () => {
     setShowAddressTextarea(!showAddressTextarea);
@@ -12,7 +11,7 @@ function OrderSummary() {
     <div className="sm:mt-[9px] lg:mt-[83px] font-rubik">
       <div
         id="orderSummaryGroup"
-        className="w-[349px] h-[713px] px-2 md:px-4 lg:px-[100px] lg:py-[42px] md:py-[32px] py-[30px] md:w-[712px] md:h-[897px] lg:w-[1200px] lg:h-[994px] shadow-[2px_3px_30px_0_rgba(253,225,223,1)] bg-[#FEFEFE] gap-[30px] md:gap-[32px] border mx-auto border-solid"
+        className="w-[349px] h-[1050px] px-2 md:px-4 lg:px-[100px] lg:py-[42px] md:py-[32px] py-[30px] md:w-[712px] md:h-[1200px] lg:w-[1200px] lg:h-[1754px] shadow-[2px_3px_30px_0_rgba(253,225,223,1)] bg-[#FEFEFE] gap-[30px] md:gap-[32px] border mx-auto border-solid"
       >
         <div className="flex sm:gap-[76px] md:gap-[217px] lg:gap-[258px] lg:ml-[70px]">
           <img
@@ -20,7 +19,7 @@ function OrderSummary() {
             src="src/assets/clarity_arrow-line.png"
             alt=""
           />
-          <div className="text-[#3B3B3B] text-base md:text-[25px] lg:text[31px] lg: font-bold leading-[19.2px] md:leading-6 lg:leading-9 text-center">
+          <div className="text-[#3B3B3B] text-base md:text-[25px] lg:text[31px] lg:font-bold leading-[19.2px] md:leading-6 lg:leading-9 text-center">
             Order Summary
           </div>
         </div>
@@ -61,48 +60,57 @@ function OrderSummary() {
                 className="sm:text-[10px] lg:text-xl pl-10 w-full h-10 md:h-12 rounded border border-[#C4C4C4]"
               />
             </div>
-           <div className="">
-            <button className=" font-medium  text-[13px] md:text-base lg:text-xl text-[#8D8386]  md:leading-6 leading-[15.6px]">
-              APPLY
-            </button>
+            <div className="">
+              <button className=" font-medium  text-[13px] md:text-base lg:text-xl text-[#8D8386]  md:leading-6 leading-[15.6px]">
+                APPLY
+              </button>
             </div>
           </div>
-          <div className="flex bg-[#F9F7F7] w-full text-[13px] md:text-base lg:text-xl md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center  ">
-            <p className=" text-[#868889] font-normal  ">
-              Payment Method
-            </p>
+          <div className="flex bg-[#F9F7F7] w-full text-[13px] md:text-base lg:text-xl md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center lg:mt-[73px]">
+            <p className=" text-[#868889] font-normal  ">Payment Method</p>
             <p className="text-[#FF4B55]">CHANGE</p>
           </div>
           <div className="flex bg-[#F9F7F7] w-full text-[13px] md:text-base lg:text-xl md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center ">
-            <p className=" font-normal text-[#868889] ">
-              Delivery Address
-            </p>
+            <p className=" font-normal text-[#868889] ">Delivery Address</p>
             <p className="text-[#FF4B55]">CHANGE</p>
           </div>
           <div className="flex bg-[#F9F7F7] w-full text-[13px] md:text-base lg:text-xl md:w-[660px] lg:w-[1000px] leading-[15.6px] md:leading-6 sm:h-8 md:h-[50px] rounded px-[13px] md:px-[16px] justify-between items-center  ">
-            <p className="font-normal  text-[#868889]">
-              Delivery Method
-            </p>
+            <p className="font-normal  text-[#868889]">Delivery Method</p>
             <p className="text-[#FF4B55]">CHANGE</p>
           </div>
         </div>
-        <div className="text-[#D92D20]  md:font-semibold sm:text-sm sm:-mt-[40px] sm:ml-[21px] md:-mt-[550px] md:ml-[14px] lg:text-xl lg:ml-[23px] lg:w-[266px] lg:-mt-[650px] cursor-pointer" onClick={handleAddressTextClick} >
+        <div
+          className="text-[#D92D20]  md:font-semibold sm:text-sm sm:-mt-[40px] sm:ml-[21px] md:-mt-[550px] md:ml-[14px] lg:text-xl lg:ml-[23px] lg:w-[266px] mt-5 cursor-pointer"
+          onClick={handleAddressTextClick}
+        >
           Ship to a different address?
         </div>
         {showAddressTextarea && (
-        <textarea
-          className="sm:mt-1 md:mt-2 w-full  h-14 p-2 sm:h-12 border border-gray-300 rounded lg:ml-[14px] sm:text-xs sm:w-[310px] sm:ml-3 md:w-[660px] lg:w-[1000px] lg:text-base"
-          placeholder="Enter your new address..."
-        ></textarea>
-      )}
+          <textarea
+            className="sm:mt-1 md:mt-2 w-full  lg:h-20 p-2 sm:h-12 border border-gray-300 rounded lg:ml-[14px] sm:text-xs sm:w-[310px] sm:ml-3 md:w-[660px] lg:w-[1000px] lg:text-base"
+            placeholder="Enter your new address..."
+          ></textarea>
+        )}
+        <div className="text-[#3B3B3B] sm:mt-10 text-base md:text-[18px] md:mt-10 lg:text[31px] lg:font-bold leading-[19.2px] lg:mt-[101px] md:leading-6 lg:leading-9 text-center">
+          Orders note (optional)
+        </div>
+        <div className="sm:h-36 sm:w-80 sm:mt-2 lg:w-[1000px] lg:h-[196.34px] md:w-[680px]  md:h-38 pl-[22px] lg:mt-5 bg-neutral-100 rounded justify-start items-center inline-flex">
+          <div className="sm:w-[250px] sm:-mt-28 md:-mt-30 md:w-[520px] lg:w-[559px] text-neutral-700 sm:text-[10px] lg:text-lg md:text-[10px]  font-normal font-rubik leading-[28.80px]">
+            Notes about your orders, special note for delivery.
+          </div>
+        </div>
 
-        <div className="flex flex-col items-center sm:mt-[15px] md:mt-[42px] lg:mt-18">
-          <button className=" bg-black text-white justify-center sm:p-1 sm:text-xs md:p-3 md:text-lg lg:p-4 lg:w-[300px]  lg:font-normal leading-normal lg:text-xl">
+        <div className="flex flex-col items-center sm:mt-[40px] md:mt-[42px] lg:mt-[100px]">
+          <button className=" bg-black text-white justify-center sm:p-1 sm:text-xs md:p-2 md:text-base lg:p-3 lg:w-[200px]  lg:font-normal leading-normal lg:text-xl">
             MAKE PAYMENT
           </button>
-          <button className="sm:mt-[10px] sm:text-[12px] w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text-[18px] md:mt-[25px] h-[20px] md:h-[30px] lg:mt-[15px] md:leading-[-px]">
+          <button className="sm:mt-[10px] sm:text-[12px] w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text-[16px] md:mt-[25px] h-[20px] md:h-[30px] lg:mt-[20px] md:leading-[-px]">
             Return to cart
           </button>
+        </div>
+        <div className=" flex gap-5 sm:text-xs sm:mt-[80px] sm:ml-[7px] md:text-base md:mt-14 md:ml-[16px] lg:text-xl lg:font-normal leading-normal lg:mt-[160px] lg:ml-[80px]">
+          <div>Return policy</div>
+          <div>Term of Service</div>
         </div>
       </div>
     </div>
