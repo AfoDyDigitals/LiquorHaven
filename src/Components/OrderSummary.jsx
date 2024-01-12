@@ -95,7 +95,7 @@ function OrderSummary() {
           Orders note (optional)
         </div>
         <div className="sm:h-36 sm:w-80 sm:mt-2 lg:w-[1000px] lg:h-[196.34px] md:w-[680px]  md:h-38 pl-[22px] lg:mt-5 bg-neutral-100 rounded justify-start items-center inline-flex">
-          <div className="sm:w-[250px] sm:-mt-28 md:-mt-30 md:w-[520px] lg:w-[559px] text-neutral-700 sm:text-[10px] lg:text-lg md:text-[10px]  font-normal font-rubik leading-[28.80px]">
+          <div className="sm:w-[250px] sm:-mt-28 md:-mt-30 md:w-[520px] lg:w-[559px] text-neutral-700 sm:text-[10px] lg:text-base md:text-[10px]  font-normal font-rubik leading-[28.80px]">
             Notes about your orders, special note for delivery.
           </div>
         </div>
