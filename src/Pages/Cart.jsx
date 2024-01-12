@@ -1,12 +1,13 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import ShoppingCartHero from "../Components/ShoppingCartHero";
 import CartItem from "../Components/cartItem/CartItem";
-
 import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { products } from "../Components/constants";
 
+// eslint-disable-next-line react/prop-types
 const Cart = ({ location }) => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -16,6 +17,7 @@ const Cart = ({ location }) => {
     setCartItems(storedItems);
   }, []);
   useEffect(() => {
+    // eslint-disable-next-line react/prop-types
     const scrollTarget = location?.state?.scrollTarget;
     if (scrollTarget) {
       const element = document.getElementById(scrollTarget);
@@ -45,6 +47,7 @@ const Cart = ({ location }) => {
     return total + item.price * item.quantity;
   }, 0);
 
+  // eslint-disable-next-line no-unused-vars
   const handleAddToCart = (productId) => {
     // Check if the product is already in the cart
     const existingProduct = cartItems.find((item) => item.id === productId);

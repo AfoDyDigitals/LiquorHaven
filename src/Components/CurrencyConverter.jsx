@@ -1,6 +1,8 @@
-import React from "react";
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
 
-function CurrencyConverter({ isVisible, toggleCurrencyConverter }) {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+function CurrencyConverter({isVisible, toggleCurrencyConverter}) {
   return (
     <>
       <div className="font-rubik bg-white text-black absolute z-30 top-[30px] right-0 flex flex-col justify-start items-center w-[150px]  pl-[10px] pr-[23px] py-[10px] gap-[5px]  md:top-[30px] right-[-80px] w-[200px]  gap-[15px] lg:hidden">
