@@ -118,7 +118,7 @@ const Checkout = () => {
                     className="sm:p-1 mt-1 md:p-2 lg:p-3 w-full border rounded-md bg-neutral-100"
                     name="shipping_address"
                     required
-                    rows="2"
+                    rows="1"
                   ></textarea>
                 </div>
 
