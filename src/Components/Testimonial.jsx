@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import TestimonialCard from "./TestimonialCard";
 import "slick-carousel/slick/slick.css";
@@ -87,17 +86,17 @@ function Testimonial() {
 
         <Slider
           {...settings}
-          className="flex justify-center items-center mx-[120px]"
+          className=" overflow-x-auto flex justify-center items-center mx-[103px] z-30 gap-[10px]"
           ref={sliderRef}
           beforeChange={handleBeforeChange}
         >
-          <div style={{ width: "500px" }} className="">
+          <div style={{ width: "492px" }} className="mx-[30px]">
             <TestimonialCard />
           </div>
-          <div style={{ width: "500px" }}>
+          <div style={{ width: "500px" }} className="mx-[30px]">
             <TestimonialCard />
           </div>
-          <div style={{ width: "500px" }}>
+          <div style={{ width: "500px" }} className="mx-[30px]">
             <TestimonialCard />
           </div>
         </Slider>
