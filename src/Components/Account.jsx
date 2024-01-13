@@ -12,49 +12,47 @@ function Account() {
     const [password, setPassword] = useState('');
     const passwordScore = zxcvbn(password);
 
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
-  
-  
-
-const getPasswordColor = () => {
-    const strength = passwordScore.score;
-    
-    if (strength === 0) {
-        return 'bg-[#D9D9D9]'; 
-      } else if (strength === 1) {
-        return 'bg-red-500'; 
-      } else if (strength === 2) {
-        return 'bg-orange-500'; 
-      } else if (strength === 3) {
-        return 'bg-green-200'; 
-      } else if (strength === 4) {
-        return 'bg-green-500';
-      } else {
-        return 'bg-gray-500'; 
-      }
+    const togglePasswordVisibility = () => {
+        setPasswordVisible(!passwordVisible);
     };
 
-  const getPasswordLabel = () => {
-    if (password.length > 0) {
-    switch (passwordScore.score) {
-      case 0:
-        return 'Weak';
-      case 1:
-      case 2:
-        return 'fair';
-      case 3:
-        return 'Good'
-      case 4:
-        return 'Strong';
-      default:
+    const getPasswordColor = () => {
+        const strength = passwordScore.score;
+        
+        if (strength === 0) {
+            return 'bg-[#D9D9D9]'; 
+        } else if (strength === 1) {
+            return 'bg-red-500'; 
+        } else if (strength === 2) {
+            return 'bg-orange-500'; 
+        } else if (strength === 3) {
+            return 'bg-green-200'; 
+        } else if (strength === 4) {
+            return 'bg-green-500';
+        } else {
+            return 'bg-gray-500'; 
+        }
+        };
+
+    const getPasswordLabel = () => {
+        if (password.length > 0) {
+        switch (passwordScore.score) {
+        case 0:
+            return 'Weak';
+        case 1:
+        case 2:
+            return 'fair';
+        case 3:
+            return 'Good'
+        case 4:
+            return 'Strong';
+        default:
+            return '';
+        }
+    }else {
         return '';
     }
-  }else {
-    return '';
-  }
-}
+    }
 
 
   return (
