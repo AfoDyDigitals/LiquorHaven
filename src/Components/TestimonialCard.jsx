@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 
 function TestimonialCard() {
@@ -6,7 +7,7 @@ function TestimonialCard() {
       <img src="./src/assets/Group 49617.png" />
       <div className="font-normal mt-[15px] mb-[30px] text-[15px] lg:text-[20px]">
         I've been using this website for my liquor needs when hosting social
-        events, and it's been a great experience overall. The visually appealing
+        events, and its been a great experience overall. The visually appealing
         layout caught my attention, making it easy to explore and find what I
         need quickly.{" "}
       </div>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import ShoppingCartHero from "../Components/ShoppingCartHero";
 import Testimonial from "../Components/Testimonial";
@@ -5,6 +6,7 @@ import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import CartItem from "../Components/cartItem/CartItem";
 
+// eslint-disable-next-line react/prop-types
 const Cart = ({ location }) => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -19,6 +21,7 @@ const Cart = ({ location }) => {
   }, [cartItems]);
 
   useEffect(() => {
+    // eslint-disable-next-line react/prop-types
     const scrollTarget = location?.state?.scrollTarget;
     if (scrollTarget) {
       const element = document.getElementById(scrollTarget);

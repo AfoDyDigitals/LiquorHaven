@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { not_starred, starred } from "../../assets";
@@ -5,6 +6,7 @@ import { Button } from "../Button";
 import "../../App.css";
 import Notification from "./Notification";
 
+// eslint-disable-next-line react/prop-types
 const TrendingCard = ({ imgURL, name, price, onAddToCart }) => {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");

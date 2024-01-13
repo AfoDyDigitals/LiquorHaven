@@ -6,9 +6,9 @@ import { Trending } from "../Components/Trending";
 import { WhyUs } from "../Components/WhyUs";
 import { Section3 } from "../Components/Section3";
 import Footer from "../Components/Footer";
-import Testimonial from "../Components/Testimonial";
 import { WhatsNew } from "../Components/WhatsNew";
 import Section4 from "../Components/Section4";
+import TestimonialNew from "../Components/TestimonialNew";
 
 export const Home = () => {
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
@@ -26,7 +26,7 @@ export const Home = () => {
       <Section3 />
       <Section4 />
       <WhatsNew />
-      <Testimonial />
+      <TestimonialNew />
       <Footer />
     </div>
   );
