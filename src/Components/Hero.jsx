@@ -1,6 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import { carousel_image1, carousel_image2, carousel_image3 } from "../assets";
 import { Button } from "./Button";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -85,14 +87,18 @@ export const Hero = () => {
                     {changeParaagraph[activeIndex]}
                   </p>
                   <h1 className="text-[25px] md:text-[39px] lg:text-[61px]  font-[700]">
-                    New Year's Eve Celebration
+                    New Years Eve Celebration
                   </h1>
                   <h2 className="text-[16px] md:text-[20px] lg:text-[39px] font-[400] opacity-90   md:opacity-100">
                     {changeSubTitle[activeIndex]}
                   </h2>
                   <div className="flex gap-4 md:gap-8 mt-4 md:mt-8 ml-0 md:ml-1">
-                    <Button label={"Sign Up"} />
-                    <Button label={"Register"} />
+                    <Link to="/signin">
+                      <Button label={"Sign In"} />
+                    </Link>
+                    <Link to="/signup">
+                      <Button label={"Register"} />
+                    </Link>
                   </div>
                 </div>
               </div>

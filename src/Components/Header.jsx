@@ -1,6 +1,8 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import CurrencyConverter from "./CurrencyConverter";
 import SideBar from "./SideBar";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
@@ -15,22 +17,25 @@ function Header() {
   }
 
   return (
-    <>
-      <div className="relative  flex justify-between mt-6  mx-8 items-center   md:flex  md:items-center md:justify-between md:mx-12 md:mt-[48px] md:mb-[40px] lg:flex gap-[60px]  lg:justify-evenly lg:items-center lg:mt-[61px]">
-        <img
-          className="w-[70px] h-[24px] md:w-[168px] md:h-[24px] mr-[10px] lg:w-[226px] lg:h-[50px]"
-          src="../src/assets/LiquorHAVEN LOGO_.svg"
-          alt="LiquorHaven Logo"
-        />
+    <div className="w-[100vw] overflow-none">
+      <div className="font-rubik relative z-20 flex justify-center items-center mt-[25px]  mx-[16px] md:flex  mx-[32px] lg:flex gap-[0px] mx-[20px]  justify-between">
+        <Link to="/">
+          <img
+            className="w-[70px] h-[24px] md:w-[146px] mr-[10px] lg:w-[260px] h-[50px]"
+            src="../src/assets/LiquorHAVEN LOGO_.svg"
+            alt="LiquorHaven Logo"
+          />
+        </Link>
 
         {/* searchbar */}
-        <div className="hidden md:flex md:justify-center md:items-center w-[381px] h-[46px] rounded-[4px] border border-[#9E9496] lg:w-[600px] lg:h-[62px] lg:flex lg:justify-center items-center justify-between lg:rounded-[4px]">
+        <div className="hidden md:flex  justify-center items-center w-[381px] h-[46px] rounded-[4px] border border-[#9E9496] lg:w-[600px] h-[62px]">
           <input
-            className="font-normal focus:outline-none  w-[343px]  md:w-[381px] lg:w-[600px] h-[16px] text-[13px] p-[15px] "
-            type="text"
+            className="text-[13px] font-normal  md:focus:outline-none focus:none w-[343px] lg:w-[600px]   p-[15px] rounded-[4px] border-none"
+            type=""
             placeholder="Search over 3,000 quality drinks..."
           />
-          <button className="flex justify-center items-center bg-[#A22634]  rounded-l md:w-[74px] h-[46px] lg:w-[125px] lg:h-[62px] ">
+
+          <button className="flex justify-center items-center bg-[#A22634]  rounded-l md:w-[74px] h-[46px] lg:w-[125px] h-[62px] ">
             <img
               className=" "
               src="../src/assets/search_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
@@ -54,7 +59,7 @@ function Header() {
         )}
 
         {/* currency and icons */}
-        <div className="sm:hidden md:hidden lg:flex gap-[20px] w-[260px] h-[32px]">
+        <div className="sm:hidden md:hidden lg:flex gap-[20px]  h-[32px] justify-end">
           <div className="flex justify-center items-center gap-[2px] ">
             <div className="text-[16px] font-normal">USD</div>
             {isCurrencyConverterVisible && (
@@ -84,11 +89,14 @@ function Header() {
           </div>
 
           <div className="flex">
-            <img
-              className="w-[32px] h-[32px]"
-              src="../src/assets/shopping_cart_FILL0_wght400_GRAD0_opsz24 1.svg"
-            />
-            <div className="flex justify-center items-center text-[10px] font-normal  bg-[#E66B66]  h-[12.5px] w-[5px] p-2 rounded-full">
+            <Link to="/cart">
+              <img
+                className="w-[32px] h-[32px] cursor-pointer"
+                src="../src/assets/shopping_cart_FILL0_wght400_GRAD0_opsz24 1.svg"
+              />
+            </Link>
+
+            <div className="flex justify-center items-center text-[10px] font-normal bg-[#E66B66]  h-[12.5px] w-[5px] p-2 rounded-full">
               1
             </div>
           </div>
@@ -97,8 +105,8 @@ function Header() {
       {isSidebarVisible && <SideBar toggleSidebar={toggleSidebar} />}
       {isCurrencyConverterVisible && (
         <CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />
-      )}{" "}
-    </>
+      )}
+    </div>
   );
 }
 

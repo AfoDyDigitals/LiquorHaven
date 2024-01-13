@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 
+// eslint-disable-next-line react/prop-types
 export const RangesCard = ({ imgURL, name, quantity }) => {
   return (
     <div className="mt-[10px] md:mt-[22px] lg:mt[47px] hover:opacity-90 hover:rounded-[1rem]  py-0 hover:border hover:border-gray-300 cursor-pointer transition-transform duration-300 shrink-0  medium:shrink">

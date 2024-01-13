@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import { RangesCard } from "./cards/RangesCard";
 import { drinkSelections } from "./constants/index";
@@ -12,7 +13,7 @@ export const Ranges = () => {
   // Scroll to the active card when activeIndex changes
   useEffect(() => {
     if (cardsRef.current) {
-      const cardWidth = cardsRef.current.offsetWidth * 0.6;
+      const cardWidth = cardsRef.current.offsetWidth * 0.58;
       const scrollLeft = cardWidth * activeIndex;
       cardsRef.current.scrollLeft = scrollLeft;
     }
@@ -29,7 +30,7 @@ export const Ranges = () => {
         </p>
         {/*Desktop Screen */}
         <div
-          className="hidden md:flex flex-wrap justify-center items-center gap-6 wide:gap-14 "
+          className="hidden md:flex flex-wrap justify-center items-center gap-6 lg:gap-[100px] mx-auto "
           ref={cardsRef}
         >
           {drinkSelections.map((drinkselection, index) => (

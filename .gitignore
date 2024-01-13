@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+<<<<<<< HEAD
+
+# Contentlayer
+.contentlayer
+=======
+node_modules
+>>>>>>> 0084ca11511255c732c3ea7de5b2f834fff4cc33

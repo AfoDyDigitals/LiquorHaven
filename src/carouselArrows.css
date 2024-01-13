@@ -1,0 +1,26 @@
+/* custom-carousel-arrows.css */
+
+/* Styles for left arrow */
+
+.carousel-left-control {
+    border: white;
+    background-color: #A22634;
+    right: -20px;
+    /* Adjust the left arrow's position */
+    right: auto;
+    /* Ensure the right arrow's default positioning */
+    width: 32px;
+    height: 32px;
+    border-radius: 25%;
+    position: absolute;
+}
+
+/* Styles for right arrow */
+.flowbite-carousel-arrow-next {
+    border: white;
+    background-color: #A22634;
+    right: -5px;
+    /* Adjust the right arrow's position */
+    left: auto;
+    /* Ensure the left arrow's default positioning */
+}
