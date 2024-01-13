@@ -5,15 +5,57 @@ import line from '../assets/line.png'
 import path from '../assets/path .png'
 import facebook from '../assets/facebook2.png'
 import twitter from '../assets/twitter2.png'
-import pass from '../assets/passline.png'
+import zxcvbn from 'zxcvbn';
 
 function Account() {
     const [passwordVisible, setPasswordVisible] = useState(false);
-  const [password, setPassword] = useState('');
+    const [password, setPassword] = useState('');
+    const passwordScore = zxcvbn(password);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
+  
+  
+
+const getPasswordColor = () => {
+    const strength = passwordScore.score;
+    
+    if (strength === 0) {
+        return 'bg-[#D9D9D9]'; 
+      } else if (strength === 1) {
+        return 'bg-red-500'; 
+      } else if (strength === 2) {
+        return 'bg-orange-500'; 
+      } else if (strength === 3) {
+        return 'bg-green-200'; 
+      } else if (strength === 4) {
+        return 'bg-green-500';
+      } else {
+        return 'bg-gray-500'; 
+      }
+    };
+
+  const getPasswordLabel = () => {
+    if (password.length > 0) {
+    switch (passwordScore.score) {
+      case 0:
+        return 'Weak';
+      case 1:
+      case 2:
+        return 'fair';
+      case 3:
+        return 'Good'
+      case 4:
+        return 'Strong';
+      default:
+        return '';
+    }
+  }else {
+    return '';
+  }
+}
+
 
   return (
     <div className='bg-[#F9F2F3] w-[100%] h-[93.75rem]'>
@@ -26,27 +68,37 @@ function Account() {
         <div className='flex flex-col justify-center items-center'>
             <div className='lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  flex flex-col justify-center lg:gap-[10px] lg:mt-[40px] mt-[20px] gap-[10px]'>
                 <p className='font-rubik text-[#000] lg:text-[20px] md:text-[16px] text-[13px] md:font-medium font-bold lg:leading-6 leading-[15px] md:leading-[19px]'>First name</p>
-                <input type="text" placeholder='Enter First name' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]'/>
+                <input type="text" required placeholder='Enter First name' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]'/>
             </div>
             <div className='lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px] lg:mt-[30px] md:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]'>
                 <p className='font-rubik text-[#000] lg:text-[20px] md:text-[16px] text-[13px] md:font-medium font-bold lg:leading-6 leading-[15px] md:leading-[19px]'>Last name</p>
-                <input type="text" placeholder='Enter Last name' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]'/>
+                <input type="text" required placeholder='Enter Last name' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]'/>
             </div>
             <div className='lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px]  flex flex-col justify-center gap-[10px]'>
                 <p className='font-rubik text-[#000] lg:text-[20px] md:text-[16px] text-[13px] md:font-medium font-bold lg:leading-6 leading-[15px] md:leading-[19px]'>Email address</p>
-                <input type="email" placeholder='Enter Email address' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]'/>
+                <input type="email" required id='email' placeholder='Enter Email address' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]'/>
             </div>
             <div className='lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]'>
                 <p className='font-rubik text-[#000] lg:text-[20px] md:text-[16px] text-[13px] md:font-medium font-bold lg:leading-6 leading-[15px] md:leading-[19px]'>Phone number</p>
-                <input type="tel" placeholder='Enter Phone number' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]'/>
+                <input type="tel" required placeholder='Enter Phone number' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]'/>
             </div>
             <div className='lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center lg:gap-[10px] gap-[7px]'>
-                <p className='font-rubik text-[#000] lg:text-[20px] md:text-[16px] text-[13px] md:font-medium font-bold lg:leading-6 leading-[15px] md:leading-[19px]'>Password</p>
+                <p className={`font-rubik text-[#000] lg:text-[20px] md:text-[16px] text-[13px] md:font-medium font-bold lg:leading-6 leading-[15px] md:leading-[19px] text-${getPasswordColor()}`}>Password: {getPasswordLabel()}</p>
                 <div className='relative'>
-                <input type={passwordVisible ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} id='password' placeholder='Enter password' className='placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] lg:h-[65px] w-full'/>
-                <span className='absolute inset-y-0 right-0 pr-3 flex items-center text-sm cursor-pointer md:text-[#847B7D] text-[#847B7D] md:text-[15px] md:font-normal' onClick={togglePasswordVisibility}>{passwordVisible ? 'Hide' : 'Show'}</span>
+                <input type={passwordVisible ? 'text' : 'password'} required value={password} onChange={(e) => setPassword(e.target.value)} id='password' placeholder='Enter password' className={`placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] lg:h-[65px] w-full  border-${getPasswordColor()} focus:border-${getPasswordColor()}`}/>
+                <span className={`absolute inset-y-0 right-0 pr-3 flex items-center text-sm cursor-pointer md:text-[#847B7D] text-[#847B7D] md:text-[15px] md:font-normal text-${getPasswordColor()}`} onClick={togglePasswordVisibility}>{passwordVisible ? 'Hide' : 'Show'}</span>
                 </div>
-                <img src={pass} alt="" />
+                
+                <div className='flex gap-[17px]  mx-auto w-full justify-center'>
+                    
+                   {[...Array(9)].map((_, index) => (
+                    <div
+                    key={index}
+                    className={`w-[70px] h-[4px] rounded ${index < 9 ? getPasswordColor() : 'bg-gray-300'}`}
+                    ></div>
+                ))}
+     
+                </div>
             </div>
         </div>
         <div className='flex  mt-[20px] md:mt-[20px] lg:mt-[70px] justify-around items-center flex-col-reverse md:flex-row  '>
