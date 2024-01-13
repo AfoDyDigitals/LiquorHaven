@@ -5,7 +5,6 @@ import {
   delivery_truck,
   heart_icon,
   local_shipping,
-  navigation_left,
   maltell1,
   maltell2,
 } from "../assets";
@@ -150,7 +149,7 @@ const Product = () => {
           onClose={() => setShowNotification(false)}
         />
       )}
-      <div className="bg-[#E66B66] w-full h-16 flex justify-center items-center  font-rubik">
+      <div className="bg-[#2E2E2E] w-full h-16 flex justify-center items-center  font-rubik">
         <Link
           to="/"
           className="hover:font-semibold text-white hover:text-[#333]"
@@ -158,9 +157,9 @@ const Product = () => {
           Home
         </Link>
         <div className="mx-2">
-          <img src={navigation_left} alt="nav left" />
+          <img src="./src/assets/navigate_next_copy.svg" alt="nav next" />
         </div>
-        <p> {selectedProduct?.name || "Product Name"}</p>
+        <p className="text-[#E66B66]"> {selectedProduct?.name || "Product Name"}</p>
       </div>
       <div className="mx-auto w-[90%]">
         <div className="flex flex-col lg:flex-row lg:gap-8 justify-center items-center ">

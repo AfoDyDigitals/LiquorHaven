@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import { carousel_image1, carousel_image2, carousel_image3 } from "../assets";
-import { Button } from "./Button";
 import { Link } from "react-router-dom";
 
 export const Hero = () => {
@@ -60,7 +59,7 @@ export const Hero = () => {
     "Summer Soirée Series",
     "Spiced Spirits Spectacle",
   ];
-
+  
   return (
     <section id="home">
       <div className="relative overflow-hidden bg-[#B0A4A7] opacity-90">
@@ -94,10 +93,14 @@ export const Hero = () => {
                   </h2>
                   <div className="flex gap-4 md:gap-8 mt-4 md:mt-8 ml-0 md:ml-1">
                     <Link to="/signin">
-                      <Button label={"Sign In"} />
+                      <div className="px-6 py-2 bg-transparent border border-white text-white hover:text-black text-[16px] font-[400] rounded-md hover:opacity-90">
+                        Sign In
+                      </div>
                     </Link>
                     <Link to="/signup">
-                      <Button label={"Register"} />
+                        <div className="px-6 py-2 bg-white text-black text-[16px] font-[400] rounded-md">
+                          Register
+                        </div>
                     </Link>
                   </div>
                 </div>

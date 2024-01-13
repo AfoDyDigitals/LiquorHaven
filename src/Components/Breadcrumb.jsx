@@ -124,7 +124,7 @@ function Breadcrumb() {
               <Link to="/signin">Sign in</Link>
             </div>
           </button>
-          <button className="hidden md:flex justify-center items-center bg-zinc-400  w-[66px] h-[32px]  rounded-[5px]  lg:rounded-[8px] w-[95px] h-[46px] ">
+          <button className="hidden md:flex justify-center items-center bg-white text-black  w-[66px] h-[32px]  rounded-[5px]  lg:rounded-[8px] w-[95px] h-[46px] ">
             <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
               <Link to="/signup">Register</Link>
             </div>
