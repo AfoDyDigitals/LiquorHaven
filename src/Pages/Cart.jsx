@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from "react";
 import ShoppingCartHero from "../Components/ShoppingCartHero";
 import CartItem from "../Components/cartItem/CartItem";
-import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import { products } from "../Components/constants";
+import TestimonialNew from "../Components/TestimonialNew";
 
 // eslint-disable-next-line react/prop-types
 const Cart = ({ location }) => {
@@ -102,7 +102,7 @@ const Cart = ({ location }) => {
           </div>
         </Link>
       </div>
-      <Testimonial />
+      <TestimonialNew />
       <Footer />
     </div>
   );
