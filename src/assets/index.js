@@ -19,7 +19,7 @@ import spirit from "./unsplash_nkUtcTb7SOg.png";
 import tequila from "./unsplash_7tOObrZ8x-o.png";
 
 import valentino_finest1 from "./unsplash_B2PMO6-Ap7w.png";
-import valentino_finest2 from "./unsplash_Xez19XDdbrI.png";
+import vodka_finest from "./Vodka.png";
 import valentino_finest3 from "./unsplash_paHLSTGqydI.png";
 import valentino_finest4 from "./unsplash_tZDHMFU3Dm0.png";
 import valentino_finest5 from "./unsplash_xTmIOJCd23U.png";
@@ -63,7 +63,7 @@ export {
   starred,
   not_starred,
   valentino_finest1,
-  valentino_finest2,
+  vodka_finest,
   valentino_finest3,
   valentino_finest4,
   valentino_finest5,

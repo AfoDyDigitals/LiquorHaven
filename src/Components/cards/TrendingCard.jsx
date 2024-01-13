@@ -10,40 +10,23 @@ const TrendingCard = ({ imgURL, name, price, onAddToCart }) => {
   const [notificationMessage, setNotificationMessage] = useState("");
   const navigate = useNavigate();
 
-  const openProductDetails = (event) => {
-    const target = event.target;
-    console.log("All Classes:", target.className);
-    // Check if the clicked element or its parent has the class "add-to-cart-button"
-    if (target.classList.contains("add-to-cart")) {
-      setShowNotification(true);
-      setNotificationMessage("Item has been Added to Cart Successfully!");
-
-      setTimeout(() => {
-        setShowNotification(false);
-        // Do not navigate to the product page if the button was clicked
-      }, 1500);
-    } else {
-      // Clicked outside the add to cart button, navigate to the product page
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      navigate("/product", { state: { imgURL, name, price } });
-    }
+  const openProductDetails = () => {
+    navigate("/product", { state: { imgURL, name, price } });
   };
 
-  const handleAddToCartClick = (event) => {
-    event.stopPropagation();
-
-    // Simulate an asynchronous action (e.g., API call)
+  const handleAddToCartClick = () => {
     setShowNotification(true);
-    setNotificationMessage("Adding to cart...");
+    setNotificationMessage(`${name} added to the cart!`);
 
+    // Simulate an asynchronous action (e.g., API call to add the product to the cart)
     setTimeout(() => {
-      setNotificationMessage(`${name} added to the cart!`);
-      // Add your logic for updating the cart state or other actions here
+      onAddToCart({ id: Date.now(), imgURL, name, price, quantity: 1 }); // Assuming you need an id for each item
+    }, 1000);
 
-      setTimeout(() => {
-        setShowNotification(false);
-      }, 2000); // Adjust the duration as needed
-    }, 1500); // Adjust the duration as needed
+    // Hide the notification after a certain duration
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 2000);
   };
 
   return (
@@ -76,7 +59,7 @@ const TrendingCard = ({ imgURL, name, price, onAddToCart }) => {
           </p>
         </div>
         <div className="mb-2">
-          <Button label={"Add To Cart"} onClick={onAddToCart} />
+          <Button label={"Add To Cart"} onClick={handleAddToCartClick} />
         </div>
       </div>
 

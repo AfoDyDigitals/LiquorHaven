@@ -4,8 +4,10 @@ import CurrencyConverter from "./CurrencyConverter";
 import { Link } from "react-router-dom";
 import Caller from "./cards/Caller";
 
-function Breadcrumb() {
+function Breadcrumb({ handleCurrencyChange }) {
   const [isShopDropdownVisible, setIsShopDropdownVisible] = useState(false);
+  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+
   function toggleShopDropdown() {
     setIsShopDropdownVisible(!isShopDropdownVisible);
   }
@@ -66,13 +68,17 @@ function Breadcrumb() {
             )}
           </div>
           <Link to="/about">About Us</Link>
-          <p className="cursor-pointer">Contact Us</p>
+          <Link to="/product" className="cursor-pointer">
+            Contact Us
+          </Link>
         </div>
 
         {/* currency & icons sm md */}
         <div className="flex justify-center items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
           <div className="flex relative justify-center items-center gap-[5px] ml-[40px] mr-[10px]  md: mr-[10px]">
-            <div className="text-[10px] font-normal md:text-[13px]">USD</div>
+            <div className="text-[10px] font-normal md:text-[13px]">
+              {selectedCurrency}
+            </div>
             {isCurrencyConverterVisible && (
               <img
                 onClick={toggleCurrencyConverter}
@@ -90,6 +96,7 @@ function Breadcrumb() {
             {isCurrencyConverterVisible && (
               <CurrencyConverter
                 toggleCurrencyConverter={toggleCurrencyConverter}
+                handleCurrencyChange={handleCurrencyChange}
               />
             )}
           </div>

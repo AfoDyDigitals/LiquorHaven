@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Hero } from "../Components/Hero";
 import { Ranges } from "../Components/Ranges";
 import NavBar from "../Components/NavBar";
@@ -11,17 +11,22 @@ import { WhatsNew } from "../Components/WhatsNew";
 import Section4 from "../Components/Section4";
 
 export const Home = () => {
+  const [selectedCurrency, setSelectedCurrency] = useState("USD");
+
+  const handleCurrencyChange = (currency) => {
+    setSelectedCurrency(currency);
+  };
   return (
     <div className="overflow-hidden">
-      <NavBar />
+      <NavBar handleCurrencyChange={handleCurrencyChange} />
       <Hero />
       <Ranges />
-      <Trending />
+      <Trending selectedCurrency={selectedCurrency} />
       <WhyUs />
       <Section3 />
-      <Testimonial />
       <Section4 />
       <WhatsNew />
+      <Testimonial />
       <Footer />
     </div>
   );

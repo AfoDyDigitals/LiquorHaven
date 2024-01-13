@@ -4,7 +4,6 @@ import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import linkedin from "../assets/linkedin.png";
 import twitter from "../assets/twitter.png";
-import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -27,10 +26,8 @@ function Footer() {
             placeholder="Your Email Address"
           />
 
-          <button className="bg-[#E66B66] text-white rounded-r-[5px] text-[13px] font-medium md:text-[16px]">
-            <Link to="/signin" className=" p-[12px]">
-              Sign in
-            </Link>
+          <button className="bg-[#E66B66] text-white rounded-r-[5px] text-[13px] font-medium md:text-[16px] p-[12px]">
+            Sign in
           </button>
         </form>
       </div>

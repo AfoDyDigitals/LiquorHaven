@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ShoppingCartHero from "../Components/ShoppingCartHero";
-import CartItem from "../Components/cartItem/CartItem";
-
 import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
-import { products } from "../Components/constants";
+import CartItem from "../Components/cartItem/CartItem";
 
 const Cart = ({ location }) => {
   const [cartItems, setCartItems] = useState([]);
@@ -15,6 +13,11 @@ const Cart = ({ location }) => {
     const storedItems = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedItems);
   }, []);
+
+  useEffect(() => {
+    console.log(cartItems);
+  }, [cartItems]);
+
   useEffect(() => {
     const scrollTarget = location?.state?.scrollTarget;
     if (scrollTarget) {
@@ -26,68 +29,68 @@ const Cart = ({ location }) => {
   }, [location]);
 
   const handleDeleteItem = (id) => {
-    // Update cart items after deleting an item
     const updatedItems = cartItems.filter((item) => item.id !== id);
     setCartItems(updatedItems);
     localStorage.setItem("cart", JSON.stringify(updatedItems));
   };
 
-  const handleUpdateQuantity = (id, newQuantity) => {
-    // Update cart items after updating quantity
+  const handleIncrement = (id) => {
     const updatedItems = cartItems.map((item) =>
-      item.id === id ? { ...item, quantity: newQuantity } : item
+      item.id === id
+        ? {
+            ...item,
+            quantity: item.quantity + 1,
+          }
+        : item
     );
     setCartItems(updatedItems);
     localStorage.setItem("cart", JSON.stringify(updatedItems));
   };
 
-  const grandTotal = cartItems.reduce((total, item) => {
-    return total + item.price * item.quantity;
-  }, 0);
-
-  const handleAddToCart = (productId) => {
-    // Check if the product is already in the cart
-    const existingProduct = cartItems.find((item) => item.id === productId);
-
-    if (existingProduct) {
-      // If the product is already in the cart, update its quantity
-      const updatedItems = cartItems.map((item) =>
-        item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-      );
-      setCartItems(updatedItems);
-      localStorage.setItem("cart", JSON.stringify(updatedItems));
-    } else {
-      // If the product is not in the cart, add it
-      const productToAdd = products.find((product) => product.id === productId);
-
-      if (productToAdd) {
-        const updatedItems = [...cartItems, { ...productToAdd, quantity: 1 }];
-        setCartItems(updatedItems);
-        localStorage.setItem("cart", JSON.stringify(updatedItems));
-      }
-    }
+  const handleDecrement = (id) => {
+    const updatedItems = cartItems.map((item) =>
+      item.id === id && item.quantity > 1
+        ? {
+            ...item,
+            quantity: item.quantity - 1,
+          }
+        : item
+    );
+    setCartItems(updatedItems);
+    localStorage.setItem("cart", JSON.stringify(updatedItems));
   };
 
   return (
-    <div id="cartItems" className="cart-items">
+    <div id="cartItems" className="cart-items overflow-hidden">
       <ShoppingCartHero />
       <div className="md:w-90% lg:w-80% lg:mx-auto lg:max-w-4xl bg-white font-rubik border border-gray-400 flex flex-col items-center justify-center mt-4 py-8 ">
         {cartItems.map((product, index) => (
-          <CartItem
-            key={`${product.id}- ${index}`}
-            id={product.id}
-            name={product.name}
-            price={parseFloat(product.price.replace("$", ""))}
-            image={product.imgURL}
-            quantity={product.quantity}
-            onDelete={handleDeleteItem}
-            onUpdateQuantity={handleUpdateQuantity}
-          />
+          <div key={index}>
+            <CartItem
+              product={product}
+              handleDeleteItem={handleDeleteItem}
+              handleIncrement={handleIncrement}
+              handleDecrement={handleDecrement}
+            />
+            <div className="bg-gray-300 w-[80%] h-[2px] max-w-[700px] mx-auto"></div>
+          </div>
         ))}
-        <div className="xsm:w-[84%] md:w-[70%] md:max-w-[300px] bg-rose-200 rounded-lg mt-4 p-4 md-[p-8] border-none  max-w-[412px]">
+        <div className="xsm:w-[84%] md:w-[70%] md:max-w-[300px] bg-rose-200 rounded-lg mt-8 p-4 md-[p-8] border-none  max-w-[412px] border ">
           <div className="flex items-center justify-between leading-[120%] text-[16px] font-normal">
             <div>SubTotal </div>
-            <div>${grandTotal.toFixed(2)}</div>
+            <div>
+              $
+              {cartItems
+                .reduce(
+                  (total, item) =>
+                    total +
+                    (item.price
+                      ? parseFloat(item.price.replace("$", "")) * item.quantity
+                      : 0),
+                  0
+                )
+                .toFixed(2)}
+            </div>
           </div>
         </div>
         <div className="w-[90%] md:w-full text-black text-[16px] leading-[120%] md:text-[20px] font-medium mx-4 my-4 text-center">

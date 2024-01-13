@@ -28,6 +28,7 @@ const Product = () => {
 
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
+  const [cartItems, setCartItems] = useState([]);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -70,12 +71,22 @@ const Product = () => {
       const initialTotalPrice =
         initialQuantity * parseFloat(price.replace("$", ""));
       setTotalPrice(initialTotalPrice);
-      setSelectedProduct({ id, imgURL, name, price });
-      const newSelectedProduct = { imgURL, name, price };
 
-      setSelectedProduct(newSelectedProduct);
+      const productInCart = cartItems.find((item) => item.name === name);
+      const imageFileName =
+        productInCart &&
+        products.find((product) => product.name === productInCart.name)
+          ?.imageFileName;
+
+      setSelectedProduct({
+        id,
+        imgURL,
+        name,
+        price,
+        imageFileName: imageFileName || "", // Ensure imageFileName is set
+      });
     }
-  }, [location.state]);
+  }, [location.state, cartItems, products]);
 
   useEffect(() => {
     // Recalculate total price whenever selectedProduct or quantity changes
@@ -116,6 +127,7 @@ const Product = () => {
     } else {
       const newItem = {
         ...selectedProduct,
+        imageFileName: "Vodka.png",
         quantity,
         imgURL: selectedProduct.imgURL,
         id: selectedProduct.id || 0,
