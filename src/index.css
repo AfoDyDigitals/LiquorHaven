@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-=======
->>>>>>> e5dc475bf42393b35d2ca89961cd0e4d077864fa
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Mulish:ital,wght@0,300;0,400;1,200&family=Poppins:ital,wght@0,300;0,400;1,500&family=Rubik:wght@300;500&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Mulish:ital,wght@0,300;0,400;1,200&family=Poppins:ital,wght@0,300;0,400;1,500&family=Rubik:wght@300;500&display=swap");
 @tailwind base;
 @tailwind components;

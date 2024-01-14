@@ -1,29 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
-import Section3 from "./Components/Section3";
-import Account from './Components/Account';
 
-
-function App() {
-  return (
-    <>
-
-    <Home />
-    <Section3 />
-    <Footer />
-    <Account />
-    </>
-  )
-};
-    
-
-    
   
-
-
 import Product from "./Pages/Product";
 import { SignIn } from "./Pages/SignIn";
 import AboutUs from "./Pages/AboutUs";
@@ -47,7 +27,6 @@ function App() {
       </Routes>
     </Router>
   );
-
 }
 
 export default App;

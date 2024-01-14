@@ -38,7 +38,7 @@ function ResetPasswordCode() {
             className="mt-[240px] h-[48px] md:h-[60px] lg:h-[64px]"
             src={default_img}
           />
-          <div className="text-[20px] my-[13px] font-bold md:text-[25px] my-[15px] lg:text-[39px]">
+          <div className="text-[20px] my-[13px] font-bold md:text-[25px] md:my-[15px] lg:text-[39px]">
             Reset your password
           </div>
           <div className="text-[13px] font-normal lg:text-[20px] mx-3 text-center">
@@ -48,7 +48,7 @@ function ResetPasswordCode() {
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-[40px] mt-[40px] mb-[50px]">
               <input
-                className="bg-[#F7F6F6] w-[252px] rounded-[4px]  text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] text-base pl-[21px]  lg:w-[797px] text-[20px]  pl-[42px] "
+                className="bg-[#F7F6F6] w-[252px] rounded-[4px]  text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] md:text-base md:pl-[21px]  lg:w-[797px] text-[20px]  lg:pl-[42px] "
                 type=""
                 placeholder="Enter Code"
                 value={code}
@@ -56,7 +56,7 @@ function ResetPasswordCode() {
                 required
               />
               <input
-                className="bg-[#F7F6F6] w-[252px] rounded-[4px]  text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] text-base pl-[21px]  lg:w-[797px] text-[20px]  pl-[42px] "
+                className="bg-[#F7F6F6] w-[252px] rounded-[4px]  text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] md:text-base md:pl-[21px]  lg:w-[797px] text-[20px]  lg:pl-[42px] "
                 type="password"
                 placeholder="Enter New Password"
                 value={newPassword}
@@ -64,7 +64,7 @@ function ResetPasswordCode() {
                 required
               />
               <input
-                className="bg-[#F7F6F6] w-[252px] rounded-[4px] text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] text-base pl-[21px]  lg:w-[797px] text-[20px] pl-[42px] "
+                className="bg-[#F7F6F6] w-[252px] rounded-[4px] text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] md:text-base md:pl-[21px]  lg:w-[797px] text-[20px] lg:pl-[42px] "
                 type="password"
                 placeholder="Confirm New Password"
                 value={confirmPassword}
@@ -81,7 +81,7 @@ function ResetPasswordCode() {
           </div>
         </div>
 
-        <div className="flex text-[12px] font-normal gap-[30px] justify-center items-center  mb-[40px] mt-[269px] md:mt-[423px] gap-[60px]  lg:gap-[316px] ">
+        <div className="flex text-[12px] font-normal gap-[30px] justify-center items-center  mb-[40px] mt-[269px] md:mt-[423px] md:gap-[60px]  lg:gap-[316px] ">
           <div>All rights reserved © 2024 LiquorHaven</div>
           <div>Privacy | Terms</div>
         </div>
