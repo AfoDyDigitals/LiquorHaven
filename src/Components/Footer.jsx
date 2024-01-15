@@ -1,5 +1,4 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
 import img from "../assets/LiquorHAVEN LOGO.png";
 import facebook from "../assets/facebook-circle-fill.svg";
 import instagram from "../assets/instagram-fill.svg";
@@ -36,7 +35,7 @@ function Footer() {
             rewards. It’s easy and free!
           </p>
           <form
-            className="flex justify-center rounded-[5px] md:justify-between border bg-white border-sm border-[#6D6A6A] mt-[45px] w-[320px] mb-[30px] md:w-[607px] lg:w-[778px]"
+            className="flex justify-center rounded-[5px] md:justify-between border bg-white  border-[#6D6A6A] mt-[45px] w-[307px] mb-[30px] md:w-[607px] lg:w-[778px]"
             action=" "
           >
             <input
