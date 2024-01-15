@@ -22,7 +22,7 @@ export const Ranges = () => {
     <section className="mt-[30px] md:mt-14">
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-[20px] md:text-[39px] font-[700] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px]">
-          Our Ranges
+          Our Range
         </h2>
 
         <p className="font-[400] text-[13px] ml-3 md:ml-0 text-center">

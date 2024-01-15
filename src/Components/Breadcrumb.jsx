@@ -4,6 +4,8 @@ import ShopDropdown from "./ShopDropdown";
 import CurrencyConverter from "./CurrencyConverter";
 import { Link } from "react-router-dom";
 import Caller from "./cards/Caller";
+import img from "../assets/arrow forward black.svg";
+import img2 from "../assets/arrow forward white.svg";
 
 function Breadcrumb({ handleCurrencyChange }) {
   const [isShopDropdownVisible, setIsShopDropdownVisible] = useState(false);
@@ -18,6 +20,9 @@ function Breadcrumb({ handleCurrencyChange }) {
   function toggleCurrencyConverter() {
     setIsCurrencyConverterVisible(!isCurrencyConverterVisible);
   }
+
+  const [isHovered1, setIsHovered1] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div className="font-rubik w-[100vw] overflow-none">
@@ -52,24 +57,23 @@ function Breadcrumb({ handleCurrencyChange }) {
         </div>
 
         <div className="sm:hidden md:hidden lg:flex gap-[50px]">
-          <Link to="/">Home</Link>
-          <div className="flex gap-[5px] justify-center items-center">
+          <Link className="font-bold" to="/">Home</Link>
+          <div
+            className="relative flex gap-[5px] justify-center items-center"
+            onMouseEnter={toggleShopDropdown}
+            onMouseLeave={toggleShopDropdown}
+          >
             <div>Shop</div>
-            {isShopDropdownVisible && (
-              <img
-                onClick={toggleShopDropdown}
-                src="../src/assets/Dropdown white.svg"
-              />
-            )}
-            {!isShopDropdownVisible && (
-              <img
-                onClick={toggleShopDropdown}
-                src="../src/assets/Dropdown white.svg"
-              />
-            )}
+            <img
+              src="../src/assets/Dropdown white.svg"
+              className={` ${
+                isShopDropdownVisible ? "visible" : "visible"
+              }`}
+            />
+            {isShopDropdownVisible && <ShopDropdown />}
           </div>
-          <Link to="/about">About Us</Link>
-          <p className="cursor-pointer">Contact Us</p>
+          <Link className="hover:font-bold" to="/about">About Us</Link>
+          <p className="hover:font-bold cursor-pointer">Contact Us</p>
         </div>
 
         {/* currency & icons sm md */}
@@ -124,21 +128,60 @@ function Breadcrumb({ handleCurrencyChange }) {
         </div>
 
         <div className="flex  md:gap-[25px] lg:gap-[35px]">
-          <button className="hidden md:flex justify-center items-center  w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent  lg:rounded-[8px] w-[95px] h-[46px] ">
-            <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
-              <Link to="/signin">Sign in</Link>
-            </div>
-          </button>
-          <button className="hidden md:flex justify-center items-center bg-white text-black  w-[66px] h-[32px]  rounded-[5px]  lg:rounded-[8px] w-[95px] h-[46px] ">
-            <div className="font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]">
-              <Link to="/signup">Register</Link>
-            </div>
-          </button>
+          <Link to="/signin">
+            <button className="hidden md:flex justify-center items-center  w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent  lg:rounded-[8px] w-[95px] h-[46px] ">
+              <div
+                className="relative font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                Sign in
+                {isHovered && (
+                  <span
+                    className="mr-[10px]"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      right: "-6px",
+                      transform: "translateY(-50%)",
+                    }}
+                  >
+                    <img src={img2} alt="Navigate Next" className="w-4 h-4" />
+                  </span>
+                )}
+              </div>
+            </button>
+          </Link>
+
+          <Link to="/signup">
+            <button className="hidden md:flex justify-center items-center bg-white text-black  w-[66px] h-[32px]  rounded-[5px]  lg:rounded-[8px] w-[95px] h-[46px] ">
+              <div
+                className="relative font-rubik md:text-[13px] p-[10px] lg:text-[16px] p-[20px]"
+                onMouseEnter={() => setIsHovered1(true)}
+                onMouseLeave={() => setIsHovered1(false)}
+              >
+                Register
+                {isHovered1 && (
+                  <span
+                    className="mr-[10px]"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      right: "-6px",
+                      transform: "translateY(-50%)",
+                    }}
+                  >
+                    <img src={img} alt="Navigate Next" className="w-4 h-4" />
+                  </span>
+                )}
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
-      {isShopDropdownVisible && (
+      {/* {isShopDropdownVisible && (
         <ShopDropdown toggleShopDropdown={toggleShopDropdown} />
-      )}
+      )} */}
     </div>
   );
 }

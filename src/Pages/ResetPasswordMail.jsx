@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SubmitButton from "../Components/SubmitButton";
 import NavBar from "../Components/NavBar";
 import { Link } from "react-router-dom";
+import { default_img } from "../assets";
 
 function ResetPasswordMail() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -38,7 +39,7 @@ function ResetPasswordMail() {
         <div className="flex flex-col justify-center items-center font-rubik bg-white shadow-lg w-[324px] h-[500px] md:h-[600px] mt-[30px] md:w-[500px] md:mt-[60px] lg:w-[1000px] lg:h-[800px] ">
           <img
             className="mt-[32px] md:mt-[58px]"
-            src="./src/assets/ProfileIcon.svg"
+            src={default_img}
           />
           <div className="text-[20px] my-[13px] font-bold md:text-[25px] md:my-[15px] lg:text-[39px]">
             Reset your password
