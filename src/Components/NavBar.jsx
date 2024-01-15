@@ -3,11 +3,11 @@ import React from "react";
 import Breadcrumb from "./Breadcrumb";
 import Header from "./Header";
 
-function NavBar() {
+function NavBar({ handleCurrencyChange }) {
   return (
     <div className="">
       <Header />
-      <Breadcrumb />
+      <Breadcrumb handleCurrencyChange={handleCurrencyChange} />
     </div>
   );
 }

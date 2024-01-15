@@ -31,29 +31,29 @@ export const DescriptionReview = ({ selectedProduct }) => {
         className={activeTab === "description" ? "" : "hidden"}
         id="description"
       >
-        <h3 className="font-[600] font-rubik text-[16px] md:text-[20px] leading-[120%] mb-6">
+        <h3 className="font-[600] font-rubik text-[17px] md:text-[20px] leading-[120%] mb-6">
           {selectedProduct?.name || "Product Name"}
         </h3>
         <ul className="list-disc">
-          <li className="font-[400] font-rubik text-[16px] md:text-[20px] leading-[120%] mb-1">
+          <li className="font-[400] font-rubik   text-[16px] md:text-[20px] leading-[120%] my-1">
             Tasting Profile:
-            <p className="block">
+            <p className="block font-[300]">
               Indulge in a sensation of fullness and generosity as Martell Blue
               Swift takes you on a journey of exquisite flavors. This unique
               spirit drink opens with enticing notes of ginger and candied
               fruit, weaving a tapestry of warmth and complexity.
             </p>
           </li>
-          <li className="font-[400] font-rubik text-[20px] leading-[120%] mb-1">
+          <li className="font-[400] font-rubik text-[16px] md:text-[20px] leading-[120%] my-1">
             Volume:
-            <p className="block">
+            <p className="block font-[300]">
               Experience this extraordinary blend in a 75cl bottle, perfectly
               crafted to deliver a moment of unparalleled enjoyment.
             </p>
           </li>
-          <li className="font-[400] font-rubik text-[20px] leading-[120%] mb-1">
+          <li className="font-[400] font-rubik  text-[16px] md:text-[20px] leading-[120%] my-1">
             Craftsmanship:
-            <p>
+            <p className="block font-[300]">
               Martell Blue Swift is a masterful creation, starting with a
               foundation of Cognac VSOP—a testament to Martell's commitment to
               quality and tradition. What sets it apart is the meticulous
@@ -62,9 +62,9 @@ export const DescriptionReview = ({ selectedProduct }) => {
               marriage of French and American craftsmanship.
             </p>
           </li>
-          <li className="font-[400] font-rubik text-[20px] leading-[120%] mb-1">
+          <li className="font-[400] font-rubik text-[16px] md:text-[20px] leading-[120%] my-1">
             Alcohol Content:
-            <p>
+            <p className="block font-[300]">
               Indulge responsibly with a 40% alcohol volume, ensuring a perfect
               balance of strength and sophistication in every sip. Tasting
               Notes: Ginger and Candied Fruit: The initial palate delights with
@@ -74,17 +74,17 @@ export const DescriptionReview = ({ selectedProduct }) => {
               adding a layer of complexity and a subtle smokiness.
             </p>
           </li>
-          <li className="font-[400] font-rubik text-[20px] leading-[120%] mb-1">
+          <li className="font-[400] font-rubik  text-[16px] md:text-[20px] leading-[120%] my-1">
             Pairing Recommendations:
-            <p>
+            <p className="block font-[300]">
               Martell Blue Swift is a versatile companion, perfect for sipping
               neat or elevating classic cocktails. Pair it with dark chocolate
               or enjoy it alongside a fine cigar for an indulgent experience.
             </p>
           </li>
-          <li className="font-[400] font-rubik text-[20px] leading-[120%] mb-1">
+          <li className="font-[400] font-rubik  text-[16px] md:text-[20px] leading-[120%] my-1">
             Packaging:
-            <p>
+            <p className="block font-[300]">
               Martell Blue Swift is presented in an elegant bottle that echoes
               the spirit's sophistication. The label is adorned with subtle
               detailing, reflecting the craftsmanship within. The bottle is

@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
 
-  
 import Product from "./Pages/Product";
 import { SignIn } from "./Pages/SignIn";
 import AboutUs from "./Pages/AboutUs";
@@ -14,6 +14,8 @@ import Cart from "./Pages/Cart";
 import CreateAccount from "./Pages/CreateAccount";
 
 function App() {
+  const [totalPrice, setTotalPrice] = useState(0);
+
   return (
     <Router>
       <Routes>
@@ -24,8 +26,13 @@ function App() {
         <Route path="/forgotpassword/code" element={<ResetPasswordCode />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/signup" element={<CreateAccount />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+          }
+        />
       </Routes>
     </Router>
   );

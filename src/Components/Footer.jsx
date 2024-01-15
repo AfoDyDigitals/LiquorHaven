@@ -7,15 +7,13 @@ import twitter from "../assets/twitter-fill.svg";
 import { Link } from "react-router-dom";
 
 
+import { Link } from "react-router-dom";
+
 function Footer() {
-
   return (
-    <div className="bg-[#2E2E2E] text-cyan-50 relative">
-
-      <a href="#" className='scroll-smooth'>
-        <button
-          className="absolute top-0 scroll mt-[10px] md:mt-9 lg:mt-16 right-6 md:right-10 lg:right-12 w-[25px] h-[25px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] bg-[#FDF0F0] rounded-full items-center flex justify-center"
-        >
+    <div className="bg-[#2E2E2E] text-cyan-50 relative mt-0 ">
+      <a href="#" className="scroll-smooth">
+        <button className="absolute top-0 scroll mt-[10px] md:mt-9 lg:mt-16 right-6 md:right-10 lg:right-12 w-[20px] h-[20px] p-1 md:p-0 md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] bg-[#FDF0F0] rounded-full items-center flex justify-center">
           <img
             src="./src/assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
             alt="BackToTop-button"
@@ -23,7 +21,6 @@ function Footer() {
           />
         </button>
       </a>
-
 
       <div className="flex justify-center items-center w-[100%] flex-col pt-[32px] lg:pt-[64px] md:px-[90px] px-[20px] text-center md:pt-[42px]">
         <div className="flex justify-center items-center w-[100%] flex-col text-center ">
@@ -89,7 +86,6 @@ function Footer() {
                 className="hover:cursor-pointer w-[25px] h-[25px] lg:w-[33px] lg:h-[33px]"
               />
             </div>
-
           </div>
           <div className="flex lg:gap-[5rem] md:mt-0 w-[100%] justify-between h-[8.9375rem]  lg:h-[10rem] md:flex md:w-[70%] lg:w-[700px]">
             <div className="lg:gap-[20px] gap-[8px] flex flex-col w-[22%] md:w-[20%] text-start items-start">

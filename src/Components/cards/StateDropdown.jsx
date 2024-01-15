@@ -1,4 +1,3 @@
-// StateDropdown.js
 import React, { useState } from "react";
 
 const StateDropdown = () => {
@@ -62,6 +61,19 @@ const StateDropdown = () => {
       : "Address does not match the selected state!";
   };
 
+  const isSaveButtonDisabled = !selectedState || !address;
+
+  const handleSaveAddress = () => {
+    if (isSaveButtonDisabled) {
+      alert("Please select a state and enter an address before saving.");
+      return;
+    }
+
+    // Save to local storage
+    localStorage.setItem("savedAddress", address);
+
+    alert("Delivery address saved successfully!");
+  };
   return (
     <div className="max-w-md mt-2 py-6   rounded-md">
       <label
@@ -98,12 +110,22 @@ const StateDropdown = () => {
             value={address}
             onChange={handleAddressChange}
             placeholder="Enter your address"
+            required
             className="mt-1 p-2 border w-full  md:max-w-[28rem]"
           />
 
           <p className="mt-2 text-sm text-gray-500">{verifyAddress()}</p>
         </div>
       )}
+      <button
+        className={`mt-3 text-[#B85652] py-1 px-2 hover:border-[2px] hover:border-[#B85652] hover:rounded-sm ${
+          isSaveButtonDisabled ? "cursor-not-allowed opacity-50" : ""
+        }`}
+        onClick={handleSaveAddress}
+        disabled={isSaveButtonDisabled}
+      >
+        Save Address
+      </button>
     </div>
   );
 };
