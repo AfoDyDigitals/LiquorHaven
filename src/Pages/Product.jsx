@@ -100,8 +100,16 @@ const Product = () => {
   const handleCardClick = (index) => {
     setActiveIndex(index);
     setSelectedProduct(products[index]);
+
+    // Navigate to the "/product" route
     navigate("/product", { state: products[index] });
   };
+
+  // Add this useEffect to handle scrolling after navigation
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, [selectedProduct]); // Ensure the useEffect is triggered when selectedProduct changes
 
   const handleQuantityChange = (newQuantity) => {
     if (newQuantity < 1) {

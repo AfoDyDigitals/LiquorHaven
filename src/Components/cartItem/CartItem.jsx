@@ -37,7 +37,7 @@ const CartItem = ({
         </div>
         <div className="ml-0 md:ml-auto flex items-center gap-[8.64px] md:gap-5 text-[14px] md:text-[34.22px]">
           <button
-            onClick={() => handleDecrement(product.id)}
+            onClick={() => handleDecrement(product.id, product.name)}
             className="py-2 px-4 md:px-6 md:py-4  bg-red-400 rounded-md md:rounded-[17.11px] border-2 border-red-400  text-[#fff]   "
           >
             -
@@ -54,13 +54,13 @@ const CartItem = ({
             {product.quantity}
           </span>
           <button
-            onClick={() => handleIncrement(product.id)}
+            onClick={() => handleIncrement(product.id, product.name)}
             className="py-2 px-4 md:px-6 md:py-4  bg-red-400 rounded-md md:rounded-[17.11px] border-2 border-red-400  text-[#fff]   "
           >
             +
           </button>
           <button
-            onClick={() => handleDeleteItem(product.id)}
+            onClick={() => handleDeleteItem(product.id, product.name)}
             className="md:w-[94.11px] md:h-[94.11px] p-3 md:p-[25.67px] rounded-[17.11px] justify-center items-center gap-2 md:gap-[21.39px] inline-flex hover:p-4 hover:rounded-lg hover:bg-gray-200 transition-all duration-300"
           >
             <img

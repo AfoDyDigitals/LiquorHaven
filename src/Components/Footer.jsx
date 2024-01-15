@@ -4,17 +4,14 @@ import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import linkedin from "../assets/linkedin.png";
 import twitter from "../assets/twitter.png";
-import facebook from "../assets/facebook-circle-fill.svg";
-import instagram from "../assets/instagram-fill.svg";
-import linkedin from "../assets/linkedin-box-fill.svg";
-import twitter from "../assets/twitter-fill.svg";
+
 import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="bg-[#2E2E2E] text-cyan-50 relative">
+    <div className="bg-[#2E2E2E] text-cyan-50 relative mt-0 ">
       <a href="#" className="scroll-smooth">
-        <button className="absolute top-0 scroll mt-[10px] md:mt-9 lg:mt-16 right-6 md:right-10 lg:right-12 w-[25px] h-[25px] md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] bg-[#FDF0F0] rounded-full items-center flex justify-center">
+        <button className="absolute top-0 scroll mt-[10px] md:mt-9 lg:mt-16 right-6 md:right-10 lg:right-12 w-[20px] h-[20px] p-1 md:p-0 md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] bg-[#FDF0F0] rounded-full items-center flex justify-center">
           <img
             src="./src/assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
             alt="BackToTop-button"
