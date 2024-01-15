@@ -1,8 +1,22 @@
-# React + Vite
+# Group Beta: Drinks - Ecommerce Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Scope of Work:
 
-Currently, two official plugins are available:
+To improve user acquisition and customer satisfaction, an online store selling just alcohol and
+drinks has asked to have several of its pages redesigned. The following pages have been
+deemed problematic by the firm, and they require a redesign. The development team can
+generate the designs for these pages after consulting with you so that they can be used for
+production upgrades.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Project Description
+What your application does,
+Why you used the technologies you used,
+Some of the challenges you faced and features you hope to implement in the future.
+The main goal is to create three new webpages for the ecommerce website: Homepage,
+
+What was your motivation?
+Why did you build this project?
+What problem does it solve?
+What did you learn?
+What makes your project stand out?
+If your project has a lot of features, consider adding a "Features" section and listing them here.
