@@ -1,13 +1,24 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../Components/NavBar";
 import OrderSummary from "../Components/OrderSummary";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Checkout = () => {
+  // Retrieve cart information from local storage
+  const storedCart = JSON.parse(localStorage.getItem("cart")) || {};
+  const { cartItems, totalPrice } = storedCart;
+  console.log("Total Price from local storage:", totalPrice);
+
+  const savedAddress = localStorage.getItem("savedAddress") || "";
+
+  const productPageTotalPrice = localStorage.getItem("totalPrice") || "0";
+
+  console.log("Total Price from local storage:", totalPrice);
+
   return (
-    <>
+    <div className="overflow-hidden">
       <NavBar />
       <div className="font-rubik w-[100vw]  mx-auto">
         <div className="w-[100vw] h-[75px] bg-zinc-800 flex items-center text-center mx-auto justify-center gap-[52.9px]">
@@ -110,7 +121,7 @@ const Checkout = () => {
               </div>
 
               <div className="sm:flex-row sm:mx-[8px] md:grid md:grid-cols-2 md:mt-5 md:gap-[12px] lg:grid grid-cols-2 lg:gap-[204px] lg:mx-[95px]">
-              <div>
+                <div>
                   <label className="sm:text-xs sm:font-normal sm:leading-tight md:text-base  lg:text-xl text-stone-500 font-normal leading-normal w-[384px] h-[24px] ">
                     Shipping Address*
                   </label>
@@ -119,6 +130,7 @@ const Checkout = () => {
                     name="shipping_address"
                     required
                     rows="1"
+                    value={savedAddress} // Set the value from local storage
                   ></textarea>
                 </div>
 
@@ -147,12 +159,16 @@ const Checkout = () => {
               </div>
             </form>
           </div>
-          <OrderSummary />
-          
+          <OrderSummary
+            totalPrice={
+              totalPrice !== undefined && productPageTotalPrice === 0
+                ? totalPrice
+                : productPageTotalPrice
+            }
+          />
         </div>
       </div>
-  
-    </>
+    </div>
   );
 };
 

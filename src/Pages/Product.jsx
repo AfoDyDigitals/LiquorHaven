@@ -27,6 +27,7 @@ const Product = () => {
 
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
+  const [cartItems, setCartItems] = useState([]);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -69,12 +70,23 @@ const Product = () => {
       const initialTotalPrice =
         initialQuantity * parseFloat(price.replace("$", ""));
       setTotalPrice(initialTotalPrice);
-      setSelectedProduct({ id, imgURL, name, price });
-      const newSelectedProduct = { imgURL, name, price };
 
-      setSelectedProduct(newSelectedProduct);
+      const productInCart = cartItems.find((item) => item.name === name);
+      const imageFileName =
+        productInCart &&
+        products.find((product) => product.name === productInCart.name)
+          ?.imageFileName;
+
+      setSelectedProduct({
+        id,
+        imgURL,
+        name,
+        price,
+        imageFileName: imageFileName || "", // Ensure imageFileName is set
+      });
+      localStorage.setItem("totalPrice", price.toString());
     }
-  }, [location.state]);
+  }, [location.state, cartItems, products]);
 
   useEffect(() => {
     // Recalculate total price whenever selectedProduct or quantity changes
@@ -88,8 +100,16 @@ const Product = () => {
   const handleCardClick = (index) => {
     setActiveIndex(index);
     setSelectedProduct(products[index]);
+
+    // Navigate to the "/product" route
     navigate("/product", { state: products[index] });
   };
+
+  // Add this useEffect to handle scrolling after navigation
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, [selectedProduct]); // Ensure the useEffect is triggered when selectedProduct changes
 
   const handleQuantityChange = (newQuantity) => {
     if (newQuantity < 1) {
@@ -105,7 +125,13 @@ const Product = () => {
 
   const handleAddToCart = () => {
     console.log("Selected Product Before Adding to Cart:", selectedProduct);
-    const updatedProducts = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Retrieve cart items from local storage
+    const storedItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Ensure that storedItems is always an array
+    const updatedProducts = Array.isArray(storedItems) ? storedItems : [];
+
     const existingProductIndex = updatedProducts.findIndex(
       (product) => product.id === selectedProduct.id
     );
@@ -116,15 +142,24 @@ const Product = () => {
       const newItem = {
         ...selectedProduct,
         quantity,
+        imageFileName: selectedProduct.imageFileName || "", // Use the existing imageFileName or set to an empty string
+        quantity,
         imgURL: selectedProduct.imgURL,
         id: selectedProduct.id || 0,
       };
-      console.log("New Item:", newItem);
       updatedProducts.push(newItem);
     }
-    console.log("Updated Products:", updatedProducts);
 
+    // Update local storage with the updated cart items
     localStorage.setItem("cart", JSON.stringify(updatedProducts));
+
+    // Update local storage with the totalPrice based on cart items
+    const updatedTotalPrice = updatedProducts.reduce(
+      (acc, product) =>
+        acc + product.quantity * parseFloat(product.price.replace("$", "")),
+      0
+    );
+    localStorage.setItem("totalPrice", JSON.stringify(updatedTotalPrice));
 
     // Display a notification with item name and quantity added
     setShowNotification(true);
@@ -141,7 +176,7 @@ const Product = () => {
   };
 
   return (
-    <section className=" ">
+    <section className="overflow-hidden ">
       <NavBar />
       {showNotification && (
         <Notification
@@ -149,17 +184,17 @@ const Product = () => {
           onClose={() => setShowNotification(false)}
         />
       )}
-      <div className="bg-[#2E2E2E] w-full h-16 flex justify-center items-center  font-rubik">
+      <div className="bg-zinc-800 w-full h-16 flex justify-center items-center  font-rubik gap-4 md:gap-6">
         <Link
           to="/"
-          className="hover:font-semibold text-white hover:text-[#333]"
+          className="sm:w-[36px] md:text-[13px] md:w-[36px]   text-white lg:text-xl font-normal hover:text-[#E66B66] leading-none max-md:mr-4"
         >
           Home
         </Link>
-        <div className="mx-2">
-          <img src="./src/assets/navigate_next_copy.svg" alt="nav next" />
-        </div>
-        <p className="text-[#E66B66]"> {selectedProduct?.name || "Product Name"}</p>
+        <div className=" text-white">&gt;</div>
+        <p className=" md:leading-none text-red-400 lg:text-xl font-bold lg:leading-normal">
+          {selectedProduct?.name || "Product Name"}
+        </p>
       </div>
       <div className="mx-auto w-[90%]">
         <div className="flex flex-col lg:flex-row lg:gap-8 justify-center items-center ">
@@ -222,17 +257,17 @@ const Product = () => {
                 +
               </button>
             </div>
-            <div className="flex flex-col">
+            <div className="flex gap-6 md:gap-10 mt-2 mb-16">
               <Link to="/cart">
                 <button
-                  className="w-full text-[20px] md:text-[31px] font-[500] mt-4 py-[20px] px-20 leading-[120%] text-black bg-[#F7D1D0] hover:bg-rose-300 rounded-md"
+                  className="w-full text-[20px] md:text-[31px] font-[500] mt-4 py-[20px] px-4 leading-[120%] text-[#E66B66] bg-white border-2 border-[#E66B66] rounded-md  hover:border-none"
                   onClick={handleAddToCart}
                 >
                   Add to Cart
                 </button>
               </Link>
               <Link to="/checkout">
-                <button className="w-full text-[20px] md:text-[31px] font-[500] mt-4 py-[20px] px-20 leading-[120%] text-black bg-[#B85652] hover:bg-red-500 rounded-md">
+                <button className="w-full text-[20px] md:text-[31px] font-[500] mt-4 py-[22px] px-4 leading-[120%] text-black bg-[#E66B66] hover:bg-[#B85652] rounded-md">
                   Buy Now
                 </button>
               </Link>
@@ -244,7 +279,7 @@ const Product = () => {
               Free delivery available for a lot of products and bulk purchases
             </p>
             <div className="w-full overflow-hidden">
-              <StateDropdown />
+              <StateDropdown onSelect={(state) => setSelectedState(state)} />
             </div>
             <div className="flex items-center">
               <img src={delivery_truck} alt="delivery" className="block" />
