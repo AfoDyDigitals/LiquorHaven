@@ -5,6 +5,7 @@ import Testimonial from "../Components/Testimonial";
 import Footer from "../Components/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import CartItem from "../Components/cartItem/CartItem";
+import TestimonialNew from "../Components/TestimonialNew";
 
 // eslint-disable-next-line react/prop-types
 const Cart = ({ location }) => {
@@ -129,7 +130,7 @@ const Cart = ({ location }) => {
           </div>
         </Link>
       </div>
-      <Testimonial />
+      <TestimonialNew />
       <Footer />
     </div>
   );
