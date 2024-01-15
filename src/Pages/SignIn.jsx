@@ -76,7 +76,7 @@ export const SignIn = () => {
               {/* Sign In button */}
               <button
                 type="submit"
-                className="mt-[40px] md:mt-[69px] lg:mt-[54px] mb-[41px] md:mb-[29.43px] lg:mb-[100px] p-[12px] bg-[#E66B66] text-[#fff] rounded-md"
+                className="mt-[40px] md:mt-[69px] lg:mt-[54px] mb-[41px] md:mb-[29.43px] lg:mb-[100px] p-[12px] bg-[#E66B66] hover:bg-[#b83c38] text-[#fff] rounded-md"
               >
                 Sign In
               </button>

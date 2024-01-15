@@ -46,7 +46,7 @@ function ResetPasswordCode() {
           </div>
 
           <form onSubmit={handleSubmit}>
-            <div className="flex flex-col gap-[40px] mt-[40px] mb-[50px]">
+            <div className="flex flex-col gap-[40px] mt-[40px]">
               <input
                 className="bg-[#F7F6F6] w-[252px] rounded-[4px]  text-sm font-normal py-[21px] pl-[13px]  md:w-[398px] md:text-base md:pl-[21px]  lg:w-[797px] text-[20px]  lg:pl-[42px] "
                 type=""

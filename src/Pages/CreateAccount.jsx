@@ -166,7 +166,7 @@ function CreateAccount() {
               </Link>
             </div>
             <div>
-              <button className="lg:w-[150px]  lg:p-3 p-2 rounded-lg border border-solid border-[#E66B66] bg-[#E66B66] font-medium text-[#fff] leading-6 lg:text-[16px] text-[13px]">
+              <button className="lg:w-[150px]  lg:p-3 p-2 rounded-lg   bg-[#E66B66] hover:bg-[#b83c38] font-medium text-[#fff] leading-6 lg:text-[16px] text-[13px]">
                 Create Account
               </button>
             </div>

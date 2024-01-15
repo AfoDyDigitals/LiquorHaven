@@ -1,13 +1,16 @@
 // eslint-disable-next-line no-unused-vars
+import { useState } from "react";
 import img from "../assets/LiquorHAVEN FOOTER LOGO.svg";
+import ArrowImg from "../assets/arrow forward white.svg";
 import facebook from "../assets/facebook-circle-fill.svg";
 import instagram from "../assets/instagram-fill.svg";
 import linkedin from "../assets/linkedin-box-fill.svg";
 import twitter from "../assets/twitter-fill.svg";
 import { Link } from "react-router-dom";
 
-
 function Footer() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="bg-[#2E2E2E] text-cyan-50 relative mt-0 ">
       <a href="#" className="scroll-smooth">
@@ -39,10 +42,27 @@ function Footer() {
               placeholder="Your Email Address"
             />
 
-            <button className="bg-[#E66B66] text-white rounded-r-[5px] text-[13px] font-medium md:text-[16px]">
-              <Link to="/signin" className=" p-[12px]">
+            <button className="bg-[#E66B66] w-auto text-black rounded-r-[5px] text-[13px] font-medium md:text-[16px]">
+              <div
+                className="relative p-[11.5px]"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 Sign in
-              </Link>
+                {isHovered && (
+                  <span 
+                  className="mx-[4px]"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      right: "-6px",
+                      transform: "translateY(-50%)",
+                    }}
+                  >
+                    <img src={ArrowImg} alt="Navigate Next" className="w-4 h-4 " />
+                  </span>
+                )}
+              </div>
             </button>
           </form>
         </div>
