@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import img from "../assets/LiquorHAVEN LOGO.png";
+import img from "../assets/LiquorHAVEN FOOTER LOGO.svg";
 import facebook from "../assets/facebook-circle-fill.svg";
 import instagram from "../assets/instagram-fill.svg";
 import linkedin from "../assets/linkedin-box-fill.svg";
@@ -40,7 +40,7 @@ function Footer() {
           >
             <input
               type=" "
-              className="bg-white focus:outline-none focus:none rounded-l-[5px] py-[15px] pl-[15px] w-[240px] text-[10px] font-normal md:w-[500px] md:text-[16px] lg:w-[680px] "
+              className="bg-white focus:outline-none focus:none rounded-l-[5px] text-[#666161] py-[15px] pl-[15px] w-[240px] text-[10px] font-normal md:w-[500px] md:text-[16px] lg:w-[680px] "
               placeholder="Your Email Address"
             />
 

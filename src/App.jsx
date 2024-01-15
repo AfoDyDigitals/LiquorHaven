@@ -11,6 +11,7 @@ import ResetPasswordCode from "./Pages/ResetPasswordCode";
 import ResetPasswordMail from "./Pages/ResetPasswordMail";
 import Checkout from "./Pages/Checkout";
 import Cart from "./Pages/Cart";
+import CreateAccount from "./Pages/CreateAccount";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/signup" element={<CreateAccount />} />
       </Routes>
     </Router>
   );
