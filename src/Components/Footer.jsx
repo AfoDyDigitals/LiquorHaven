@@ -7,8 +7,6 @@ import twitter from "../assets/twitter-fill.svg";
 import { Link } from "react-router-dom";
 
 
-import { Link } from "react-router-dom";
-
 function Footer() {
   return (
     <div className="bg-[#2E2E2E] text-cyan-50 relative mt-0 ">
