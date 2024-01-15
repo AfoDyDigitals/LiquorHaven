@@ -11,6 +11,7 @@ import ResetPasswordCode from "./Pages/ResetPasswordCode";
 import ResetPasswordMail from "./Pages/ResetPasswordMail";
 import Checkout from "./Pages/Checkout";
 import Cart from "./Pages/Cart";
+import CreateAccount from "./Pages/CreateAccount";
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
@@ -25,6 +26,7 @@ function App() {
         <Route path="/forgotpassword/code" element={<ResetPasswordCode />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/signup" element={<CreateAccount />} />
         <Route
           path="/cart"
           element={
