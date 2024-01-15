@@ -69,9 +69,7 @@ function Breadcrumb({ handleCurrencyChange }) {
             )}
           </div>
           <Link to="/about">About Us</Link>
-          <Link to="/product" className="cursor-pointer">
-            Contact Us
-          </Link>
+          <p className="cursor-pointer">Contact Us</p>
         </div>
 
         {/* currency & icons sm md */}

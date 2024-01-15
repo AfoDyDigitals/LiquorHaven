@@ -1,11 +1,36 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function OrderSummary() {
+function OrderSummary({ totalPrice }) {
   const [showAddressTextarea, setShowAddressTextarea] = useState(false);
   const handleAddressTextClick = () => {
     setShowAddressTextarea(!showAddressTextarea);
   };
+
+  useEffect(() => {
+    // Additional check to handle cases where totalPrice is not available
+    if (totalPrice === null || totalPrice === undefined) {
+      // Handle the case where totalPrice is not available
+      console.error("totalPrice is not available");
+    }
+  }, [totalPrice]);
+
+  // Assuming you have separate values for "Delivery fees" and "Free delivery"
+  const deliveryFees = 1880; // Replace with your actual delivery fees
+  const freeDelivery = -470; // Replace with your actual free delivery value
+
+  // Log types and values for debugging
+  console.log(
+    "Types:",
+    typeof totalPrice,
+    typeof deliveryFees,
+    typeof freeDelivery
+  );
+  console.log("Values:", totalPrice, deliveryFees, freeDelivery);
+
+  // Convert totalPrice to a number, defaulting to 0 if it's not a valid number
+  const totalPriceValue = Number(totalPrice) || 0;
 
   return (
     <div className="sm:mt-[9px] lg:mt-[83px] font-rubik">
@@ -36,13 +61,20 @@ function OrderSummary() {
             <div className="Total font-bold ">Total</div>
           </div>
           <div className="flex-col sm:w-[87px] sm:text-[13px] sm:font-normal sm:gap-[10px] md:gap-4 lg:gap-6 lg:text-xl md:w-[120px] lg:w-[142px] flex">
-            <div className=" text-right font-normal  "> N 123,340</div>
-            <div className=" text-right  font-normal">N 1,880</div>
-            <div className=" text-right text-[#3EB02B]  font-normal ">
-              {" "}
-              -N 470
+            <div className="text-right font-normal ">
+              {`$ ${totalPriceValue.toFixed(2)}`}
             </div>
-            <div className=" text-right font-bold ">N 124,750</div>
+            <div className="text-right font-normal">
+              {`$ ${deliveryFees.toFixed(2)}`}
+            </div>
+            <div className="text-right text-[#3EB02B] font-normal ">
+              {`-$ ${freeDelivery.toFixed(2)}`}
+            </div>
+            <div className="text-right font-bold ">
+              {`$ ${(totalPriceValue + deliveryFees + freeDelivery).toFixed(
+                2
+              )}`}
+            </div>
           </div>
         </div>
 
@@ -61,7 +93,7 @@ function OrderSummary() {
               />
             </div>
             <div className="">
-              <button className=" font-medium  text-[13px] md:text-base lg:text-xl text-[#8D8386]  md:leading-6 leading-[15.6px]">
+              <button className=" font-medium ml-2 md:ml-0  text-[13px] md:text-base lg:text-xl text-[#8D8386]  md:leading-6 leading-[15.6px]">
                 APPLY
               </button>
             </div>
@@ -91,7 +123,7 @@ function OrderSummary() {
             placeholder="Enter your new address..."
           ></textarea>
         )}
-        
+
         <div className="text-[#3B3B3B] sm:mt-10 text-base md:text-[18px] md:mt-10 lg:text-[28px] lg:font-bold leading-[19.2px] lg:mt-[101px] md:leading-6 lg:leading-9 text-center">
           Orders note (optional)
         </div>
@@ -102,12 +134,21 @@ function OrderSummary() {
         </div>
 
         <div className="flex flex-col items-center sm:mt-[40px] md:mt-[42px] lg:mt-[100px]">
-          <button className=" bg-black text-white justify-center sm:p-1 sm:text-xs md:p-2 md:text-base lg:p-3 lg:w-[200px]  lg:font-normal leading-normal lg:text-xl">
+          <button
+            onClick={() => {
+              window.alert("Payment has been successfully made!");
+              // Assuming you are using React Router for navigation
+              window.location.href = "/"; // Redirect to the home page
+            }}
+            className="bg-black text-white justify-center sm:p-1 sm:text-xs md:p-2 md:text-base lg:p-3 lg:w-[200px] lg:font-normal leading-normal lg:text-xl"
+          >
             MAKE PAYMENT
           </button>
-          <button className="sm:mt-[10px] sm:text-[12px] w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text-[16px] md:mt-[25px] h-[20px] md:h-[30px] lg:mt-[20px] md:leading-[-px]">
-            Return to cart
-          </button>
+          <Link to="/cart">
+            <button className="sm:mt-[10px] sm:text-[12px] w-[140px] lg:w-[163px] lg:leading-[30px] font-normal lg:text-[23px] md:text-[16px] md:mt-[25px] h-[20px] md:h-[30px] lg:mt-[20px] md:leading-[-px]">
+              Return to cart
+            </button>
+          </Link>
         </div>
         <div className=" flex gap-5 sm:text-xs sm:mt-[80px] sm:ml-[7px] md:text-base md:mt-14 md:ml-[16px] lg:text-xl lg:font-normal leading-normal lg:mt-[160px] lg:ml-[80px]">
           <div>Return policy</div>
