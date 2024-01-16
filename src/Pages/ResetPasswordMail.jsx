@@ -30,7 +30,7 @@ function ResetPasswordMail() {
     // Perform other necessary validations or actions
 
     // Navigate to the "/forgotpassword/code" route
-    window.location.href = "/forgotpassword/code";
+    window.location.href = "/code";
   };
   return (
     <>
