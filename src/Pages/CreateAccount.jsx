@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import img from "../assets/account icon.png";
+import img from "../assets/account-icon.png";
 import line from "../assets/line.png";
 import { Link } from "react-router-dom";
-import path from "../assets/path .png";
+import path from "../assets/path.png";
 import facebook from "../assets/facebook2.png";
 import twitter from "../assets/twitter2.png";
 import zxcvbn from "zxcvbn";
