@@ -54,7 +54,7 @@ function Header() {
           <img
             onClick={toggleSidebar}
             className=" lg:hidden"
-            src="../src/assets/menuBar.svg"
+            src="../menuBar.svg"
           />
         )}
 

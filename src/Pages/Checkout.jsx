@@ -28,11 +28,10 @@ const Checkout = () => {
             </p>
           </Link>
           <div className="w-3 h-3.5 sm:-mx-[30px] relative origin-top-left lg:-mx-5 rotate-[-3.87deg]">
-            {" "}
             <img
-              src="src/assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.png"
+              src="../navigation_next.svg"
               alt=""
-            />{" "}
+            />
           </div>
           <div className="sm:w-[63px] md:w-[63px] md:text-[13px] md:leading-none text-red-400 lg:text-xl font-bold lg:leading-normal lg:-ml-3">
             Checkout
@@ -59,7 +58,7 @@ const Checkout = () => {
               <div className="lg:w-9 h-9 relative">
                 <img
                   className="sm:w-4 sm:h-4 lg:w-9 lg:h-9"
-                  src="src/assets/fluent_payment-28-regular.svg"
+                  src="../fluent_payment-28-regular.svg"
                   alt="fluent_payment logo"
                 />
               </div>

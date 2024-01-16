@@ -21,7 +21,7 @@ function AboutUs() {
               Home
             </Link>
           </div>
-          <img src="../src/assets/navigate_next_copy.svg" />
+          <img src="../navigate_next_copy.svg" />
           <div className="text-[#E66B66]">About Us</div>
         </div>
         <WhoWeAre />
