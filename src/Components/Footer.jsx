@@ -16,7 +16,7 @@ function Footer() {
       <a href="#" className="scroll-smooth">
         <button className="absolute top-0 scroll mt-[10px] md:mt-9 lg:mt-16 right-6 md:right-10 lg:right-12 w-[20px] h-[20px] p-1 md:p-0 md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] bg-[#FDF0F0] rounded-full items-center flex justify-center">
           <img
-            src="../assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
+            src="../arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
             alt="BackToTop-button"
             className="w-[24px] h-[24px]"
           />
