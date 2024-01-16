@@ -3,7 +3,7 @@ import { useState } from "react";
 import img from "../assets/account-icon.png";
 import line from "../assets/line.png";
 import { Link } from "react-router-dom";
-import path from "../assets/path.png";
+import gmail from "../assets/Gmail.png";
 import facebook from "../assets/facebook2.png";
 import twitter from "../assets/twitter2.png";
 import zxcvbn from "zxcvbn";
@@ -188,7 +188,7 @@ function CreateAccount() {
               />
             </div>
             <div className="flex mb-[31px] lg:gap-[57px] gap-[20px] md:gap-[40px] items-center justify-center lg:mt-[21px] mt-[10px] md:mt-[15px]">
-              <img src={path} alt="" />
+              <img src={gmail} alt="" />
               <img src={facebook} alt="" />
               <img src={twitter} alt="" />
             </div>
