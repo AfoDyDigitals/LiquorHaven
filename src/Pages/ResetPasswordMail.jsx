@@ -56,7 +56,7 @@ function ResetPasswordMail() {
           />
           
             <p className="text-red-400 text-sm mb-[51px]">{error}</p>
-            <Link to="forgotpassword/code" onClick={submit} className="-mt-[0.6rem]">
+            <Link to="/code" onClick={submit} className="-mt-[0.6rem]">
               <SubmitButton />
             </Link>
             <div className="text-[13px] mt-[23px] font-normal hover:underline hover:underline-offset-6 mb-30px md:text-[16px] lg:text-[20px] lg:mb-[240px] cursor-pointer ">
