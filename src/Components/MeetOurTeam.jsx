@@ -21,27 +21,27 @@ const MeetOurTeam = () => {
 
   const teamMembers = [
     {
-      image: "../src/assets/Frame 49516.png",
+      image: "../Frame 49516.png",
       name: "John Wole",
       title: "CEO / Co-founder",
-      icon1: "../src/assets/linkedin-box-fill.svg",
-      icon2: "../src/assets/twitter-fill.svg",
+      icon1: "../Linkedin Rose.png",
+      icon2: "../twitter2.png",
       bio: "John is the spirited mastermind behind Liquor Haven.",
     },
     {
-      image: "../src/assets/Frame 49516 (1).png",
+      image: "../Frame 49516 (1).png",
       name: "Jane Yusuf",
       title: "CFO / Co-founder",
-      icon1: "../src/assets/linkedin-box-fill.svg",
-      icon2: "../src/assets/twitter-fill.svg",
+      icon1: "../Linkedin Rose.png",
+      icon2: "../twitter2.png",
       bio: "Jane is the financial alchemist who ensures every drop of success at Liquor Haven.",
     },
     {
-      image: "../src/assets/Frame 49516 (2).png",
+      image: "../Frame 49516 (2).png",
       name: "Jim Urji",
       title: "CTO / Co-founder",
-      icon1: "../src/assets/linkedin-box-fill.svg",
-      icon2: "../src/assets/twitter-fill.svg",
+      icon1: "../Linkedin Rose.png",
+      icon2: "../twitter2.png",
       bio: "Jim is the tech wizard who weaves the magic behind Liquor Haven's seamless online experience.",
     },
   ];
@@ -55,29 +55,29 @@ const MeetOurTeam = () => {
       {/* teams sm */}
       <div className="w-[100vw] flex flex-col font-rubik my-[64px] px-[32px] justify-center items-center gap-[64px] md:hidden lg:hidden">
         <TeamCard
-          image="../src/assets/Frame 49516.png"
+          image="../Frame 49516.png"
           name="John Wole"
           title="CEO / Co-founder"
-          icon1="../src/assets/linkedin-box-fill.svg"
-          icon2="../src/assets/twitter-fill.svg"
+          icon1="../Linkedin Rose.png"
+          icon2="../twitter2.png"
           bio="John is the spirited mastermind behind Liquor Haven."
         />
 
         <TeamCard
-          image="../src/assets/Frame 49516 (1).png"
+          image="../Frame 49516 (1).png"
           name="Jane Yusuf"
           title="CFO / Co-founder"
-          icon1="../src/assets/linkedin-box-fill.svg"
-          icon2="../src/assets/twitter-fill.svg"
+          icon1="../Linkedin Rose.png"
+          icon2="../twitter2.png"
           bio="Jane is the financial alchemist who ensures every drop of success at Liquor Haven."
         />
 
         <TeamCard
-          image="../src/assets/Frame 49516 (2).png"
+          image="../Frame 49516 (2).png"
           name="Jim Urji"
           title="CTO / Co-founder"
-          icon1="../src/assets/linkedin-box-fill.svg"
-          icon2="../src/assets/twitter-fill.svg"
+          icon1="../Linkedin Rose.png"
+          icon2="../twitter2.png"
           bio="Jim is the tech wizard who weaves the magic behind Liquor Haven's seamless online experience."
         />
       </div>
@@ -113,29 +113,29 @@ const MeetOurTeam = () => {
 
       <div className="hidden md:hidden lg:flex justify-center items-center justify-between px-[50px] gap-2">
         <TeamCard
-          image="../src/assets/Frame 49516.png"
+          image="../Frame 49516.png"
           name="John Wole"
           title="CEO / Co-founder"
-          icon1="../src/assets/linkedin-box-fill.svg"
-          icon2="../src/assets/twitter-fill.svg"
+          icon1="../Linkedin Rose.png"
+          icon2="../twitter2.png"
           bio="John is the spirited mastermind behind Liquor Haven."
         />
 
         <TeamCard
-          image="../src/assets/Frame 49516 (1).png"
+          image="../Frame 49516 (1).png"
           name="Jane Yusuf"
           title="CFO / Co-founder"
-          icon1="../src/assets/linkedin-box-fill.svg"
-          icon2="../src/assets/twitter-fill.svg"
+          icon1="../Linkedin Rose.png"
+          icon2="../twitter2.png"
           bio="Jane is the financial alchemist who ensures every drop of success at Liquor Haven."
         />
 
         <TeamCard
-          image="../src/assets/Frame 49516 (2).png"
+          image="../Frame 49516 (2).png"
           name="Jim Urji"
           title="CTO / Co-founder"
-          icon1="../src/assets/linkedin-box-fill.svg"
-          icon2="../src/assets/twitter-fill.svg"
+          icon1="../Linkedin Rose.png"
+          icon2="../twitter2.png"
           bio="Jim is the tech wizard who weaves the magic behind Liquor Haven's seamless online experience."
         />
       </div>

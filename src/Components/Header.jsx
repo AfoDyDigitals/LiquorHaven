@@ -22,7 +22,7 @@ function Header() {
         <Link to="/">
           <img
             className="w-[70px] h-[24px] md:w-[146px] mr-[10px] lg:w-[260px] h-[50px]"
-            src="../src/assets/LiquorHAVEN LOGO_.svg"
+            src="../LiquorHAVEN LOGO_.svg"
             alt="LiquorHaven Logo"
           />
         </Link>
@@ -38,7 +38,7 @@ function Header() {
           <button className="flex justify-center items-center bg-[#A22634]  rounded-l md:w-[74px] h-[46px] lg:w-[125px] h-[62px] ">
             <img
               className=" "
-              src="../src/assets/search_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
+              src="../search_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
             />
           </button>
         </div>
@@ -54,7 +54,7 @@ function Header() {
           <img
             onClick={toggleSidebar}
             className=" lg:hidden"
-            src="../src/assets/menuBar.svg"
+            src="../menuBar.svg"
           />
         )}
 
@@ -66,14 +66,14 @@ function Header() {
               <img
                 onClick={toggleCurrencyConverter}
                 className="w-[8px] h-[14px]"
-                src="../src/assets/Dropdown.svg"
+                src="../Dropdown.svg"
               />
             )}
             {!isCurrencyConverterVisible && (
               <img
                 onClick={toggleCurrencyConverter}
                 className="w-[8px] h-[14px]"
-                src="../src/assets/Dropdown.svg"
+                src="../Dropdown.svg"
               />
             )}
           </div>
@@ -81,7 +81,7 @@ function Header() {
           <div className="flex">
             <img
               className="w-[32px] h-[32px]"
-              src="../src/assets/favorite_FILL0_wght400_GRAD0_opsz24 1.svg"
+              src="../favorite_FILL0_wght400_GRAD0_opsz24 1.svg"
             />
             <div className="flex justify-center items-center text-[10px] font-normal bg-[#E66B66]  h-[12.5px] w-[5px] p-2 rounded-full">
               1
@@ -92,10 +92,9 @@ function Header() {
             <Link to="/cart">
               <img
                 className="w-[32px] h-[32px] cursor-pointer"
-                src="../src/assets/shopping_cart_FILL0_wght400_GRAD0_opsz24 1.svg"
+                src="../shopping_cart_FILL0_wght400_GRAD0_opsz24 1.svg"
               />
             </Link>
-
             <div className="flex justify-center items-center text-[10px] font-normal bg-[#E66B66]  h-[12.5px] w-[5px] p-2 rounded-full">
               1
             </div>

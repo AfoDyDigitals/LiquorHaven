@@ -41,7 +41,7 @@ function SideBar({ isVisible, toggleSidebar }) {
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
-          src="../src/assets/CloseIcon.svg"
+          src="../CloseIcon.svg"
         />
         <div className="hidden md:grid font-rubik justify-end gap-[50px] absolute top-[108px] ml-[40%] text-center lg:hidden">
           <Link to="/" className="text-[16px] font-normal md:text-[20px]">

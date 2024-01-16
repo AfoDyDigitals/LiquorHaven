@@ -16,14 +16,14 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/canada-flag-circular-17758 1.png"
+            src="../canada-flag-circular-17758 1.png"
           />
           <div className="text-[16px] font-normal">CAD</div>
         </div>
         <div className="flex justify-center items-center gap-[20px] hover:bg-[#ddd9d9] cursor-pointer">
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/united-kingdom-flag-icon 1.png"
+            src="../united-kingdom-flag-icon 1.png"
           />
           <div
             className="text-[16px] font-normal "
@@ -38,7 +38,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/japan-flag-icon 1.png"
+            src="../japan-flag-icon 1.png"
           />
           <div className="text-[16px] font-normal">JPY</div>
         </div>
@@ -48,7 +48,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px] "
-            src="../src/assets/united-states-flag-icon 1.png"
+            src="../united-states-flag-icon 1.png"
           />
           <div className="text-[16px] font-normal">USD</div>
         </div>
@@ -58,7 +58,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/australia-flag-icon 1.png"
+            src="../australia-flag-icon 1.png"
           />
           <div className="text-[16px] font-normal">AUD</div>
         </div>
@@ -71,7 +71,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/canada-flag-circular-17758 1.png"
+            src="../canada-flag-circular-17758 1.png"
           />
           <div className="text-[16px] font-normal ">CAD</div>
         </div>
@@ -81,7 +81,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/united-kingdom-flag-icon 1.png"
+            src="../united-kingdom-flag-icon 1.png"
           />
           <div className="text-[16px] font-normal">GBP</div>
         </div>
@@ -91,7 +91,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/japan-flag-icon 1.png"
+            src="../japan-flag-icon 1.png"
           />
           <div className="text-[16px] font-normal">JPY</div>
         </div>
@@ -101,7 +101,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/united-states-flag-icon 1.png"
+            src="../united-states-flag-icon 1.png"
           />
           <div className="text-[16px] font-normal">USD</div>
         </div>
@@ -111,7 +111,7 @@ function CurrencyConverter({
         >
           <img
             className="w-[32px] m-[10px]"
-            src="../src/assets/australia-flag-icon 1.png"
+            src="../australia-flag-icon 1.png"
           />
           <div className="text-[16px] font-normal">AUD</div>
         </div>

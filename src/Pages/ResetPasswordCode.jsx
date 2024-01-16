@@ -71,9 +71,9 @@ function ResetPasswordCode() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
-              <div className="flex items-center justify-center">
+              <Link to="/" className="flex items-center justify-center">
                 <SubmitButton />
-              </div>
+              </Link>
             </div>
           </form>
           <div className="text-[13px] mt-[30px] font-normal hover:underline cursor-pointer hover:underline-offset-6 mb-30px md:text-[16px] lg:text-[20px] mb-[240px]">

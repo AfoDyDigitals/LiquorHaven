@@ -30,7 +30,7 @@ function ResetPasswordMail() {
     // Perform other necessary validations or actions
 
     // Navigate to the "/forgotpassword/code" route
-    window.location.href = "/forgotpassword/code";
+    window.location.href = "/code";
   };
   return (
     <>
@@ -56,9 +56,9 @@ function ResetPasswordMail() {
           />
           
             <p className="text-red-400 text-sm mb-[51px]">{error}</p>
-            <button onClick={submit} className="-mt-[0.6rem]">
+            <Link to="/code" onClick={submit} className="-mt-[0.6rem]">
               <SubmitButton />
-            </button>
+            </Link>
             <div className="text-[13px] mt-[23px] font-normal hover:underline hover:underline-offset-6 mb-30px md:text-[16px] lg:text-[20px] lg:mb-[240px] cursor-pointer ">
               <Link to="/">Cancel</Link>
             

@@ -66,10 +66,10 @@ export const TestimonialNew = () => {
         </div>
         <div className="absolute flex gap-[10px] right-5 top-10 transform -translate-y-1/2 z-30">
           <button className="" onClick={handlePrevious}>
-            <img src="./src/assets/Group 49620.png" alt="Previous" />
+            <img src="../Group 49620.png" alt="Previous" />
           </button>
           <button className="" onClick={handleNext}>
-            <img src="./src/assets/Group 111.png" alt="Next" />
+            <img src="../Group 111.png" alt="Next" />
           </button>
         </div>
         <div className="flex justify-center mt-4 space-x-2">
