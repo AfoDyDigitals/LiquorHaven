@@ -29,7 +29,7 @@ const Checkout = () => {
           </Link>
           <div className="w-3 h-3.5 sm:-mx-[30px] relative origin-top-left lg:-mx-5 rotate-[-3.87deg]">
             <img
-              src="../navigation_next.svg"
+              src="../navigate_next_copy.svg"
               alt=""
             />
           </div>
