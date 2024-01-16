@@ -41,7 +41,7 @@ function OrderSummary({ totalPrice }) {
         <div className="flex sm:gap-[76px] md:gap-[217px] lg:gap-[258px] lg:ml-[70px]">
           <img
             className="sm:w-[20px] h-[20px] lg:w-[40px] lg:h-[30px] md:w-[28px] md:h-[20px]"
-            src="src/assets/clarity_arrow-line.png"
+            src="../clarity_arrow-line.png"
             alt=""
           />
           <div className="text-[#3B3B3B] text-base md:text-[25px] lg:text-[31px] lg:font-bold leading-[19.2px] md:leading-6 lg:leading-9 text-center">

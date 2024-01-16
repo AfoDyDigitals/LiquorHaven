@@ -37,7 +37,7 @@ function Breadcrumb({ handleCurrencyChange }) {
           <button className="flex justify-center items-center bg-[#A22634] w-[60px] h-[35px] rounded-l">
             <img
               className=" "
-              src="../src/assets/search_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
+              src="../search_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
             />
           </button>
         </div>
@@ -48,7 +48,7 @@ function Breadcrumb({ handleCurrencyChange }) {
         <div className="flex gap-[10px] justify-center items-center md:ml-[32px]">
           <img
             className="w-[16px] md:w-[24px] lg:w-[32px]"
-            src="../src/assets/call_FILL1_wght400_GRAD0_opsz24 1.svg"
+            src="../call_FILL1_wght400_GRAD0_opsz24 1.svg"
           />
           <div className="text-[13px] font-semibold md:text-[16px] lg:text-[20px]">
             Hotline:
@@ -65,7 +65,7 @@ function Breadcrumb({ handleCurrencyChange }) {
           >
             <div>Shop</div>
             <img
-              src="../src/assets/Dropdown white.svg"
+              src="../Dropdown white.svg"
               className={` ${
                 isShopDropdownVisible ? "visible" : "visible"
               }`}
@@ -86,14 +86,14 @@ function Breadcrumb({ handleCurrencyChange }) {
               <img
                 onClick={toggleCurrencyConverter}
                 className="w-[6px] h-[10px]"
-                src="../src/assets/Dropdown white.svg"
+                src="../Dropdown white.svg"
               />
             )}
             {!isCurrencyConverterVisible && (
               <img
                 onClick={toggleCurrencyConverter}
                 className="w-[6px] h-[10px]"
-                src="../src/assets/Dropdown white.svg"
+                src="../Dropdown white.svg"
               />
             )}
             {isCurrencyConverterVisible && (
@@ -107,7 +107,7 @@ function Breadcrumb({ handleCurrencyChange }) {
           <div className="flex w-[26px] md:w-[30px]">
             <img
               className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
-              src="../src/assets/favorite_FILL0_white.svg"
+              src="../favorite_FILL0_white.svg"
             />
             <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1.5 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">
               1
@@ -118,7 +118,7 @@ function Breadcrumb({ handleCurrencyChange }) {
             <Link to="/cart">
               <img
                 className="w-[16px] h-[16px] md:w-[18px] h-[18px]"
-                src="../src/assets/shopping_cart_white.svg"
+                src="../shopping_cart_white.svg"
               />
             </Link>
             <div className="flex text-black justify-center items-center text-[8px] font-normal bg-[#E66B66]  h-[10px] w-[4px] p-1.5 rounded-full lg:text-[10px] h-[12.5px] w-[4px]">

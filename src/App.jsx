@@ -23,7 +23,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/forgotpassword" element={<ResetPasswordMail />} />
-        <Route path="/forgotpassword/code" element={<ResetPasswordCode />} />
+        <Route path="/code" element={<ResetPasswordCode />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/signup" element={<CreateAccount />} />
