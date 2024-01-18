@@ -57,8 +57,8 @@ function CreateAccount() {
   };
 
   return (
-    <>
-    <NavBar />
+    <div className="overflow-hidden">
+      <NavBar />
       <div className="bg-[#F9F2F3] w-[100%] h-auto pt-[49px]">
         <div className="lg:w-[1000px] lg:h-[1127px] md:w-[500px] md:h-[800px] w-[300px] h-[800px] bg-white mx-auto  border border-solid border-[#FDF0F0] shadow-md ">
           <div className="flex flex-col lg:gap-[15px] gap-[9px] items-center">
@@ -161,7 +161,10 @@ function CreateAccount() {
               <p className="lg:text-[16px] md:text-[14px] text-[11px] font-normal leading-[13px]">
                 Already have an account?
               </p>
-              <Link to="/signin" className="text-[#E66B66] lg:text-[20px] md:text-[16px] font-medium">
+              <Link
+                to="/signin"
+                className="text-[#E66B66] lg:text-[20px] md:text-[16px] font-medium"
+              >
                 Sign in
               </Link>
             </div>
@@ -196,7 +199,10 @@ function CreateAccount() {
               <p className="text-[12px] md:text-[14px] lg:text-[16px] md:font-medium font-normal leading-[14px]">
                 Want to make a quick order?
               </p>
-              <Link to="/" className="text-[#E66B66] text-[12px] lg:text-[16px] md:text-[14px] md:font-medium font-medium leading-[14px]">
+              <Link
+                to="/"
+                className="text-[#E66B66] text-[12px] lg:text-[16px] md:text-[14px] md:font-medium font-medium leading-[14px]"
+              >
                 Order as a Guest
               </Link>
             </div>
@@ -211,7 +217,7 @@ function CreateAccount() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

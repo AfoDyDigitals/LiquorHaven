@@ -18,7 +18,7 @@ function Header() {
 
   return (
     <div className="w-[100vw] overflow-none">
-      <div className="font-rubik relative z-20 flex justify-center items-center mt-[25px]  mx-[16px] md:flex  mx-[32px] lg:flex gap-[0px] mx-[20px]  justify-between">
+      <div className="font-rubik relative z-20 flex justify-between items-center mt-[25px]  mx-[12px] sm:mx-[16px] md:flex  md:mx-[32px] lg:flex gap-[0px] lg:max-w-[95%]  ">
         <Link to="/">
           <img
             className="w-[70px] h-[24px] md:w-[146px] mr-[10px] lg:w-[260px] h-[50px]"
@@ -59,7 +59,7 @@ function Header() {
         )}
 
         {/* currency and icons */}
-        <div className="sm:hidden md:hidden lg:flex gap-[20px]  h-[32px] justify-end">
+        <div className="hidden md:hidden lg:flex gap-[20px]  h-[32px] justify-end">
           <div className="flex justify-center items-center gap-[2px] ">
             <div className="text-[16px] font-normal">USD</div>
             {isCurrencyConverterVisible && (
