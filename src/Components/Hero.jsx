@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import img from "../assets/arrow forward black.svg";
 import img2 from "../assets/arrow forward white.svg";
 
-
 export const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
@@ -66,7 +65,6 @@ export const Hero = () => {
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
-
   return (
     <section id="home">
       <div className="relative overflow-hidden bg-[#B0A4A7] opacity-90">
@@ -100,14 +98,16 @@ export const Hero = () => {
                   </h2>
                   <div className="flex gap-4 md:gap-8 mt-4 md:mt-8 ml-0 md:ml-1">
                     <Link to="/signin">
-                      <div className="px-6 py-2 w-auto bg-transparent border border-white text-white text-[16px] font-[400] rounded-md relative overflow-hidden"
-                      onMouseEnter={() => setIsHovered(true)}
-                      onMouseLeave={() => setIsHovered(false)}
+                      <div
+                        className="px-6 py-2 w-auto bg-transparent border border-white text-white text-[16px] font-[400] rounded-md relative overflow-hidden"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
                       >
                         Sign In
                         {isHovered && (
-                          <span className="mr-[10px]"
-                          style={{
+                          <span
+                            className="mr-[10px]"
+                            style={{
                               position: "absolute",
                               top: "50%",
                               right: "-6px",
@@ -132,7 +132,8 @@ export const Hero = () => {
                       >
                         Register
                         {isHovered1 && (
-                          <span className="mr-[10px]"
+                          <span
+                            className="mr-[10px]"
                             style={{
                               position: "absolute",
                               top: "50%",
