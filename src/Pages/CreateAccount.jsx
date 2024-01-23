@@ -11,11 +11,53 @@ import NavBar from "../Components/NavBar";
 
 function CreateAccount() {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [password, setPassword] = useState("");
-  const passwordScore = zxcvbn(password);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+  });
+  const passwordScore = zxcvbn(formData.password);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleCreateAccount = async () => {
+    // Use the actual API endpoint provided
+    const apiEndpoint = "http://102.36.176.226:8081/auth/register";
+
+    try {
+      const response = await fetch(apiEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log("Response:", response);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("API Response:", data);
+
+      // Check for success message or handle it as needed
+      if (data.message) {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
   };
 
   const getPasswordColor = () => {
@@ -37,6 +79,8 @@ function CreateAccount() {
   };
 
   const getPasswordLabel = () => {
+    const password = formData.password;
+
     if (password.length > 0) {
       switch (passwordScore.score) {
         case 0:
@@ -84,6 +128,9 @@ function CreateAccount() {
                 required
                 placeholder="Enter First name"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]"
+                onChange={handleChange}
+                name="firstName"
+                value={formData.firstName}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px] lg:mt-[30px] md:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]">
@@ -95,6 +142,9 @@ function CreateAccount() {
                 required
                 placeholder="Enter Last name"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]"
+                onChange={handleChange}
+                name="lastName"
+                value={formData.lastName}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px]  flex flex-col justify-center gap-[10px]">
@@ -107,6 +157,9 @@ function CreateAccount() {
                 id="email"
                 placeholder="Enter Email address"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]"
+                onChange={handleChange}
+                name="email"
+                value={formData.email}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]">
@@ -118,6 +171,9 @@ function CreateAccount() {
                 required
                 placeholder="Enter Phone number"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]"
+                onChange={handleChange}
+                name="phoneNumber"
+                value={formData.phoneNumber}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center lg:gap-[10px] gap-[7px]">
@@ -130,12 +186,14 @@ function CreateAccount() {
                 <input
                   type={passwordVisible ? "text" : "password"}
                   required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handleChange}
                   id="password"
                   placeholder="Enter password"
                   className={`placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] lg:h-[65px] w-full  border-${getPasswordColor()} focus:border-${getPasswordColor()}`}
+                  name="password"
+                  value={formData.password}
                 />
+
                 <span
                   className={`absolute inset-y-0 right-0 pr-3 flex items-center text-sm cursor-pointer md:text-[#847B7D] text-[#847B7D] md:text-[15px] md:font-normal text-${getPasswordColor()}`}
                   onClick={togglePasswordVisibility}
@@ -169,7 +227,10 @@ function CreateAccount() {
               </Link>
             </div>
             <div>
-              <button className="lg:w-[150px]  lg:p-3 p-2 rounded-lg   bg-[#E66B66] hover:bg-[#b83c38] font-medium text-[#fff] leading-6 lg:text-[16px] text-[13px]">
+              <button
+                className="lg:w-[150px]  lg:p-3 p-2 rounded-lg   bg-[#E66B66] hover:bg-[#b83c38] font-medium text-[#fff] leading-6 lg:text-[16px] text-[13px]"
+                onClick={handleCreateAccount}
+              >
                 Create Account
               </button>
             </div>
