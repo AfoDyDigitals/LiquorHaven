@@ -1,9 +1,6 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
-
 import Product from "./Pages/Product";
 import { SignIn } from "./Pages/SignIn";
 import AboutUs from "./Pages/AboutUs";
@@ -13,10 +10,8 @@ import Checkout from "./Pages/Checkout";
 import Cart from "./Pages/Cart";
 import CreateAccount from "./Pages/CreateAccount";
 
-
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
-
 
   return (
     <Router>

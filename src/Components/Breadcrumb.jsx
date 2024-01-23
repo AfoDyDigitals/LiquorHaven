@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import ShopDropdown from "./ShopDropdown";
 import CurrencyConverter from "./CurrencyConverter";
@@ -63,7 +62,7 @@ function Breadcrumb({ handleCurrencyChange }) {
     <div className="font-rubik w-[100vw] overflow-none">
       {/* searchbar sm*/}
       <div className="flex justify-center items-center">
-        <div className=" flex justify-center items-center  border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden">
+        <div className=" flex justify-between items-center  border-solid border border-[#9E9496] w-[92%] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden">
           <input
             className="font-normal focus:outline-none focus:none  w-[343px] h-[16px] text-[13px] p-[15px] border-none"
             placeholder="Search over 3,000 quality drinks..."
@@ -81,19 +80,20 @@ function Breadcrumb({ handleCurrencyChange }) {
       </div>
 
       {/* breadcrumb */}
-      <div className=" flex justify-evenly items-center bg-[#A22634] text-white  h-[60px] mt-[20px] md:h-[60px] mt-[40px] justify-between lg:h-[108px] mt-[60px] justify-between">
-        <div className="flex gap-[10px] justify-center items-center md:ml-[32px]">
+      <div className=" flex justify-evenly items-center bg-[#A22634] text-white  h-[60px] mt-[20px] md:h-[60px] md:mt-[40px] md:justify-between md:pl-8 md:pr-12 lg:h-[108px] lg:mt-[60px] lg:justify-between">
+        <div className="flex gap-[2px] sm:gap-[10px] justify-center items-center sm:md:ml-[32px]">
           <img
             className="w-[16px] md:w-[24px] lg:w-[32px]"
             src="../call_FILL1_wght400_GRAD0_opsz24 1.svg"
           />
           <div className="text-[13px] font-semibold md:text-[16px] lg:text-[20px]">
-            Hotline:
+            <p className="hidden sm:block"> Hotline:</p>
           </div>
           <Caller />
         </div>
 
-        <div className="sm:hidden md:hidden lg:flex gap-[50px]">
+        <div className="hidden md:hidden lg:flex gap-[50px]">
+
           <Link className="font-bold" to="/">
             Home
           </Link>
@@ -116,8 +116,8 @@ function Breadcrumb({ handleCurrencyChange }) {
         </div>
 
         {/* currency & icons sm md */}
-        <div className="flex justify-center items-center gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
-          <div className="flex relative justify-center items-center gap-[5px] ml-[40px] mr-[10px]  md: mr-[10px]">
+        <div className="flex justify-center items-center gap-1 sm:gap-[10px] h-[32px] md:gap-[15px] lg:hidden">
+          <div className="flex relative justify-center items-center gap-[3px] sm:gap-[5px] ml-[40px] mr-[10px]  md: mr-[10px]">
             <div className="text-[10px] font-normal md:text-[13px]">
               {selectedCurrency}
             </div>
@@ -166,7 +166,7 @@ function Breadcrumb({ handleCurrencyChange }) {
           </div>
         </div>
 
-        <div className="flex  md:gap-[25px] lg:gap-[35px]">
+        <div className="flex  md:gap-[12px] lg:gap-[35px]">
           <Link to="/signin">
             <button className="hidden md:flex justify-center items-center  w-[66px] h-[32px] border border-[#E7E3E4] rounded-[5px] bg-transparent  lg:rounded-[8px] w-[95px] h-[46px] ">
               <div
