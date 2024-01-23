@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import TrendingCard from "./cards/TrendingCard";
-
+import GetProduct from "./draft/GetProduct";
 import { products3 } from "./constants";
 
 export const WhatsNew = () => {
@@ -12,6 +12,10 @@ export const WhatsNew = () => {
     setActiveIndex(index);
   };
 
+  const [products3, setProduct] = useState([]);
+  useEffect(() => {
+    GetProduct(setProduct);
+  },[]);
   /* const handleCardClick = (index) => {
     // Navigate to the product page with the selected product's details
     history.push(`/product-details/${index}`);
@@ -44,9 +48,9 @@ export const WhatsNew = () => {
           {products3.map((product, index) => (
             <TrendingCard
               key={index}
-              imgURL={product.imgURL}
+              imgURL={product.imageURL}
               name={product.name}
-              price={product.price}
+              price={`$${product.price}`}
             />
           ))}
         </div>
@@ -61,9 +65,9 @@ export const WhatsNew = () => {
               {products3.map((product, index) => (
                 <TrendingCard
                   key={index}
-                  imgURL={product.imgURL}
+                  imgURL={product.imageURL}
                   name={product.name}
-                  price={product.price}
+                  price={`$${product.price}`}
                 />
               ))}
             </div>

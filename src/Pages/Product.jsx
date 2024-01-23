@@ -11,11 +11,12 @@ import {
 import { WhyUs } from "../Components/WhyUs";
 import TrendingCard from "../Components/cards/TrendingCard";
 
-import { products } from "../Components/constants";
+// import { products } from "../Components/constants";
 import StateDropdown from "../Components/cards/StateDropdown";
 import Footer from "../Components/Footer";
 import { DescriptionReview } from "../Components/cards/DescriptionReview";
 import Notification from "../Components/cards/Notification";
+import GetProduct from "../Components/draft/GetProduct";
 
 const Product = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -28,9 +29,14 @@ const Product = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState("");
   const [cartItems, setCartItems] = useState([]);
-
+  
   const location = useLocation();
   const navigate = useNavigate();
+  
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    GetProduct(setProducts);
+  },[]);
 
   useEffect(() => {
     // Calculate delivery date logic
@@ -320,9 +326,10 @@ const Product = () => {
             {products.map((product, index) => (
               <TrendingCard
                 key={index}
-                imgURL={product.imgURL}
+                imgURL={product.imageURL}
+                // imgURL={product.imgURL}
                 name={product.name}
-                price={product.price}
+                price={`$${product.price}`}
                 onAddToCart={() => handleAddToCart(product)}
               />
             ))}
@@ -337,7 +344,7 @@ const Product = () => {
               {products.map((product, index) => (
                 <TrendingCard
                   key={index}
-                  imgURL={product.imgURL}
+                  imgURL={product.imageURL}
                   name={product.name}
                   price={product.price}
                   onAddToCart={() => handleAddToCart(product)}
@@ -350,6 +357,7 @@ const Product = () => {
                 <div
                   key={index}
                   onClick={() => handleDotClick(index)}
+                  // onClick={() => handleCardClick(index)}
                   className={`w-3 h-3 rounded-full cursor-pointer ${
                     activeIndex === index ? "bg-[#A22634]" : "bg-[#E66B66]"
                   }`}
