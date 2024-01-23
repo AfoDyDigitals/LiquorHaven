@@ -9,7 +9,7 @@ function SideBar({ isVisible, toggleSidebar }) {
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
-          src="../src/assets/CloseIcon.svg"
+          src="../CloseIcon.svg"
         />
 
         <div className="flex flex-col font-rubik justify-center items-center ml-[0px] mr-[0px] gap-[31px] mt-[108px] text-center md:hidden lg:hidden">

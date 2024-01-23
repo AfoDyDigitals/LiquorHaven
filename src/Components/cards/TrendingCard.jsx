@@ -41,7 +41,7 @@ const TrendingCard = ({ imgURL, name, price, onAddToCart }) => {
         <img
           src={imgURL}
           alt="Valentino Finest"
-          className="hover:rounded-t-[1rem]"
+          className=" w-[214px] h-[313px] hover:rounded-t-[1rem]"
         />
         <h3 className="text-[16px] wide:text-[20px] mt-[15px]">{name} </h3>
         <div className="flex flex-row items-center gap-0 mt-[15px]">

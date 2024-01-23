@@ -1,19 +1,52 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CurrencyConverter from "./CurrencyConverter";
 import SideBar from "./SideBar";
 import { Link } from "react-router-dom";
+import ProductPrototype from "./draft/ProductPrototype";
+import TrendingCard from "./cards/TrendingCard";
 
 function Header() {
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [products, setProduct] = useState([]);
+
   function toggleSidebar() {
     setIsSidebarVisible(!isSidebarVisible);
   }
-
   const [isCurrencyConverterVisible, setIsCurrencyConverterVisible] =
     useState(false);
   function toggleCurrencyConverter() {
     setIsCurrencyConverterVisible(!isCurrencyConverterVisible);
+  }
+  function search(e) {
+    setSearchValue(e.target.value);
+  }
+  useEffect(() => {
+      searchFunction();
+  }, [searchValue]);
+  function searchFunction() {
+    if (searchValue.length > 0) {
+      setProduct((prev) => {
+        let curr = [...prev];
+        const value = searchValue.toLowerCase();
+        if (value.length === 0) {
+          return [];
+        } else {
+          const matches = [];
+          for (let i = 0; i < ProductPrototype.length; i++) {
+            const current = ProductPrototype[i];
+            const currentName = current.name.toLowerCase();
+            if (currentName.includes(value)) {
+              matches.push(current);
+            }
+          }
+          return matches;
+        }
+      });
+    } else {
+      setProduct([]);
+    }
   }
 
   return (
@@ -31,8 +64,10 @@ function Header() {
         <div className="hidden md:flex  justify-center items-center w-[381px] h-[46px] rounded-[4px] border border-[#9E9496] lg:w-[600px] h-[62px]">
           <input
             className="text-[13px] font-normal  md:focus:outline-none focus:none w-[343px] lg:w-[600px]   p-[15px] rounded-[4px] border-none"
-            type=""
             placeholder="Search over 3,000 quality drinks..."
+            onChange={search}
+            onClick={() => console.log(products)}
+            value={searchValue}
           />
 
           <button className="flex justify-center items-center bg-[#A22634]  rounded-l md:w-[74px] h-[46px] lg:w-[125px] h-[62px] ">
@@ -105,6 +140,20 @@ function Header() {
       {isCurrencyConverterVisible && (
         <CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />
       )}
+      <div className="flex gap-2">
+        {products.map((item, index) => {
+          return (
+            <TrendingCard
+              key={index}
+              imgURL={item.imageURL}
+              name={item.name}
+              price={item.price}
+              onAddToCart={() => console.log(item)}
+              style={{ opacity: 1 }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

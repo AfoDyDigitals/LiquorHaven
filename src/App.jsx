@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./Pages/Home";
@@ -13,8 +13,10 @@ import Checkout from "./Pages/Checkout";
 import Cart from "./Pages/Cart";
 import CreateAccount from "./Pages/CreateAccount";
 
+
 function App() {
   const [totalPrice, setTotalPrice] = useState(0);
+
 
   return (
     <Router>

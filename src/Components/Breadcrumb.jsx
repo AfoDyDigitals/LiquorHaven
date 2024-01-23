@@ -1,15 +1,20 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ShopDropdown from "./ShopDropdown";
 import CurrencyConverter from "./CurrencyConverter";
 import { Link } from "react-router-dom";
 import Caller from "./cards/Caller";
 import img from "../assets/arrow forward black.svg";
 import img2 from "../assets/arrow forward white.svg";
+import ProductPrototype from "./draft/ProductPrototype";
+import TrendingCard from "./cards/TrendingCard";
 
 function Breadcrumb({ handleCurrencyChange }) {
   const [isShopDropdownVisible, setIsShopDropdownVisible] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
+
+  const [searchValue, setSearchValue] = useState("");
+  const [products, setProduct] = useState([]);
 
   function toggleShopDropdown() {
     setIsShopDropdownVisible(!isShopDropdownVisible);
@@ -24,6 +29,36 @@ function Breadcrumb({ handleCurrencyChange }) {
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
+  function search(e) {
+    setSearchValue(e.target.value);
+  }
+  useEffect(() => {
+    searchFunction();
+  }, [searchValue]);
+  function searchFunction() {
+    if (searchValue.length > 0) {
+      setProduct((prev) => {
+        let curr = [...prev];
+        const value = searchValue.toLowerCase();
+        if (value.length === 0) {
+          return [];
+        } else {
+          const matches = [];
+          for (let i = 0; i < ProductPrototype.length; i++) {
+            const current = ProductPrototype[i];
+            const currentName = current.name.toLowerCase();
+            if (currentName.includes(value)) {
+              matches.push(current);
+            }
+          }
+          return matches;
+        }
+      });
+    } else {
+      setProduct([]);
+    }
+  }
+
   return (
     <div className="font-rubik w-[100vw] overflow-none">
       {/* searchbar sm*/}
@@ -31,8 +66,10 @@ function Breadcrumb({ handleCurrencyChange }) {
         <div className=" flex justify-center items-center  border-solid border border-[#9E9496] w-[343px] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden">
           <input
             className="font-normal focus:outline-none focus:none  w-[343px] h-[16px] text-[13px] p-[15px] border-none"
-            type=""
             placeholder="Search over 3,000 quality drinks..."
+            onChange={search}
+            onClick={() => console.log(products)}
+            value={searchValue}
           />
           <button className="flex justify-center items-center bg-[#A22634] w-[60px] h-[35px] rounded-l">
             <img
@@ -57,7 +94,9 @@ function Breadcrumb({ handleCurrencyChange }) {
         </div>
 
         <div className="sm:hidden md:hidden lg:flex gap-[50px]">
-          <Link className="font-bold" to="/">Home</Link>
+          <Link className="font-bold" to="/">
+            Home
+          </Link>
           <div
             className="relative flex gap-[5px] justify-center items-center"
             onMouseEnter={toggleShopDropdown}
@@ -66,13 +105,13 @@ function Breadcrumb({ handleCurrencyChange }) {
             <div>Shop</div>
             <img
               src="../Dropdown white.svg"
-              className={` ${
-                isShopDropdownVisible ? "visible" : "visible"
-              }`}
+              className={` ${isShopDropdownVisible ? "visible" : "visible"}`}
             />
             {isShopDropdownVisible && <ShopDropdown />}
           </div>
-          <Link className="hover:font-bold" to="/about">About Us</Link>
+          <Link className="hover:font-bold" to="/about">
+            About Us
+          </Link>
           <p className="hover:font-bold cursor-pointer">Contact Us</p>
         </div>
 
@@ -182,6 +221,21 @@ function Breadcrumb({ handleCurrencyChange }) {
       {/* {isShopDropdownVisible && (
         <ShopDropdown toggleShopDropdown={toggleShopDropdown} />
       )} */}
+
+      <div className="flex gap-2">
+        {products.map((item, index) => {
+          return (
+            <TrendingCard
+              key={index}
+              imgURL={item.imageURL}
+              name={item.name}
+              price={item.price}
+              onAddToCart={() => console.log(item)}
+              style={{ opacity: 1 }}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
