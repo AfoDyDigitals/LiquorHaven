@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SubmitButton from "../Components/SubmitButton";
 import NavBar from "../Components/NavBar";
 import { Link } from "react-router-dom";
+import { default_img } from "../assets";
 
 function ResetPasswordMail() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -29,7 +30,7 @@ function ResetPasswordMail() {
     // Perform other necessary validations or actions
 
     // Navigate to the "/forgotpassword/code" route
-    window.location.href = "/forgotpassword/code";
+    window.location.href = "forgotpassword/code";
   };
   return (
     <>
@@ -38,7 +39,7 @@ function ResetPasswordMail() {
         <div className="flex flex-col justify-center items-center font-rubik bg-white shadow-lg w-[324px] h-[500px] md:h-[600px] mt-[30px] md:w-[500px] md:mt-[60px] lg:w-[1000px] lg:h-[800px] ">
           <img
             className="mt-[32px] md:mt-[58px]"
-            src="./src/assets/ProfileIcon.svg"
+            src={default_img}
           />
           <div className="text-[20px] my-[13px] font-bold md:text-[25px] md:my-[15px] lg:text-[39px]">
             Reset your password
@@ -55,9 +56,9 @@ function ResetPasswordMail() {
           />
           
             <p className="text-red-400 text-sm mb-[51px]">{error}</p>
-            <button onClick={submit} className="-mt-[0.6rem]">
+            <Link to="/code" onClick={submit} className="-mt-[0.6rem]">
               <SubmitButton />
-            </button>
+            </Link>
             <div className="text-[13px] mt-[23px] font-normal hover:underline hover:underline-offset-6 mb-30px md:text-[16px] lg:text-[20px] lg:mb-[240px] cursor-pointer ">
               <Link to="/">Cancel</Link>
             

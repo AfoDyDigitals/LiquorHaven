@@ -131,7 +131,7 @@ export const products2 = [
 
     imageFileName: "valent9.png",
     price: "$190",
-    name: "Gunness",
+    name: "Guinness",
   },
   {
     id: 10,
@@ -148,14 +148,14 @@ export const products3 = [
     imgURL: valentino_finest11,
     imageFileName: "What's new - Image 1.png",
     price: "$130",
-    name: "Ginger Beer",
+    name: "Four Brother's",
   },
   {
     id: 12,
     imgURL: valentino_finest12,
     imageFileName: "What's new - Image 2.png",
     price: "$180",
-    name: "Heineken",
+    name: "Centurion's",
   },
   {
     id: 13,

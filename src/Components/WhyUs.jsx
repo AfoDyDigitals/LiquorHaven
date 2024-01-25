@@ -17,7 +17,7 @@ export const WhyUs = () => {
           <div className="flex gap-[12px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/local_shipping.png"
+              src="../local_shipping.png"
             />
             <div>
               <div className="sm:font-bold w-[203px]  leading-tight text-base mb-2 md:mb-2 font-bold md:text-xl font-rubik md:leading-none">
@@ -31,7 +31,7 @@ export const WhyUs = () => {
           <div className="flex gap-[12px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/lock_FILL.png"
+              src="../lock_FILL.png"
             />
 
             <div>
@@ -46,7 +46,7 @@ export const WhyUs = () => {
           <div className="flex gap-[12px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/storefront_FILL.png"
+              src="../storefront_FILL.png"
             />
             <div>
               <div className="sm:font-bold w-[203px] font-rubik leading-tight text-base mb-2 md:font-bold md:text-xl  md:leading-none ">
@@ -60,7 +60,7 @@ export const WhyUs = () => {
           <div className="flex gap-[12px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/payments_FILL.png"
+              src="../payments_FILL.png"
             />
             <div>
               <div className="sm:font-bold w-[203px] font-rubik leading-tight text-base mb-2 md:text-xl  md:leading-none">
@@ -79,7 +79,7 @@ export const WhyUs = () => {
             <div className="flex gap-[12px] justify-center items-center ">
               <img
                 className="w-[24px] md:w-[32px]  lg:w-[60px]"
-                src="src/assets/local_shipping.png"
+                src="../local_shipping.png"
               />
               <div>
                 <div className="sm:font-bold w-[203px]  leading-tight text-base mb-2 md:mb-2 font-bold md:text-xl font-rubik md:leading-none">
@@ -93,7 +93,7 @@ export const WhyUs = () => {
             <div className="flex gap-[12px] justify-center items-center ">
               <img
                 className="w-[24px] md:w-[32px]  lg:w-[60px]"
-                src="src/assets/lock_FILL.png"
+                src="../lock_FILL.png"
               />
 
               <div>
@@ -111,7 +111,7 @@ export const WhyUs = () => {
             <div className="flex gap-[12px] justify-center items-center ">
               <img
                 className="w-[24px] md:w-[32px]  lg:w-[60px]"
-                src="src/assets/storefront_FILL.png"
+                src="../storefront_FILL.png"
               />
               <div>
                 <div className="sm:font-bold w-[203px] font-rubik leading-tight text-base mb-2 md:font-bold md:text-xl  md:leading-none ">
@@ -126,7 +126,7 @@ export const WhyUs = () => {
             <div className="flex gap-[12px] justify-center items-center ">
               <img
                 className="w-[24px] md:w-[32px]  lg:w-[60px]"
-                src="src/assets/payments_FILL.png"
+                src="../payments_FILL.png"
               />
               <div>
                 <div className="sm:font-bold w-[203px] font-rubik leading-tight text-base mb-2 md:text-xl  md:leading-none">
@@ -145,7 +145,7 @@ export const WhyUs = () => {
           <div className="flex justify-center items-center gap-[24px]  ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/local_shipping.png"
+              src="../local_shipping.png"
             />
             <div>
               <div className="sm:font-bold w-[203px]  leading-tight text-base mb-2 md:mb-2 font-bold md:text-xl font-rubik md:leading-none">
@@ -160,7 +160,7 @@ export const WhyUs = () => {
           <div className="flex gap-[24px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/lock_FILL.png"
+              src="../lock_FILL.png"
             />
             <div>
               <div className="font-bold w-[150px] font-rubik mb-2 md:font-bold md:text-xl ">
@@ -174,7 +174,7 @@ export const WhyUs = () => {
           <div className="flex gap-[24px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/storefront_FILL.png"
+              src="../storefront_FILL.png"
             />
             <div>
               <div className="sm:font-bold w-[203px] font-rubik leading-tight text-base mb-2 md:font-bold md:text-xl  md:leading-none ">
@@ -188,7 +188,7 @@ export const WhyUs = () => {
           <div className="flex gap-[24px] justify-center items-center ">
             <img
               className="w-[24px] md:w-[32px]  lg:w-[60px]"
-              src="src/assets/payments_FILL.png"
+              src="../payments_FILL.png"
             />
             <div>
               <div className="sm:font-bold w-[203px] font-rubik leading-tight text-base mb-2 md:text-xl  md:leading-none">

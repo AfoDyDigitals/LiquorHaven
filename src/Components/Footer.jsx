@@ -1,19 +1,22 @@
 // eslint-disable-next-line no-unused-vars
+import { useState } from "react";
 import img from "../assets/LiquorHAVEN FOOTER LOGO.svg";
+import ArrowImg from "../assets/arrow forward white.svg";
 import facebook from "../assets/facebook-circle-fill.svg";
 import instagram from "../assets/instagram-fill.svg";
 import linkedin from "../assets/linkedin-box-fill.svg";
 import twitter from "../assets/twitter-fill.svg";
 import { Link } from "react-router-dom";
 
-
 function Footer() {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="bg-[#2E2E2E] text-cyan-50 relative mt-0 ">
       <a href="#" className="scroll-smooth">
         <button className="absolute top-0 scroll mt-[10px] md:mt-9 lg:mt-16 right-6 md:right-10 lg:right-12 w-[20px] h-[20px] p-1 md:p-0 md:w-[45px] md:h-[45px] lg:w-[50px] lg:h-[50px] bg-[#FDF0F0] rounded-full items-center flex justify-center">
           <img
-            src="./src/assets/arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
+            src="../arrow_forward_ios_FILL0_wght400_GRAD0_opsz24 (1) 1.svg"
             alt="BackToTop-button"
             className="w-[24px] h-[24px]"
           />
@@ -39,10 +42,27 @@ function Footer() {
               placeholder="Your Email Address"
             />
 
-            <button className="bg-[#E66B66] text-white rounded-r-[5px] text-[13px] font-medium md:text-[16px]">
-              <Link to="/signin" className=" p-[12px]">
+            <button className="bg-[#E66B66] w-auto text-black rounded-r-[5px] text-[13px] font-medium md:text-[16px]">
+              <div
+                className="relative p-[11.5px]"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 Sign in
-              </Link>
+                {isHovered && (
+                  <span 
+                  className="mx-[4px]"
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      right: "-6px",
+                      transform: "translateY(-50%)",
+                    }}
+                  >
+                    <img src={ArrowImg} alt="Navigate Next" className="w-4 h-4 " />
+                  </span>
+                )}
+              </div>
             </button>
           </form>
         </div>

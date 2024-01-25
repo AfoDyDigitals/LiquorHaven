@@ -5,11 +5,11 @@ function SideBar({ isVisible, toggleSidebar }) {
   return (
     <>
       {/* sm Sidebar */}
-      <div className=" font-rubik fixed z-20 top-[10px] right-[0px] flex flex-col w-[250px] h-[768px] bg-white  md:hidden lg:hidden">
+      <div className=" font-rubik fixed z-20 top-[10px] right-[0px] flex flex-col  w-[250px] h-[768px] bg-white  md:hidden lg:hidden">
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
-          src="../src/assets/CloseIcon.svg"
+          src="../CloseIcon.svg"
         />
 
         <div className="flex flex-col font-rubik justify-center items-center ml-[0px] mr-[0px] gap-[31px] mt-[108px] text-center md:hidden lg:hidden">
@@ -41,7 +41,7 @@ function SideBar({ isVisible, toggleSidebar }) {
         <img
           onClick={toggleSidebar}
           className="w-[24px] absolute right-0 m-[20px]"
-          src="../src/assets/CloseIcon.svg"
+          src="../CloseIcon.svg"
         />
         <div className="hidden md:grid font-rubik justify-end gap-[50px] absolute top-[108px] ml-[40%] text-center lg:hidden">
           <Link to="/" className="text-[16px] font-normal md:text-[20px]">

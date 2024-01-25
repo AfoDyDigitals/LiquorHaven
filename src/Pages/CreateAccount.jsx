@@ -1,18 +1,23 @@
-import React from "react";
-import { useState } from "react";
-import img from "../assets/account icon.png";
+import React, { useState } from "react";
+import img from "../assets/account-icon.png";
 import line from "../assets/line.png";
-import { Link } from "react-router-dom";
-import path from "../assets/path .png";
+import { Link, Navigate } from "react-router-dom";
+import gmail from "../assets/Gmail.png";
 import facebook from "../assets/facebook2.png";
 import twitter from "../assets/twitter2.png";
 import zxcvbn from "zxcvbn";
 import NavBar from "../Components/NavBar";
+import { useNavigate } from "react-router-dom";
 
 function CreateAccount() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const passwordScore = zxcvbn(password);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -55,10 +60,39 @@ function CreateAccount() {
       return "";
     }
   };
+  async function signUp() {
+    try {
+      let items = { firstName, lastName, phoneNumber, email, password };
+      console.warn(items);
+
+      let result = await fetch("http://102.36.176.226:8081/auth/register", {
+        method: "POST",
+        body: JSON.stringify(items),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+
+      if (!result.ok) {
+        // If the response status is not ok, throw an error
+        throw new Error(`Failed to register: ${result.statusText}`);
+      }
+
+      result = await result.json();
+      console.warn("result", result);
+      localStorage.setItem("user-info", JSON.stringify(result));
+      // Redirect to the home page or any other page upon successful registration
+      navigate("/");
+    } catch (error) {
+      // Display an alert with the error message
+      alert(`Registration failed: ${error.message}`);
+    }
+  }
 
   return (
-    <>
-    <NavBar />
+    <div className="overflow-hidden">
+      <NavBar />
       <div className="bg-[#F9F2F3] w-[100%] h-auto pt-[49px]">
         <div className="lg:w-[1000px] lg:h-[1127px] md:w-[500px] md:h-[800px] w-[300px] h-[800px] bg-white mx-auto  border border-solid border-[#FDF0F0] shadow-md ">
           <div className="flex flex-col lg:gap-[15px] gap-[9px] items-center">
@@ -84,6 +118,8 @@ function CreateAccount() {
                 required
                 placeholder="Enter First name"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px] lg:mt-[30px] md:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]">
@@ -95,6 +131,8 @@ function CreateAccount() {
                 required
                 placeholder="Enter Last name"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px]  flex flex-col justify-center gap-[10px]">
@@ -107,6 +145,8 @@ function CreateAccount() {
                 id="email"
                 placeholder="Enter Email address"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]">
@@ -118,6 +158,8 @@ function CreateAccount() {
                 required
                 placeholder="Enter Phone number"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center lg:gap-[10px] gap-[7px]">
@@ -161,12 +203,18 @@ function CreateAccount() {
               <p className="lg:text-[16px] md:text-[14px] text-[11px] font-normal leading-[13px]">
                 Already have an account?
               </p>
-              <Link to="/signin" className="text-[#E66B66] lg:text-[20px] md:text-[16px] font-medium">
+              <Link
+                to="/signin"
+                className="text-[#E66B66] lg:text-[20px] md:text-[16px] font-medium"
+              >
                 Sign in
               </Link>
             </div>
             <div>
-              <button className="lg:w-[150px]  lg:p-3 p-2 rounded-lg border border-solid border-[#E66B66] bg-[#E66B66] font-medium text-[#fff] leading-6 lg:text-[16px] text-[13px]">
+              <button
+                className="lg:w-[150px]  lg:p-3 p-2 rounded-lg   bg-[#E66B66] hover:bg-[#b83c38] font-medium text-[#fff] leading-6 lg:text-[16px] text-[13px]"
+                onClick={signUp}
+              >
                 Create Account
               </button>
             </div>
@@ -188,7 +236,7 @@ function CreateAccount() {
               />
             </div>
             <div className="flex mb-[31px] lg:gap-[57px] gap-[20px] md:gap-[40px] items-center justify-center lg:mt-[21px] mt-[10px] md:mt-[15px]">
-              <img src={path} alt="" />
+              <img src={gmail} alt="" />
               <img src={facebook} alt="" />
               <img src={twitter} alt="" />
             </div>
@@ -196,7 +244,10 @@ function CreateAccount() {
               <p className="text-[12px] md:text-[14px] lg:text-[16px] md:font-medium font-normal leading-[14px]">
                 Want to make a quick order?
               </p>
-              <Link to="/" className="text-[#E66B66] text-[12px] lg:text-[16px] md:text-[14px] md:font-medium font-medium leading-[14px]">
+              <Link
+                to="/"
+                className="text-[#E66B66] text-[12px] lg:text-[16px] md:text-[14px] md:font-medium font-medium leading-[14px]"
+              >
                 Order as a Guest
               </Link>
             </div>
@@ -211,7 +262,7 @@ function CreateAccount() {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

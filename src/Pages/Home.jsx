@@ -10,12 +10,15 @@ import { WhatsNew } from "../Components/WhatsNew";
 import Section4 from "../Components/Section4";
 import TestimonialNew from "../Components/TestimonialNew";
 
+
 export const Home = () => {
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
 
   const handleCurrencyChange = (currency) => {
     setSelectedCurrency(currency);
   };
+
+
   return (
     <div className="overflow-hidden">
       <NavBar handleCurrencyChange={handleCurrencyChange} />
