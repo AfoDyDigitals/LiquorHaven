@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "http://102.36.176.226:8081",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -16,7 +15,6 @@
     "fetch": "^1.1.0",
     "flowbite-react": "^0.7.2",
     "framer-motion": "^10.18.0",
-    "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",

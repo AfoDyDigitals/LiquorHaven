@@ -1,63 +1,26 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import img from "../assets/account-icon.png";
 import line from "../assets/line.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import gmail from "../assets/Gmail.png";
 import facebook from "../assets/facebook2.png";
 import twitter from "../assets/twitter2.png";
 import zxcvbn from "zxcvbn";
 import NavBar from "../Components/NavBar";
+import { useNavigate } from "react-router-dom";
 
 function CreateAccount() {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    password: "",
-  });
-  const passwordScore = zxcvbn(formData.password);
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const passwordScore = zxcvbn(password);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleCreateAccount = async () => {
-    // Use the actual API endpoint provided
-    const apiEndpoint = "http://102.36.176.226:8081/auth/register";
-
-    try {
-      const response = await fetch(apiEndpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      console.log("Response:", response);
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log("API Response:", data);
-
-      // Check for success message or handle it as needed
-      if (data.message) {
-        alert(data.message);
-      }
-    } catch (error) {
-      console.error("Error during registration:", error);
-    }
   };
 
   const getPasswordColor = () => {
@@ -79,8 +42,6 @@ function CreateAccount() {
   };
 
   const getPasswordLabel = () => {
-    const password = formData.password;
-
     if (password.length > 0) {
       switch (passwordScore.score) {
         case 0:
@@ -99,6 +60,35 @@ function CreateAccount() {
       return "";
     }
   };
+  async function signUp() {
+    try {
+      let items = { firstName, lastName, phoneNumber, email, password };
+      console.warn(items);
+
+      let result = await fetch("http://102.36.176.226:8081/auth/register", {
+        method: "POST",
+        body: JSON.stringify(items),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+
+      if (!result.ok) {
+        // If the response status is not ok, throw an error
+        throw new Error(`Failed to register: ${result.statusText}`);
+      }
+
+      result = await result.json();
+      console.warn("result", result);
+      localStorage.setItem("user-info", JSON.stringify(result));
+      // Redirect to the home page or any other page upon successful registration
+      navigate("/");
+    } catch (error) {
+      // Display an alert with the error message
+      alert(`Registration failed: ${error.message}`);
+    }
+  }
 
   return (
     <div className="overflow-hidden">
@@ -128,9 +118,8 @@ function CreateAccount() {
                 required
                 placeholder="Enter First name"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]"
-                onChange={handleChange}
-                name="firstName"
-                value={formData.firstName}
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px] lg:mt-[30px] md:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]">
@@ -142,9 +131,8 @@ function CreateAccount() {
                 required
                 placeholder="Enter Last name"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] lg:h-[65px] h-[42px] md:h-[65px]"
-                onChange={handleChange}
-                name="lastName"
-                value={formData.lastName}
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px]  flex flex-col justify-center gap-[10px]">
@@ -157,9 +145,8 @@ function CreateAccount() {
                 id="email"
                 placeholder="Enter Email address"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]"
-                onChange={handleChange}
-                name="email"
-                value={formData.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center gap-[10px]">
@@ -171,9 +158,8 @@ function CreateAccount() {
                 required
                 placeholder="Enter Phone number"
                 className="placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] md:h-[65px]"
-                onChange={handleChange}
-                name="phoneNumber"
-                value={formData.phoneNumber}
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
               />
             </div>
             <div className="lg:w-[807px] lg:h-[99px] md:w-[398px] md:h-[65px] w-[258px]  lg:mt-[30px] mt-[20px] flex flex-col justify-center lg:gap-[10px] gap-[7px]">
@@ -186,14 +172,12 @@ function CreateAccount() {
                 <input
                   type={passwordVisible ? "text" : "password"}
                   required
-                  onChange={handleChange}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   id="password"
                   placeholder="Enter password"
                   className={`placeholder:text-[#847B7D] placeholder:text-[13px] md:placeholder:text-[16px] px-4 rounded bg-[#F7F6F6] h-[42px] lg:h-[65px] w-full  border-${getPasswordColor()} focus:border-${getPasswordColor()}`}
-                  name="password"
-                  value={formData.password}
                 />
-
                 <span
                   className={`absolute inset-y-0 right-0 pr-3 flex items-center text-sm cursor-pointer md:text-[#847B7D] text-[#847B7D] md:text-[15px] md:font-normal text-${getPasswordColor()}`}
                   onClick={togglePasswordVisibility}
@@ -229,7 +213,7 @@ function CreateAccount() {
             <div>
               <button
                 className="lg:w-[150px]  lg:p-3 p-2 rounded-lg   bg-[#E66B66] hover:bg-[#b83c38] font-medium text-[#fff] leading-6 lg:text-[16px] text-[13px]"
-                onClick={handleCreateAccount}
+                onClick={signUp}
               >
                 Create Account
               </button>

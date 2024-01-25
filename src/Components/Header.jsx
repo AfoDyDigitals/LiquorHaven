@@ -23,7 +23,7 @@ function Header() {
     setSearchValue(e.target.value);
   }
   useEffect(() => {
-      searchFunction();
+    searchFunction();
   }, [searchValue]);
   function searchFunction() {
     if (searchValue.length > 0) {
@@ -140,7 +140,7 @@ function Header() {
       {isCurrencyConverterVisible && (
         <CurrencyConverter toggleCurrencyConverter={toggleCurrencyConverter} />
       )}
-      <div className="flex gap-2">
+      <div className=" flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-3">
         {products.map((item, index) => {
           return (
             <TrendingCard
