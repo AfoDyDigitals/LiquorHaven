@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useRef, useEffect } from "react";
 import TrendingCard from "./cards/TrendingCard";
-import GetProduct from "./draft/GetProduct";
+
 import { products3 } from "./constants";
 
 export const WhatsNew = () => {
@@ -12,10 +13,6 @@ export const WhatsNew = () => {
     setActiveIndex(index);
   };
 
-  const [products3, setProduct] = useState([]);
-  useEffect(() => {
-    GetProduct(setProduct);
-  }, []);
   /* const handleCardClick = (index) => {
     // Navigate to the product page with the selected product's details
     history.push(`/product-details/${index}`);
@@ -30,10 +27,10 @@ export const WhatsNew = () => {
     }
   }, [activeIndex]);
   return (
-    <section className="my-[30px] md:mt-14">
+    <section className="my-[30px]  md:mt-14 ">
       <div className="flex flex-col justify-center items-center">
         <h2 className="text-[20px] md:text-[39px] font-[700] opacity-90  md:opacity-100 mb-[7px] md:mt-[10px] ">
-          What’s New?
+          What's New
         </h2>
 
         <p className="font-[400] text-[13px] ml-3 md:ml-0 text-center">
@@ -48,9 +45,9 @@ export const WhatsNew = () => {
           {products3.map((product, index) => (
             <TrendingCard
               key={index}
-              imgURL={product.imageURL}
+              imgURL={product.imgURL}
               name={product.name}
-              price={`$${product.price}`}
+              price={product.price}
             />
           ))}
         </div>
@@ -58,16 +55,16 @@ export const WhatsNew = () => {
         {/* Mobile Screen View */}
         <div className="relative">
           <div
-            className="flex overflow-x-auto mt-4 px-5 mb-5 md:hidden lg:hidden w-[70%] mx-auto"
+            className="flex overflow-x-auto mt-4 px-5 mb-5 md:hidden lg:hidden w-[280px] sm:w-[70%] mx-auto"
             ref={cardsRef}
           >
             <div className="flex flex-row items-center gap-[13px]">
               {products3.map((product, index) => (
                 <TrendingCard
                   key={index}
-                  imgURL={product.imageURL}
+                  imgURL={product.imgURL}
                   name={product.name}
-                  price={`$${product.price}`}
+                  price={product.price}
                 />
               ))}
             </div>
