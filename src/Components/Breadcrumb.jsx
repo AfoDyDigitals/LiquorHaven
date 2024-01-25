@@ -62,7 +62,7 @@ function Breadcrumb({ handleCurrencyChange }) {
     <div className="font-rubik w-[100vw] overflow-none">
       {/* searchbar sm*/}
       <div className="flex justify-center items-center">
-        <div className=" flex justify-between items-center  border-solid border border-[#9E9496] w-[92%] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden relative">
+        <div className=" flex justify-between items-center  border-solid border border-[#9E9496] w-[92%] h-[35px] rounded-[4px] mt-[16px] md:hidden lg:hidden ">
           <input
             className="font-normal focus:outline-none focus:none  w-[343px] h-[16px] text-[13px] p-[15px] border-none"
             placeholder="Search over 3,000 quality drinks..."
@@ -218,7 +218,7 @@ function Breadcrumb({ handleCurrencyChange }) {
         </div>
       </div>
 
-      <div className="flex flex-col absolute -top-10 md:hidden">
+      <div className="flex flex-col  md:hidden">
         {products.map((item, index) => {
           return (
             <TrendingCard

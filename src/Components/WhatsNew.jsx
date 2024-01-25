@@ -15,7 +15,7 @@ export const WhatsNew = () => {
   const [products3, setProduct] = useState([]);
   useEffect(() => {
     GetProduct(setProduct);
-  },[]);
+  }, []);
   /* const handleCardClick = (index) => {
     // Navigate to the product page with the selected product's details
     history.push(`/product-details/${index}`);
